@@ -1,0 +1,1202 @@
+<template>
+  <div>
+    <div id="navbar" ref="section1">
+      <!-- percobaan navbar 1 -->
+      <v-toolbar dense height="80">
+        <v-toolbar-title>
+          <img
+            src="~@/assets/gendislogo.png"
+            style="width: 200px; height: 60px; position: relative; top: 3px"
+          />
+        </v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-items class="hidden-sm-and-down">
+          <v-menu offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn flat text v-bind="attrs" v-on="on">
+                <h2 class="navbarmenu">Facility</h2>
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item-group
+                v-model="group"
+                active-class="deep-purple--text text--accent-4"
+              >
+                <v-list-item
+                  href="#feature"
+                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                >
+                  <v-list-item-title>Features</v-list-item-title>
+                </v-list-item>
+                <v-list-item
+                  href="#specification"
+                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                >
+                  <v-list-item-title>Specification</v-list-item-title>
+                </v-list-item>
+              </v-list-item-group>
+            </v-list>
+          </v-menu>
+          <v-menu offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn flat text v-bind="attrs" v-on="on">
+                <h2 class="navbarmenu">Products</h2>
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item-group
+                v-model="group"
+                active-class="deep-purple--text text--accent-4"
+              >
+                <v-list-item>
+                  <v-list-item-title>Block A</v-list-item-title>
+                </v-list-item>
+                <v-list-item
+                  href="#salessection"
+                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                >
+                  <v-list-item-title>Block B</v-list-item-title>
+                </v-list-item>
+
+                <v-list-item>
+                  <v-list-item-title>Block C</v-list-item-title>
+                </v-list-item>
+
+                <v-list-item
+                  href="#progress"
+                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                >
+                  <v-list-item-title>Progress</v-list-item-title>
+                </v-list-item>
+
+                <v-list-item
+                  href="#availability"
+                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                >
+                  <v-list-item-title>Price List</v-list-item-title>
+                </v-list-item>
+              </v-list-item-group>
+            </v-list>
+          </v-menu>
+          <v-btn
+            text
+            flat
+            href="#locationpart"
+            v-smooth-scroll="{ duration: 1000, offset: 0 }"
+          >
+            <h2 class="navbarmenu">Location</h2>
+          </v-btn>
+          <v-btn
+            text
+            flat
+            href="#contactus"
+            v-smooth-scroll="{ duration: 1000, offset: 0 }"
+          >
+            <h2 class="navbarmenu">Contact</h2>
+          </v-btn>
+        </v-toolbar-items>
+        <v-app-bar-nav-icon
+          class="hidden-sm-and-up"
+          @click.stop="drawer = !drawer"
+        ></v-app-bar-nav-icon>
+      </v-toolbar>
+      <v-list nav dense v-if="drawer" class="hidden-sm-and-up">
+        <v-list-item-group
+          v-model="group"
+          active-class="deep-purple--text text--accent-4"
+        >
+          <v-list-item>
+            <v-list-item-title>Home</v-list-item-title>
+          </v-list-item>
+          <v-list-item
+            href="#salessection"
+            v-smooth-scroll="{ duration: 1000, offset: 2 }"
+          >
+            <v-list-item-title>Sales</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title>About</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item
+            href="#contactus"
+            v-smooth-scroll="{ duration: 1000, offset: 0 }"
+          >
+            <v-list-item-title>Contact</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </div>
+    <div>
+      <v-row no-gutters>
+        <v-col>
+          <!-- <v-parallax :src="require('@/assets/homepage.jpg')" 
+            style="background-size: cover; height:625px;
+            text-align: right;" linear-gradient="to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)" position="absolute" height="600">
+            <v-container>
+              <p class="jumbotrontulisan">ARGAGENDHIS</p>
+              <p class="jumbotrontulisan1">Residence</p>
+            </v-container>
+          </v-parallax> -->
+          <v-card class="jumbotron">
+            <v-container>
+              <p class="jumbotrontulisan">ARGAGENDHIS</p>
+              <p class="jumbotrontulisan1">Residence</p>
+            </v-container>
+          </v-card>
+        </v-col>
+      </v-row>
+    </div>
+    <v-parallax :src="require('@/assets/pharalax4.png')" style="height: 250px">
+      <v-container>
+        <h1 class="featureSpecificationPart" style="margin-top: 100px">
+          Features & Specification
+        </h1>
+      </v-container>
+    </v-parallax>
+    <div id="feature">
+      <v-container>
+        <h1 class="feature" style="margin-top: 100px">
+          Why Choose Argagendhis
+        </h1>
+      </v-container>
+      <v-container>
+        <v-row>
+          <v-col cols="3">
+            <v-row justify="center">
+              <v-avatar tile size="90" style="align: center; margin-top: 45px">
+                <img
+                  alt="user"
+                  src="https://img.icons8.com/material/96/26e07f/lightning-bolt--v1.png"
+                />
+              </v-avatar>
+            </v-row>
+            <v-row justify="center" style="margin-top: 30px">
+              <h1 class="featureCaption">2200 Watt Electricity</h1>
+              <p class="featureCaption2">
+                2200 watts of electricity with a <br />
+                secure underground electrical system
+              </p>
+            </v-row>
+            <!-- <v-card-title> Top western road trips </v-card-title>
+            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
+          </v-col>
+          <v-col cols="3">
+            <v-row justify="center">
+              <v-avatar tile size="90" style="align: center; margin-top: 45px">
+                <img
+                  src="https://img.icons8.com/ios-glyphs/96/26e07f/last-24-hours.png"
+                />
+              </v-avatar>
+            </v-row>
+            <v-row justify="center" style="margin-top: 30px">
+              <h1 class="featureCaption">24 Hours Secure</h1>
+              <p class="featureCaption2">
+                the security team is ready to <br />
+                maintain real estate security 24 hours
+              </p>
+            </v-row>
+            <!-- <v-card-title> Top western road trips </v-card-title>
+            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
+          </v-col>
+          <v-col cols="3">
+            <v-row justify="center">
+              <v-avatar tile size="90" style="align: center; margin-top: 45px">
+                <img
+                  src="https://img.icons8.com/material/96/26e07f/tollbooth.png"
+                />
+              </v-avatar>
+            </v-row>
+            <v-row justify="center" style="margin-top: 30px">
+              <h1 class="featureCaption">One Gate System</h1>
+              <p class="featureCaption2">
+                One gate system that will <br />
+                provide maximum security
+              </p>
+            </v-row>
+            <!-- <v-card-title> Top western road trips </v-card-title>
+            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
+          </v-col>
+          <v-col cols="3">
+            <v-row justify="center">
+              <v-avatar tile size="90" style="align: center; margin-top: 45px">
+                <img
+                  src="https://img.icons8.com/material/96/26e07f/water-tap-.png"
+                />
+              </v-avatar>
+            </v-row>
+            <v-row justify="center" style="margin-top: 30px">
+              <h1 class="featureCaption">PDAM or Artetis</h1>
+              <p class="featureCaption2">
+                Guaranteed availability of clean water
+              </p>
+            </v-row>
+            <!-- <v-card-title> Top western road trips </v-card-title>
+            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
+    <div id="specification">
+      <v-container>
+        <v-row>
+          <v-col cols="6" style="margin-top: 100px">
+            <h1 class="spesifikasi">Specification</h1>
+            <p class="LocationCaption2" style="margin-top: 10px">
+              The choice of material combination becomes very <br />
+              important in the construction of each unit <br />
+              because splendor and comfort are
+              <br />
+              important points in a design.
+            </p>
+          </v-col>
+          <v-col cols="6">
+            <v-simple-table>
+              <template v-slot:default>
+                <thead>
+                  <tr>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in bahan" :key="item.name">
+                    <td class="text-left">{{ item.name }}</td>
+                    <td class="text-left">{{ item.detail }}</td>
+                  </tr>
+                </tbody>
+              </template>
+            </v-simple-table>
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
+    <v-parallax :src="require('@/assets/pharalax2.jpg')" style="height: 350px">
+      <v-container>
+        <h1 class="progresspart" style="margin-top: 100px">Our</h1>
+        <h1 class="progresspart" style="margin-top: -25px">Products</h1>
+      </v-container>
+    </v-parallax>
+    <div id="product">
+      <v-container>
+        <div id="salessection" ref="section2">
+          <v-row no-gutters style="padding-top: 45px">
+            <v-col v-for="imgMap in mapImg" :key="imgMap" cols="7">
+              <v-img :src="imgMap.src" style="width: 650px; height: 550px">
+              </v-img>
+            </v-col>
+            <v-col cols="4">
+              <v-row>
+                <v-col>
+                  <h1 class="mapsection">Private</h1>
+                  <h1 class="mapsection" style="margin-top: -20px">
+                    Residental
+                  </h1>
+                  <v-row>
+                    <v-col cols="8">
+                      <v-row>
+                        <v-col cols="4">
+                          <img
+                            src="https://img.icons8.com/material/85/be2edd/circled-a.png"
+                          />
+                        </v-col>
+                        <v-col>
+                          <p class="LocationCaption1" style="margin-top: -2px">
+                            Block A
+                          </p>
+                          <v-btn
+                            style="margin-top: -20px"
+                            color="green"
+                            outlined
+                          >
+                            View More
+                          </v-btn>
+                        </v-col>
+                      </v-row>
+                    </v-col>
+                    <v-col cols="8">
+                      <v-row>
+                        <v-col cols="4">
+                          <img
+                            src="https://img.icons8.com/material/85/FDA7DF/circled-b.png"
+                          />
+                        </v-col>
+                        <v-col>
+                          <p class="LocationCaption1" style="margin-top: -2px">
+                            Block B
+                          </p>
+                          <v-btn
+                            style="margin-top: -20px"
+                            color="green"
+                            outlined
+                          >
+                            View More
+                          </v-btn>
+                        </v-col>
+                      </v-row>
+                    </v-col>
+                    <v-col cols="8">
+                      <v-row>
+                        <v-col cols="4">
+                          <img
+                            src="https://img.icons8.com/material/85/ffb8b8/circled-c.png"
+                          />
+                        </v-col>
+                        <v-col>
+                          <p class="LocationCaption1" style="margin-top: -2px">
+                            Block C
+                          </p>
+                          <v-btn
+                            style="margin-top: -20px"
+                            color="green"
+                            outlined
+                          >
+                            View More
+                          </v-btn>
+                        </v-col>
+                      </v-row>
+                    </v-col>
+                  </v-row>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </div>
+      </v-container>
+    </div>
+    <v-parallax
+      id="progress"
+      :src="require('@/assets/pharalax3.png')"
+      style="height: 350px"
+    >
+      <v-container>
+        <h1 class="progresspart" style="margin-top: 100px">Our</h1>
+        <h1 class="progresspart" style="margin-top: -25px">Progress</h1>
+      </v-container>
+    </v-parallax>
+    <div style="height: 415px">
+      <v-row no-gutters>
+        <v-col no-gutters cols="3">
+          <v-card class="align-start" height="400" width="500">
+            <v-img
+              :src="require('@/assets/progress1.jpeg')"
+              style="width: 100%; height: 100%"
+            >
+            </v-img>
+          </v-card>
+        </v-col>
+        <v-col no-gutters cols="3">
+          <v-card height="400" width="500">
+            <v-img
+              :src="require('@/assets/progress2.jpeg')"
+              style="width: 100%; height: 100%"
+            >
+            </v-img>
+          </v-card>
+        </v-col>
+        <v-col no-gutters cols="3">
+          <v-card height="400" width="500">
+            <v-img
+              :src="require('@/assets/progress3.jpeg')"
+              style="width: 100%; height: 100%"
+            >
+            </v-img>
+          </v-card>
+        </v-col>
+        <v-col cols="3">
+          <v-card height="400" width="500">
+            <v-img
+              :src="require('@/assets/progress4.jpeg')"
+              style="width: 100%; height: 100%"
+            >
+            </v-img>
+          </v-card>
+        </v-col>
+      </v-row>
+    </div>
+    <div id="availability">
+      <v-container>
+        <h1 class="pricelist" style="margin-top: 100px">Check availability</h1>
+        <v-data-table :headers="headers" :items="desserts" :items-per-page="5">
+        </v-data-table>
+      </v-container>
+    </div>
+    <v-parallax
+      id="locationpart"
+      :src="require('@/assets/pharalax.jpg')"
+      style="height: 425px"
+    >
+      <v-container>
+        <h1 class="locationPart" style="margin-top: 125px">Location</h1>
+      </v-container>
+    </v-parallax>
+
+    <div id="location" style="background-color: #f1f2f6; height: ">
+      <v-row no-gutters>
+        <v-col cols="6">
+          <iframe
+            width="800px"
+            height="636px"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=argagendhis&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          >
+          </iframe>
+        </v-col>
+        <v-col cols="6" style="padding-left: 80px">
+          <h1 class="location" style="margin-top: 100px">Nearby Place</h1>
+          <p class="LocationCaption2" style="margin-top: 2px">
+            A private area with easy accessibility is the main <br />
+            consideration for choosing housing. <br />
+            Choose your best location at Argagendhis Residence.
+          </p>
+          <v-row>
+            <v-col cols="5">
+              <v-row>
+                <v-col cols="4">
+                  <v-avatar tile size="90">
+                    <img
+                      src="https://img.icons8.com/material/85/00b894/road--v2.png"
+                    />
+                  </v-avatar>
+                </v-col>
+                <v-col>
+                  <p class="LocationCaption1">50 m</p>
+                  <p class="LocationCaption2">From Highway</p>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col>
+              <v-row>
+                <v-col cols="3">
+                  <v-avatar tile size="90">
+                    <img
+                      src="https://img.icons8.com/material/85/00b894/hospital-2.png"
+                    />
+                  </v-avatar>
+                </v-col>
+                <v-col>
+                  <p class="LocationCaption1">06 Minutes</p>
+                  <p class="LocationCaption2">From RSUD Ketileng</p>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="5">
+              <v-row>
+                <v-col cols="4">
+                  <v-avatar tile size="90">
+                    <img
+                      src="https://img.icons8.com/material/85/00b894/highway.png"
+                    />
+                  </v-avatar>
+                </v-col>
+                <v-col>
+                  <p class="LocationCaption1" style="margin-top: 2px">
+                    12 Minutes
+                  </p>
+                  <p class="LocationCaption2">
+                    From Gayamsari<br />
+                    Entrance Toll
+                  </p>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col>
+              <v-row>
+                <v-col cols="3">
+                  <v-avatar tile size="90">
+                    <img
+                      src="https://img.icons8.com/material/85/00b894/university--v1.png"
+                    />
+                  </v-avatar>
+                </v-col>
+                <v-col>
+                  <p class="LocationCaption1" style="margin-top: -5px">
+                    04 Minutes
+                  </p>
+                  <p class="LocationCaption2">From UNIMUS</p>
+                  <p class="LocationCaption1" style="margin-top: -15px">
+                    16 Minutes
+                  </p>
+                  <p class="LocationCaption2">From UNDIP</p>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </div>
+
+    <div id="footer">
+      <v-row>
+        <v-container>
+          <v-col>
+            <v-row style="padding-top: 20px">
+              <v-col cols="4">
+                <img
+                  src="~@/assets/gendislogoputih.png"
+                  style="
+                    width: 200px;
+                    height: 60px;
+                    position: relative;
+                    top: 3px;
+                  "
+                />
+                <p class="Footerfont">
+                  Showcase all your properties in a truly <br />
+                  modern manner. Welcome to ARGAGENDHIS.
+                </p>
+              </v-col>
+              <v-col>
+                <h1>Contact</h1>
+                <p class="Footerfont">+62811-2714-200</p>
+                <p class="Footerfont" style="margin-top: -10px">
+                  gendhisargasadana@gmail.com
+                </p>
+                <p class="Footerfont" style="margin-top: -10px">
+                  Jl. Kompol R Soekanto, Mangunharjo,<br />
+                  Kec. Tembalang, Kota Semarang, Jawa Tengah 50272
+                </p>
+              </v-col>
+              <v-col>
+                <h1>Our Social Media</h1>
+                <div class="d-flex">
+                  <v-btn dark icon href="https://www.instagram.com/argagendhis">
+                    <v-icon size="24px" color="white"> mdi-instagram </v-icon>
+                  </v-btn>
+                  <v-btn
+                    class="ml-4"
+                    dark
+                    icon
+                    href="https://www.facebook.com/Argagendhis-Residence-101331898865469"
+                  >
+                    <v-icon size="24px" color="white"> mdi-facebook </v-icon>
+                  </v-btn>
+                  <v-btn
+                    class="mx-4"
+                    dark
+                    icon
+                    href="https://api.whatsapp.com/message/FAXQXMO3HVMKC1"
+                  >
+                    <v-icon size="24px" color="white"> mdi-whatsapp </v-icon>
+                  </v-btn>
+                </div>
+              </v-col>
+            </v-row>
+          </v-col>
+          <v-col>
+            <h1 class="FooterfontCopyright" style="margin-top: 20px">
+              make with <v-icon color="red">mdi-heart</v-icon> by @tiodong99
+            </h1>
+          </v-col>
+        </v-container>
+      </v-row>
+    </div>
+  </div>
+</template>
+
+<script>
+// import {onMounted,ref} from "vue"
+import { Icon } from "@iconify/vue2";
+export default {
+  name: "Home",
+  
+  data() {
+    // const X = ref(null);
+    // const section1 = ref(null);
+    // const section2 = ref(null);
+
+    // function handleScroll(){
+    //     if(window.scrollY >= section1.value.offsetHeight){
+    //         X.value = -(window.scrollY - section1.value.offsetHeight)
+    //     }
+    // }
+
+    // onMounted(()=>{
+    //     document.addEventListener('scroll',handleScroll)
+    // })
+
+    return {
+      Icon,
+      drawer: false,
+      model: null,
+      
+
+      bahan: [
+        {
+          name: "Pondasi",
+          detail: "Pondasi Batu Kali & Footplate",
+        },
+        {
+          name: "Dinding",
+          detail: "Pasangan Batu Merah",
+        },
+        {
+          name: "Lantai Induk",
+          detail: "Granitile 60 x 60",
+        },
+        {
+          name: "Plafond",
+          detail: "Gypsum Rangka Galvalum",
+        },
+        {
+          name: "Rangka Atap",
+          detail: "Rangka Atap Baja Ringan",
+        },
+        {
+          name: "KM/WC Induk",
+          detail:
+            "Dinding full kramik 25 x 40 Lantai kramik 40 x 40 Closet duduk",
+        },
+        {
+          name: "Kusen",
+          detail: "Alumunium powder coating 4",
+        },
+        {
+          name: "Daun Jendela",
+          detail: "Alumunium",
+        },
+        {
+          name: "Daun Pintu",
+          detail:
+            "Pintu utama panil jati finish cat duco. Pintu dalam fabrikasi finish HPL",
+        },
+        {
+          name: "Listrik",
+          detail: "2200 Watt, Instalasi bawah tanah",
+        },
+        {
+          name: "Sumber Air Bersih",
+          detail: "PDAM/Artetis",
+        },
+      ],
+      headers: [
+        {
+          text: "No",
+          align: "start",
+          sortable: false,
+          value: "no",
+        },
+        { text: "Type", value: "type" },
+        { text: "LT", value: "lt" },
+        { text: "LB1", value: "lb1" },
+        { text: "LB2", value: "lb2" },
+        { text: "LB", value: "lb" },
+        { text: "Harga", value: "harga" },
+      ],
+      desserts: [
+        {
+          no: "A1",
+          type: "Argapura 71 (Rumah)",
+          lt: 47,
+          lb1: 41,
+          lb2: 30,
+          lb: 71,
+          harga: "Rp. 640,500,000",
+        },
+        {
+          no: "A1",
+          type: "Argapura 55 (Rukan)",
+          lt: 47,
+          lb1: 30,
+          lb2: 25,
+          lb: 55,
+          harga: "Rp. 550,000,000",
+        },
+        {
+          no: "A2",
+          type: "Argapura 60 ( Rumah )",
+          lt: 40,
+          lb1: 30,
+          lb2: 30,
+          lb: 60,
+          harga: "Rp. 545,000,000",
+        },
+        {
+          no: "A3",
+          type: "Argapura 60 ( Rumah ) ",
+          lt: 40,
+          lb1: 30,
+          lb2: 30,
+          lb: 60,
+          harga: "Rp. 545,000,000",
+        },
+        {
+          no: "A5",
+          type: "Mahendra 112",
+          lt: 91,
+          lb1: 57.49,
+          lb2: 54.5,
+          lb: 111.99,
+          harga: "Rp. 1,098,195,000",
+        },
+        {
+          no: "A6",
+          type: "Mahendra 111",
+          lt: 71,
+          lb1: 56.62,
+          lb2: 54.02,
+          lb: 110.64,
+          harga: "Rp. 990,530,000",
+        },
+        {
+          no: "A7",
+          type: "Sindoro 58",
+          lt: 46,
+          lb1: 33.55,
+          lb2: 25.3,
+          lb: 58.85,
+          harga: "Rp. 566,325,000",
+        },
+        {
+          no: "B1",
+          type: "Mahameru 128",
+          lt: 100,
+          lb1: 65.76,
+          lb2: 61.63,
+          lb: 127.39,
+          harga: "Rp. 1,231,460,000",
+        },
+        {
+          no: "B2",
+          type: "Mahameru 128",
+          lt: 100,
+          lb1: 65.76,
+          lb2: 61.63,
+          lb: 127.39,
+          harga: "Rp. 1,231,460,000",
+        },
+        {
+          no: "B3",
+          type: "Sindoro 80",
+          lt: 82,
+          lb1: 40,
+          lb2: 40,
+          lb: 80,
+          harga: "Rp. 870,000,000",
+        },
+        {
+          no: "B3",
+          type: "Sindoro 50",
+          lt: 82,
+          lb1: 50,
+          lb2: 0,
+          lb: 50,
+          harga: "Rp. 685,000,000",
+        },
+        {
+          no: "B3",
+          type: "Sindoro 45",
+          lt: 82,
+          lb1: 45,
+          lb2: 0,
+          lb: 45,
+          harga: "Rp. 657,500,000",
+        },
+        {
+          no: "B5",
+          type: "Sindoro 159",
+          lt: 145,
+          lb1: 83.35,
+          lb2: 75.25,
+          lb: 158.6,
+          harga: "Rp. 1,634,925,000",
+        },
+        {
+          no: "B6",
+          type: "Mahameru 128",
+          lt: 100,
+          lb1: 65.76,
+          lb2: 61.63,
+          lb: 127.39,
+          harga: "Rp. 1,231,460,000",
+        },
+        {
+          no: "B7",
+          type: "Mahameru 128",
+          lt: 100,
+          lb1: 65.76,
+          lb2: 61.63,
+          lb: 127.39,
+          harga: "Rp. 1,231,460,000",
+        },
+        {
+          no: "C1",
+          type: "Sindoro 133",
+          lt: 107,
+          lb1: 68.1,
+          lb2: 64.9,
+          lb: 133,
+          harga: "Rp. 1,298,950,000",
+        },
+        {
+          no: "C2",
+          type: "Mahameru 128",
+          lt: 104,
+          lb1: 65.76,
+          lb2: 61.63,
+          lb: 127.39,
+          harga: "Rp. 1,251,460,000",
+        },
+        {
+          no: "C5",
+          type: "Mahameru 124",
+          lt: 94,
+          lb1: 63.81,
+          lb2: 59.63,
+          lb: 123.44,
+          harga: "Rp. 1,178,735,000",
+        },
+        {
+          no: "C6",
+          type: "Mahameru 124",
+          lt: 92,
+          lb1: 63.81,
+          lb2: 59.63,
+          lb: 123.44,
+          harga: "Rp. 1,168,735,000",
+        },
+        {
+          no: "C7",
+          type: "Sindoro 156",
+          lt: 110,
+          lb1: 83.04,
+          lb2: 73.47,
+          lb: 156.51,
+          harga: "Rp. 1,447,540,000",
+        },
+      ],
+      paralax: {
+        src: require("../assets/pharalax.jpg"),
+      },
+      mapImg: [
+        {
+          src: require("../assets/gendhisMap2.png"),
+        },
+      ],
+      progress: [
+        {
+          title: "Argapura 66",
+          src: require("../assets/2.jpg"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Argapura 61",
+          src: require("../assets/3.jpg"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Mahendra 112",
+          src: require("../assets/4.jpg"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Mahendra 111",
+          src: require("../assets/5.jpg"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Mahendra 111",
+          src: require("../assets/6.jpg"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Mahendra 111",
+          src: require("../assets/7.jpg"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Mahendra 111",
+          src: require("../assets/8.jpg"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Mahendra 111",
+          src: require("../assets/9.jpg"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Mahendra 111",
+          src: require("../assets/10.jpg"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Mahendra 111",
+          src: require("../assets/11.jpg"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Mahendra 111",
+          src: require("../assets/12.jpg"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Mahendra 111",
+          src: require("../assets/13.jpg"),
+          to: "/sindoro",
+          flex: 6,
+        },
+      ],
+      cards: [
+        {
+          title: "Argapura 66",
+          src: require("../assets/argapura66.png"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Argapura 61",
+          src: require("../assets/argapura61.png"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Mahendra 112",
+          src: require("../assets/mahendra112.png"),
+          to: "/sindoro",
+          flex: 6,
+        },
+        {
+          title: "Mahendra 111",
+          src: require("../assets/mahendra111.png"),
+          to: "/sindoro",
+          flex: 6,
+        },
+      ],
+      icons: [
+        {
+          icon: "mdi-instagram",
+          href: "https://www.instagram.com/{ARGAGENDHIS}",
+        },
+        {
+          icon: "mdi-twitter",
+          href: "https://www.instagram.com/dionisiusaa/",
+        },
+        {
+          icon: "mdi-facebook",
+          href: "https://www.instagram.com/dionisiusaa/",
+        },
+      ],
+      
+    };
+  },
+  // mounted() {
+  //   this.initMap();
+  //   this.initLayers();
+  // },
+  // methods: {
+  //   submitComment: function (reply) {
+  //     this.comments.push({
+  //       id: 1,
+  //       user: this.current_user.user,
+  //       avatar: this.current_user.avatar,
+  //       text: reply,
+  //     });
+  //   },
+  // },
+ 
+};
+</script>
+
+<style scoped>
+.fullheight {
+  min-height: 100vh !important;
+}
+
+.jumbotron {
+  background-image: url("../assets/homepage.jpg");
+  background-size: cover;
+  height: 625px;
+  width: max;
+  text-align: right;
+  position: relative;
+}
+
+.mapsection {
+  font-family: poppinssemibold;
+  color: black;
+  font-size: 65px;
+  text-align: left;
+}
+
+.float-left {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+}
+
+.jumbotron.container {
+  z-index: 1;
+  position: relative;
+}
+
+.jumbotron::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 60%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  position: absolute;
+  bottom: 0;
+}
+
+.sales {
+  padding-left: 89px;
+  padding-right: 89px;
+}
+
+.salespart {
+  font-family: poppinssemibold;
+  color: black;
+  font-size: 55px;
+  text-align: left;
+}
+.feature {
+  font-family: poppinssemibold;
+  color: black;
+  font-size: 45px;
+  text-align: center;
+}
+.featureCaption {
+  font-family: poppinssemibold;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+}
+.featureCaption2 {
+  font-family: poppinslight;
+  color: black;
+  font-size: 10px;
+  text-align: center;
+}
+.featureSpecificationPart {
+  font-family: poppinssemibold;
+  color: white;
+  font-size: 75px;
+  text-align: center;
+}
+.progresspart {
+  font-family: poppinssemibold;
+  color: white;
+  font-size: 75px;
+  text-align: left;
+}
+.locationPart {
+  font-family: poppinssemibold;
+  color: white;
+  font-size: 75px;
+  text-align: right;
+}
+.spesifikasi {
+  font-family: poppinssemibold;
+  color: black;
+  font-size: 45px;
+  text-align: left;
+}
+.viewAll {
+  font-family: poppinssemibold;
+  color: rgb(40, 27, 219);
+  font-size: 20px;
+  padding-top: 35px;
+  text-align: center;
+}
+
+.title2 {
+  font-family: poppinssemibold;
+  color: black;
+  font-size: 25px;
+  text-align: left;
+}
+.location {
+  font-family: poppinssemibold;
+  color: black;
+  font-size: 45px;
+  text-align: left;
+}
+.value2 {
+  font-family: poppinslight;
+  color: black;
+  font-size: 12px;
+  text-align: left;
+}
+
+/* .aboutusbackground{
+    background-color: rgba(221, 210, 210, 0.623);
+} */
+
+.footertext {
+  font-family: poppinssemibold;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+.footertext2 {
+  font-family: poppinslight;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* .jeda2{
+  background-image: url("../assets/homepage.jpg");
+  background-size: cover;
+  height: 625px;
+  text-align: right;
+  position: relative;
+} */
+
+/* Animation css */
+
+/* This only changes this particular animation duration */
+/* .animate__animated.animate__fadeInRight {
+  --animate-duration: 2s;
+} */
+
+/* This changes all the animations globally */
+:root {
+  --animate-duration: 800ms;
+  --animate-delay: 1s;
+}
+#feature {
+  height: auto !important;
+  min-height: 500px;
+}
+#specification {
+  height: auto !important;
+  min-height: 700px;
+}
+#product {
+  height: auto !important;
+  min-height: 650px;
+  background-color: #f1f2f6;
+}
+#availability {
+  height: auto !important;
+  min-height: 650px;
+}
+#location {
+  height: auto !important;
+  min-height: 650px;
+}
+#footer {
+  height: auto !important;
+  background-color: black;
+}
+</style>
