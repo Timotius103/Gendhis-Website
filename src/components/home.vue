@@ -1,20 +1,22 @@
 <template>
-  <div>
+  <v-main>
     <div id="navbar" ref="section1">
       <!-- percobaan navbar 1 -->
       <v-toolbar dense height="80">
-        <v-toolbar-title>
-          <img
-            src="~@/assets/gendislogo.png"
-            style="width: 200px; height: 60px; position: relative; top: 3px"
-          />
-        </v-toolbar-title>
+        <v-container>
+          <v-toolbar-title>
+            <img
+              src="~@/assets/gendislogo.png"
+              style="width: 200px; height: 60px; position: relative; top: 3px"
+            />
+          </v-toolbar-title>
+        </v-container>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
           <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
               <v-btn flat text v-bind="attrs" v-on="on">
-                <h2 class="navbarmenu">Facility</h2>
+                <h2 class="navbarmenu">Fasilitas</h2>
               </v-btn>
             </template>
             <v-list>
@@ -26,13 +28,13 @@
                   href="#feature"
                   v-smooth-scroll="{ duration: 1000, offset: 2 }"
                 >
-                  <v-list-item-title>Features</v-list-item-title>
+                  <v-list-item-title>Fitur</v-list-item-title>
                 </v-list-item>
                 <v-list-item
                   href="#specification"
                   v-smooth-scroll="{ duration: 1000, offset: 2 }"
                 >
-                  <v-list-item-title>Specification</v-list-item-title>
+                  <v-list-item-title>Spesifikasi</v-list-item-title>
                 </v-list-item>
               </v-list-item-group>
             </v-list>
@@ -40,7 +42,7 @@
           <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
               <v-btn flat text v-bind="attrs" v-on="on">
-                <h2 class="navbarmenu">Products</h2>
+                <h2 class="navbarmenu">Produk</h2>
               </v-btn>
             </template>
             <v-list>
@@ -48,11 +50,13 @@
                 v-model="group"
                 active-class="deep-purple--text text--accent-4"
               >
-                <v-list-item>
+                <v-list-item 
+                  @click="keBlockA"
+                >
                   <v-list-item-title>Block A</v-list-item-title>
                 </v-list-item>
                 <v-list-item
-                  href="#salessection"
+                  @click="keBlockB"
                   v-smooth-scroll="{ duration: 1000, offset: 2 }"
                 >
                   <v-list-item-title>Block B</v-list-item-title>
@@ -73,7 +77,7 @@
                   href="#availability"
                   v-smooth-scroll="{ duration: 1000, offset: 2 }"
                 >
-                  <v-list-item-title>Price List</v-list-item-title>
+                  <v-list-item-title>Daftar Harga</v-list-item-title>
                 </v-list-item>
               </v-list-item-group>
             </v-list>
@@ -84,7 +88,7 @@
             href="#locationpart"
             v-smooth-scroll="{ duration: 1000, offset: 0 }"
           >
-            <h2 class="navbarmenu">Location</h2>
+            <h2 class="navbarmenu">Lokasi Kami</h2>
           </v-btn>
           <v-btn
             text
@@ -92,7 +96,7 @@
             href="#contactus"
             v-smooth-scroll="{ duration: 1000, offset: 0 }"
           >
-            <h2 class="navbarmenu">Contact</h2>
+            <h2 class="navbarmenu">Kontak</h2>
           </v-btn>
         </v-toolbar-items>
         <v-app-bar-nav-icon
@@ -151,15 +155,19 @@
     <v-parallax :src="require('@/assets/pharalax4.png')" style="height: 250px">
       <v-container>
         <h1 class="featureSpecificationPart" style="margin-top: 100px">
-          Features & Specification
+          Fitur & Spesifikasi
         </h1>
       </v-container>
     </v-parallax>
+
+    <!-- <button @click="show = !show">Toggle Slide + Fade</button>
+    <Transition name="slide-fade">
+      <p v-if="show">hello</p>
+    </Transition> -->
+
     <div id="feature">
       <v-container>
-        <h1 class="feature" style="margin-top: 100px">
-          Why Choose Argagendhis
-        </h1>
+        <h1 class="feature" style="margin-top: 60px">Mengapa Argagendhis?</h1>
       </v-container>
       <v-container>
         <v-row>
@@ -173,10 +181,10 @@
               </v-avatar>
             </v-row>
             <v-row justify="center" style="margin-top: 30px">
-              <h1 class="featureCaption">2200 Watt Electricity</h1>
+              <h1 class="featureCaption">Listrik 2200 Watt</h1>
               <p class="featureCaption2">
-                2200 watts of electricity with a <br />
-                secure underground electrical system
+                2200 Watt daya listrik dengan sistem kelistrikan<br />
+                bawah tanah yang terjamin keamanannya
               </p>
             </v-row>
             <!-- <v-card-title> Top western road trips </v-card-title>
@@ -191,10 +199,10 @@
               </v-avatar>
             </v-row>
             <v-row justify="center" style="margin-top: 30px">
-              <h1 class="featureCaption">24 Hours Secure</h1>
+              <h1 class="featureCaption">Keamanan 24 Jam</h1>
               <p class="featureCaption2">
-                the security team is ready to <br />
-                maintain real estate security 24 hours
+                Kami menjamin keamanan 24 jam non stop <br />
+                dengan petugas keamanan terlatih dan terverifikasi.
               </p>
             </v-row>
             <!-- <v-card-title> Top western road trips </v-card-title>
@@ -211,8 +219,8 @@
             <v-row justify="center" style="margin-top: 30px">
               <h1 class="featureCaption">One Gate System</h1>
               <p class="featureCaption2">
-                One gate system that will <br />
-                provide maximum security
+                Tidak memiliki akses keluar masuk lain selain pintu utama<br />
+                Dengan demikian tidak ada celah untuk pelaku kejahatan.
               </p>
             </v-row>
             <!-- <v-card-title> Top western road trips </v-card-title>
@@ -221,15 +229,23 @@
           <v-col cols="3">
             <v-row justify="center">
               <v-avatar tile size="90" style="align: center; margin-top: 45px">
-                <img
-                  src="https://img.icons8.com/material/96/26e07f/water-tap-.png"
-                />
+                <div
+                  v-animate-onscroll="{
+                    down: 'animated flip',
+                    up: 'animated rotateOut',
+                  }"
+                >
+                  <img
+                    src="https://img.icons8.com/material/96/26e07f/water-tap-.png"
+                  />
+                </div>
               </v-avatar>
             </v-row>
             <v-row justify="center" style="margin-top: 30px">
-              <h1 class="featureCaption">PDAM or Artetis</h1>
+              <h1 class="featureCaption">PDAM atau Artetis</h1>
               <p class="featureCaption2">
-                Guaranteed availability of clean water
+                Tersedianya air PAM atau Sumur untuk menjamin <br />
+                ketersediaan air bersih.
               </p>
             </v-row>
             <!-- <v-card-title> Top western road trips </v-card-title>
@@ -241,14 +257,12 @@
     <div id="specification">
       <v-container>
         <v-row>
-          <v-col cols="6" style="margin-top: 100px">
-            <h1 class="spesifikasi">Specification</h1>
+          <v-col cols="6" style="margin-top: 130px">
+            <h1 class="spesifikasi">Spesifikasi</h1>
             <p class="LocationCaption2" style="margin-top: 10px">
-              The choice of material combination becomes very <br />
-              important in the construction of each unit <br />
-              because splendor and comfort are
-              <br />
-              important points in a design.
+              Pemilihan kombinasi bahan menjadi sangat penting <br />
+              dalam pembangunan setiap unit karena kemegahan <br />
+              dan kenyamanan merupakan piont penting dalam sebuah desain.
             </p>
           </v-col>
           <v-col cols="6">
@@ -274,8 +288,8 @@
     </div>
     <v-parallax :src="require('@/assets/pharalax2.jpg')" style="height: 350px">
       <v-container>
-        <h1 class="progresspart" style="margin-top: 100px">Our</h1>
-        <h1 class="progresspart" style="margin-top: -25px">Products</h1>
+        <h1 class="progresspart" style="margin-top: 100px">Produk</h1>
+        <h1 class="progresspart" style="margin-top: -25px">Kami</h1>
       </v-container>
     </v-parallax>
     <div id="product">
@@ -308,6 +322,7 @@
                           <v-btn
                             style="margin-top: -20px"
                             color="green"
+                            @click="keBlockA"
                             outlined
                           >
                             View More
@@ -329,6 +344,7 @@
                           <v-btn
                             style="margin-top: -20px"
                             color="green"
+                            @click="keBlockB"
                             outlined
                           >
                             View More
@@ -350,6 +366,7 @@
                           <v-btn
                             style="margin-top: -20px"
                             color="green"
+                            @click="keBlockC"
                             outlined
                           >
                             View More
@@ -371,8 +388,8 @@
       style="height: 350px"
     >
       <v-container>
-        <h1 class="progresspart" style="margin-top: 100px">Our</h1>
-        <h1 class="progresspart" style="margin-top: -25px">Progress</h1>
+        <h1 class="progresspart" style="margin-top: 100px">Progress</h1>
+        <h1 class="progresspart" style="margin-top: -25px">Kami</h1>
       </v-container>
     </v-parallax>
     <div style="height: 415px">
@@ -417,7 +434,7 @@
     </div>
     <div id="availability">
       <v-container>
-        <h1 class="pricelist" style="margin-top: 100px">Check availability</h1>
+        <h1 class="pricelist" style="margin-top: 100px">Daftar Harga</h1>
         <v-data-table :headers="headers" :items="desserts" :items-per-page="5">
         </v-data-table>
       </v-container>
@@ -428,7 +445,7 @@
       style="height: 425px"
     >
       <v-container>
-        <h1 class="locationPart" style="margin-top: 125px">Location</h1>
+        <h1 class="locationPart" style="margin-top: 125px">Lokasi Kami</h1>
       </v-container>
     </v-parallax>
 
@@ -447,11 +464,11 @@
           </iframe>
         </v-col>
         <v-col cols="6" style="padding-left: 80px">
-          <h1 class="location" style="margin-top: 100px">Nearby Place</h1>
+          <h1 class="location" style="margin-top: 100px">Tempat Terdekat</h1>
           <p class="LocationCaption2" style="margin-top: 2px">
-            A private area with easy accessibility is the main <br />
-            consideration for choosing housing. <br />
-            Choose your best location at Argagendhis Residence.
+            Area pribadi dengan aksesibilitas mudah adalah yang utama <br />
+            dan perlu menjadi pertimbangan untuk memilih sebuah hunian. <br />
+            Pilih lokasi terbaik Anda di Argagendhis Residence.
           </p>
           <v-row>
             <v-col cols="5">
@@ -465,7 +482,7 @@
                 </v-col>
                 <v-col>
                   <p class="LocationCaption1">50 m</p>
-                  <p class="LocationCaption2">From Highway</p>
+                  <p class="LocationCaption2">Dari Jalan Raya</p>
                 </v-col>
               </v-row>
             </v-col>
@@ -479,8 +496,8 @@
                   </v-avatar>
                 </v-col>
                 <v-col>
-                  <p class="LocationCaption1">06 Minutes</p>
-                  <p class="LocationCaption2">From RSUD Ketileng</p>
+                  <p class="LocationCaption1">06 Menit</p>
+                  <p class="LocationCaption2">Dari RSUD Ketileng</p>
                 </v-col>
               </v-row>
             </v-col>
@@ -497,11 +514,11 @@
                 </v-col>
                 <v-col>
                   <p class="LocationCaption1" style="margin-top: 2px">
-                    12 Minutes
+                    12 Menit
                   </p>
                   <p class="LocationCaption2">
-                    From Gayamsari<br />
-                    Entrance Toll
+                    Dari pintu masuk<br />
+                    Toll Gayamsari
                   </p>
                 </v-col>
               </v-row>
@@ -517,13 +534,13 @@
                 </v-col>
                 <v-col>
                   <p class="LocationCaption1" style="margin-top: -5px">
-                    04 Minutes
+                    04 Menit
                   </p>
-                  <p class="LocationCaption2">From UNIMUS</p>
+                  <p class="LocationCaption2">Dari UNIMUS</p>
                   <p class="LocationCaption1" style="margin-top: -15px">
-                    16 Minutes
+                    16 Menit
                   </p>
-                  <p class="LocationCaption2">From UNDIP</p>
+                  <p class="LocationCaption2">Dari UNDIP</p>
                 </v-col>
               </v-row>
             </v-col>
@@ -591,13 +608,13 @@
           </v-col>
           <v-col>
             <h1 class="FooterfontCopyright" style="margin-top: 20px">
-              make with <v-icon color="red">mdi-heart</v-icon> by @tiodong99
+              make with <v-icon color="red">mdi-heart</v-icon> by<a href="https://www.instagram.com/tiodong99" style="text-decoration: none;color: white;"> @tiodong99</a>
             </h1>
           </v-col>
         </v-container>
       </v-row>
     </div>
-  </div>
+  </v-main>
 </template>
 
 <script>
@@ -605,7 +622,7 @@
 import { Icon } from "@iconify/vue2";
 export default {
   name: "Home",
-  
+
   data() {
     // const X = ref(null);
     // const section1 = ref(null);
@@ -622,10 +639,10 @@ export default {
     // })
 
     return {
+      show: false,
       Icon,
       drawer: false,
       model: null,
-      
 
       bahan: [
         {
@@ -878,107 +895,7 @@ export default {
         {
           src: require("../assets/gendhisMap2.png"),
         },
-      ],
-      progress: [
-        {
-          title: "Argapura 66",
-          src: require("../assets/2.jpg"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Argapura 61",
-          src: require("../assets/3.jpg"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Mahendra 112",
-          src: require("../assets/4.jpg"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Mahendra 111",
-          src: require("../assets/5.jpg"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Mahendra 111",
-          src: require("../assets/6.jpg"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Mahendra 111",
-          src: require("../assets/7.jpg"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Mahendra 111",
-          src: require("../assets/8.jpg"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Mahendra 111",
-          src: require("../assets/9.jpg"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Mahendra 111",
-          src: require("../assets/10.jpg"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Mahendra 111",
-          src: require("../assets/11.jpg"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Mahendra 111",
-          src: require("../assets/12.jpg"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Mahendra 111",
-          src: require("../assets/13.jpg"),
-          to: "/sindoro",
-          flex: 6,
-        },
-      ],
-      cards: [
-        {
-          title: "Argapura 66",
-          src: require("../assets/argapura66.png"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Argapura 61",
-          src: require("../assets/argapura61.png"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Mahendra 112",
-          src: require("../assets/mahendra112.png"),
-          to: "/sindoro",
-          flex: 6,
-        },
-        {
-          title: "Mahendra 111",
-          src: require("../assets/mahendra111.png"),
-          to: "/sindoro",
-          flex: 6,
-        },
-      ],
+      ],  
       icons: [
         {
           icon: "mdi-instagram",
@@ -993,24 +910,37 @@ export default {
           href: "https://www.instagram.com/dionisiusaa/",
         },
       ],
-      
     };
   },
   // mounted() {
   //   this.initMap();
   //   this.initLayers();
   // },
-  // methods: {
-  //   submitComment: function (reply) {
-  //     this.comments.push({
-  //       id: 1,
-  //       user: this.current_user.user,
-  //       avatar: this.current_user.avatar,
-  //       text: reply,
-  //     });
-  //   },
-  // },
- 
+  methods: {
+    // submitComment: function (reply) {
+    //   this.comments.push({
+    //     id: 1,
+    //     user: this.current_user.user,
+    //     avatar: this.current_user.avatar,
+    //     text: reply,
+    //   });
+    // },
+    keBlockA(){
+      this.$router.push({
+        path: '/blockA',
+      })
+    },
+    keBlockB(){
+      this.$router.push({
+        path: '/blockB',
+      })
+    },
+    keBlockC(){
+      this.$router.push({
+        path: '/blockC',
+      })
+    },
+  },
 };
 </script>
 
@@ -1174,6 +1104,7 @@ export default {
   --animate-duration: 800ms;
   --animate-delay: 1s;
 }
+
 #feature {
   height: auto !important;
   min-height: 500px;
@@ -1199,4 +1130,18 @@ export default {
   height: auto !important;
   background-color: black;
 }
+
+/* .slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+} */
 </style>

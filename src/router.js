@@ -15,29 +15,22 @@ const router = new VueRouter({
             component: importComponent('home'),
         },
         {
-            path: "/testing",
-            name: "test",
-            meta: {title: 'Agragendis Residence'},
-            component: importComponent('testing'),
+            path: "/blockA",
+            name: "blockA",
+            meta: {title: 'Block A'},
+            component: importComponent('TodoList/blockA'),
         },
         {
-            path: "/",
-            name: "admin",
-            component: importComponent('DashboardLayout'),
-            children: [
-                //Dashboard
-                {
-                    path: "/",
-                    name: "Root",
-                    component: importComponent('Dashboard'),
-                },
-                // To do list
-                {
-                    path: "/gd",
-                    name: "Guided",
-                    component: importComponent('TodoList/List'),
-                },
-            ]
+            path: "/blockB",
+            name: "blockB",
+            meta: {title: 'Block B'},
+            component: importComponent('TodoList/blockB'),
+        },
+        {
+            path: "/blockC",
+            name: "blockC",
+            meta: {title: 'Block C'},
+            component: importComponent('TodoList/blockC'),
         },
     ]
 });
