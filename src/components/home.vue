@@ -524,7 +524,7 @@
                 </p>
               </v-col>
               <v-col>
-                <h1>Contact</h1>
+                <h1>Kontak</h1>
                 <p><a class="Footerfont" style="text-decoration: none;color: white;" href="https://api.whatsapp.com/send?phone=628112714200">+62811-2714-200</a></p>
                 <p class="Footerfont" style="margin-top: -10px">
                   gendhisargasadana@gmail.com
@@ -535,7 +535,7 @@
                 </p>
               </v-col>
               <v-col>
-                <h1>Our Social Media</h1>
+                <h1>Sosial Media Kami</h1>
                 <div class="d-flex">
                   <v-btn dark icon href="https://www.instagram.com/argagendhis">
                     <v-icon size="24px" color="white"> mdi-instagram </v-icon>
