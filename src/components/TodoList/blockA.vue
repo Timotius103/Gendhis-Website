@@ -140,95 +140,6 @@
       <v-container>
         <h1 class="tipeBlockA">Tipe A1</h1>
       </v-container>
-
-
-
-
-
-      <!-- <v-row>
-        <v-col>
-          <v-container>
-            <v-row>
-              <v-col cols="8">
-                <v-row>
-                  <v-col cols="10">
-                    <v-card style="width: 650px; height: 300px"> </v-card>
-                  </v-col>
-                </v-row>
-                <v-row>
-                  <v-col cols="5">
-                    <v-card style="width: 300px; height: 200px"> </v-card>
-                  </v-col>
-                  <v-col cols="5">
-                    <v-card style="width: 300px; height: 200px"> </v-card> 
-                  </v-col>
-                </v-row>
-              </v-col>
-              <v-col>
-                <h1 style="color:black">Konrtol</h1>
-              </v-col>
-            </v-row>
-          </v-container>
-        </v-col>
-      </v-row> -->
-      <!-- <v-container>
-        <v-row>
-          <v-col cols="3">
-            <v-row justify="center">
-              <v-avatar tile size="90" style="align: center; margin-top: 45px">
-                <img
-                  alt="user"
-                  src="https://img.icons8.com/small/96/1e272e/bedroom.png"
-                />
-              </v-avatar>
-            </v-row>
-            <v-row justify="center" style="margin-top: 30px">
-              <h1 class="featureCaption">Listrik 2200 Watt</h1>
-            </v-row>
-          </v-col>
-          <v-col cols="3">
-            <v-row justify="center">
-              <v-avatar tile size="90" style="align: center; margin-top: 45px">
-                <img src="https://img.icons8.com/small/96/1e272e/garage.png" />
-              </v-avatar>
-            </v-row>
-            <v-row justify="center" style="margin-top: 30px">
-              <h1 class="featureCaption">Keamanan 24 Jam</h1>
-            </v-row>
-          </v-col>
-          <v-col cols="3">
-            <v-row justify="center">
-              <v-avatar tile size="90" style="align: center; margin-top: 45px">
-                <img
-                  src="https://img.icons8.com/fluency-systems-regular/96/1e272e/living-room.png"
-                />
-              </v-avatar>
-            </v-row>
-            <v-row justify="center" style="margin-top: 30px">
-              <h1 class="featureCaption">One Gate System</h1>
-            </v-row>
-          </v-col>
-          <v-col cols="3">
-            <v-row justify="center">
-              <v-avatar tile size="90" style="align: center; margin-top: 45px">
-                <div
-                  v-animate-onscroll="{
-                    down: 'animated flip',
-                    up: 'animated rotateOut',
-                  }"
-                >
-                  <img
-                    src="https://img.icons8.com/fluency-systems-regular/96/1e272e/dining-room.png"
-                  />
-                </div>
-              </v-avatar>
-            </v-row>
-            <v-row justify="center" style="margin-top: 30px">
-              <h1 class="featureCaption">PDAM atau Artetis</h1>
-            </v-row>
-          </v-col>
-        </v-row>
-      </v-container> -->
     </div>
     <div id="footer">
       <v-row>
@@ -428,7 +339,22 @@ export default {
   //     this.nextSlide();
   //     this.previousSlide();
   //   },
-  methods: {},
+  beforeDestroy() {
+    if (typeof window === "undefined") return;
+
+    window.removeEventListener("resize", this.onResize, { passive: true });
+  },
+
+  mounted() {
+    this.onResize();
+
+    window.addEventListener("resize", this.onResize, { passive: true });
+  },
+  methods: {
+    onResize() {
+      this.isMobile = window.innerWidth < 600;
+    },
+  },
 };
 </script>
 

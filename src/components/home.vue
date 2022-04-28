@@ -93,7 +93,7 @@
           <v-btn
             text
             flat
-            href="#contactus"
+            href="#footer"
             v-smooth-scroll="{ duration: 1000, offset: 0 }"
           >
             <h2 class="navbarmenu">Kontak</h2>
@@ -303,70 +303,24 @@
             <v-col cols="4">
               <v-row>
                 <v-col>
-                  <h1 class="mapsection">Private</h1>
+                  <h1 class="mapsection">List</h1>
                   <h1 class="mapsection" style="margin-top: -20px">
-                    Residental
+                    Properti
                   </h1>
                   <v-row>
-                    <v-col cols="8">
+                    <v-col v-for="allblock in block" :key="allblock.title" cols="8">
                       <v-row>
                         <v-col cols="4">
-                          <img
-                            src="https://img.icons8.com/material/85/be2edd/circled-a.png"
-                          />
+                          <img :src="allblock.pict">
                         </v-col>
                         <v-col>
                           <p class="LocationCaption1" style="margin-top: -2px">
-                            Block A
+                            {{allblock.title}}
                           </p>
-                          <v-btn
+                           <v-btn
                             style="margin-top: -20px"
                             color="green"
-                            @click="keBlockA"
-                            outlined
-                          >
-                            View More
-                          </v-btn>
-                        </v-col>
-                      </v-row>
-                    </v-col>
-                    <v-col cols="8">
-                      <v-row>
-                        <v-col cols="4">
-                          <img
-                            src="https://img.icons8.com/material/85/FDA7DF/circled-b.png"
-                          />
-                        </v-col>
-                        <v-col>
-                          <p class="LocationCaption1" style="margin-top: -2px">
-                            Block B
-                          </p>
-                          <v-btn
-                            style="margin-top: -20px"
-                            color="green"
-                            @click="keBlockB"
-                            outlined
-                          >
-                            View More
-                          </v-btn>
-                        </v-col>
-                      </v-row>
-                    </v-col>
-                    <v-col cols="8">
-                      <v-row>
-                        <v-col cols="4">
-                          <img
-                            src="https://img.icons8.com/material/85/ffb8b8/circled-c.png"
-                          />
-                        </v-col>
-                        <v-col>
-                          <p class="LocationCaption1" style="margin-top: -2px">
-                            Block C
-                          </p>
-                          <v-btn
-                            style="margin-top: -20px"
-                            color="green"
-                            @click="keBlockC"
+                            router :to="allblock.to"
                             outlined
                           >
                             View More
@@ -571,7 +525,7 @@
               </v-col>
               <v-col>
                 <h1>Contact</h1>
-                <p class="Footerfont">+62811-2714-200</p>
+                <p><a class="Footerfont" style="text-decoration: none;color: white;" href="https://api.whatsapp.com/send?phone=628112714200">+62811-2714-200</a></p>
                 <p class="Footerfont" style="margin-top: -10px">
                   gendhisargasadana@gmail.com
                 </p>
@@ -643,7 +597,17 @@ export default {
       Icon,
       drawer: false,
       model: null,
-
+      block:[
+        {
+          pict:'https://img.icons8.com/material/85/be2edd/circled-a.png', to:'/blockA',title:'Blok A'
+        },
+        {
+          pict:'https://img.icons8.com/material/85/FDA7DF/circled-b.png', to:'/blockB',title:'Blok B'
+        },
+        {
+          pict:'https://img.icons8.com/material/85/ffb8b8/circled-c.png', to:'/blockC',title:'Blok C'
+        }
+      ],
       bahan: [
         {
           name: "Pondasi",
@@ -925,21 +889,6 @@ export default {
     //     text: reply,
     //   });
     // },
-    keBlockA(){
-      this.$router.push({
-        path: '/blockA',
-      })
-    },
-    keBlockB(){
-      this.$router.push({
-        path: '/blockB',
-      })
-    },
-    keBlockC(){
-      this.$router.push({
-        path: '/blockC',
-      })
-    },
   },
 };
 </script>
