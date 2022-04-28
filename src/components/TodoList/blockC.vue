@@ -15,7 +15,7 @@
         <v-toolbar-items class="hidden-sm-and-down">
           <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
-              <v-btn flat text v-bind="attrs" v-on="on">
+              <v-btn flat text v-bind="attrs" v-on="on" router to="/">
                 <h2 class="navbarmenu">Home</h2>
               </v-btn>
             </template>
@@ -31,32 +31,13 @@
                 v-model="group"
                 active-class="deep-purple--text text--accent-4"
               >
-                <v-list-item>
+                <v-list-item router to="/blockA">
                   <v-list-item-title>Block A</v-list-item-title>
                 </v-list-item>
                 <v-list-item
-                  href="#salessection"
-                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                  router to="/blockB"
                 >
                   <v-list-item-title>Block B</v-list-item-title>
-                </v-list-item>
-
-                <v-list-item>
-                  <v-list-item-title>Block C</v-list-item-title>
-                </v-list-item>
-
-                <v-list-item
-                  href="#progress"
-                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
-                >
-                  <v-list-item-title>Progress</v-list-item-title>
-                </v-list-item>
-
-                <v-list-item
-                  href="#availability"
-                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
-                >
-                  <v-list-item-title>Daftar Harga</v-list-item-title>
                 </v-list-item>
               </v-list-item-group>
             </v-list>

@@ -51,18 +51,20 @@
                 active-class="deep-purple--text text--accent-4"
               >
                 <v-list-item 
-                  @click="keBlockA"
+                  router to="/blockA" 
                 >
                   <v-list-item-title>Block A</v-list-item-title>
                 </v-list-item>
                 <v-list-item
-                  @click="keBlockB"
+                  router to="/blockB" 
                   v-smooth-scroll="{ duration: 1000, offset: 2 }"
                 >
                   <v-list-item-title>Block B</v-list-item-title>
                 </v-list-item>
 
-                <v-list-item>
+                <v-list-item
+                  router to="/blockC" 
+                >
                   <v-list-item-title>Block C</v-list-item-title>
                 </v-list-item>
 
