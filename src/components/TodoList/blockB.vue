@@ -199,28 +199,20 @@ export default {
       onboarding: 0,
       slides: [
         {
-          tipe: "Tipe A1 a",
-          image: require("@/assets/argapuraA1A.png"),
+          tipe: "Tipe B1 & B2",
+          image: require("@/assets/mahameruB1B2.png"),
         },
         {
-          tipe: "Tipe A1 b",
-          image: require("@/assets/argapuraA1B.png"),
+          tipe: "Tipe B3",
+          image: require("@/assets/sundoroB3.png"),
         },
         {
-          tipe: "Tipe A2 & A3",
-          image: require("@/assets/argapuraA2A3.png"),
+          tipe: "Tipe B5",
+          image: require("@/assets/sundoroB5.png"),
         },
         {
-          tipe: "Tipe A5",
-          image: require("@/assets/mahendraA5.png"),
-        },
-        {
-          tipe: "Tipe A6",
-          image: require("@/assets/mahendraA6.png"),
-        },
-        {
-          tipe: "Tipe A7",
-          image: require("@/assets/sindoroA7.png"),
+          tipe: "Tipe B6 & B7",
+          image: require("@/assets/mahameruB6B7.png"),
         },
       ],
     };

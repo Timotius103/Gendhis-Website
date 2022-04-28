@@ -11,7 +11,7 @@ const router = new VueRouter({
         {
             path: "/",
             name: "Root",
-            meta: {title: 'Agragendis Residence'},
+            meta: { title: 'Agragendis Residence' },
             component: importComponent('home'),
         },
         // {
@@ -44,21 +44,25 @@ const router = new VueRouter({
         {
             path: "/blockA",
             name: "blockA",
-            meta: {title: 'Block A'},
+            meta: { title: 'Block A' },
             component: importComponent('TodoList/blockA'),
         },
         {
             path: "/blockB",
             name: "blockB",
-            meta: {title: 'Block B'},
+            meta: { title: 'Block B' },
             component: importComponent('TodoList/blockB'),
         },
         {
             path: "/blockC",
             name: "blockC",
-            meta: {title: 'Block C'},
+            meta: { title: 'Block C' },
             component: importComponent('TodoList/blockC'),
         },
-    ]
+    ],
+    scrollBehavior() {
+        return { x: 0, y: 0 }
+    }
 });
+
 export default router;
