@@ -144,8 +144,15 @@
                   </p>
                 </v-col>
                 <v-col>
-                  <h1>Contact</h1>
-                  <p class="Footerfont">+62811-2714-200</p>
+                  <h1>Kontak</h1>
+                  <p>
+                    <a
+                      class="Footerfont"
+                      style="text-decoration: none; color: white"
+                      href="https://api.whatsapp.com/send?phone=628112714200"
+                      >+62811-2714-200</a
+                    >
+                  </p>
                   <p class="Footerfont" style="margin-top: -10px">
                     gendhisargasadana@gmail.com
                   </p>
@@ -155,7 +162,7 @@
                   </p>
                 </v-col>
                 <v-col>
-                  <h1>Our Social Media</h1>
+                  <h1>Sosial Media Kami</h1>
                   <div class="d-flex">
                     <v-btn
                       dark

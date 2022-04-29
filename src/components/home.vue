@@ -108,7 +108,91 @@
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
-          <v-list-item>
+          <v-menu offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn flat text v-bind="attrs" v-on="on">
+                <h2 class="navbarmenu">Fasilitas</h2>
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item-group
+                v-model="group"
+                active-class="deep-purple--text text--accent-4"
+              >
+                <v-list-item
+                  href="#featuremb"
+                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                >
+                  <v-list-item-title>Fitur</v-list-item-title>
+                </v-list-item>
+                <v-list-item
+                  href="#specificationmb"
+                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                >
+                  <v-list-item-title>Spesifikasi</v-list-item-title>
+                </v-list-item>
+              </v-list-item-group>
+            </v-list>
+          </v-menu>
+          <v-menu offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn flat text v-bind="attrs" v-on="on">
+                <h2 class="navbarmenu">Produk</h2>
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item-group
+                v-model="group"
+                active-class="deep-purple--text text--accent-4"
+              >
+                <v-list-item router to="/blockA">
+                  <v-list-item-title>Block A</v-list-item-title>
+                </v-list-item>
+                <v-list-item
+                  router
+                  to="/blockB"
+                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                >
+                  <v-list-item-title>Block B</v-list-item-title>
+                </v-list-item>
+
+                <v-list-item router to="/blockC">
+                  <v-list-item-title>Block C</v-list-item-title>
+                </v-list-item>
+
+                <v-list-item
+                  href="#progress"
+                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                >
+                  <v-list-item-title>Progress</v-list-item-title>
+                </v-list-item>
+
+                <v-list-item
+                  href="#availability"
+                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                >
+                  <v-list-item-title>Daftar Harga</v-list-item-title>
+                </v-list-item>
+              </v-list-item-group>
+            </v-list>
+          </v-menu>
+          <v-btn
+            text
+            flat
+            href="#locationpart"
+            v-smooth-scroll="{ duration: 1000, offset: 0 }"
+          >
+            <h2 class="navbarmenu">Lokasi Kami</h2>
+          </v-btn>
+          <v-btn
+            text
+            flat
+            href="#footer"
+            v-smooth-scroll="{ duration: 1000, offset: 0 }"
+          >
+            <h2 class="navbarmenu">Kontak</h2>
+          </v-btn>
+          <!-- <v-list-item>
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item>
           <v-list-item
@@ -127,7 +211,7 @@
             v-smooth-scroll="{ duration: 1000, offset: 0 }"
           >
             <v-list-item-title>Contact</v-list-item-title>
-          </v-list-item>
+          </v-list-item> -->
         </v-list-item-group>
       </v-list>
     </div>
@@ -145,7 +229,6 @@
     </div>
 
     <!-- ////////////////////// FEATURE SPESIFACTION SECTION //////////////////////////////////////////////////// -->
-
     <v-parallax :src="require('@/assets/pharalax4.png')" style="height: 250px">
       <v-container>
         <h1 class="featureSpecificationPart">Fitur & Spesifikasi</h1>
@@ -155,7 +238,7 @@
     <Transition name="slide-fade">
       <p v-if="show">hello</p>
     </Transition> -->
-    <div id="feature">
+    <div id="feature" class="hidden-sm-and-down">
       <v-container>
         <h1 class="feature">Mengapa Argagendhis?</h1>
       </v-container>
@@ -244,7 +327,93 @@
         </v-row>
       </v-container>
     </div>
-    <div id="specification">
+
+    <!-- //////////////////// VERSI MOBILE FITUR ////////////////////////////////// -->
+    <div id="featuremb" class="hidden-sm-and-up">
+      <v-container>
+        <h1 class="feature">Mengapa Argagendhis?</h1>
+      </v-container>
+      <v-container>
+        <v-row>
+          <v-col cols="3">
+            <v-avatar tile size="90" style="align: center">
+              <img
+                alt="user"
+                src="https://img.icons8.com/material/96/26e07f/lightning-bolt--v1.png"
+              />
+            </v-avatar>
+          </v-col>
+          <v-col justify="left">
+            <h1 class="featureCaption">Listrik 2200 Watt</h1>
+            <p class="featureCaption2">
+              2200 Watt daya listrik dengan sistem kelistrikan<br />
+              bawah tanah yang terjamin keamanannya
+            </p>
+          </v-col>
+          <!--<v-card-title> Top western road trips </v-card-title>
+            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
+        </v-row>
+        <v-row>
+          <v-col cols="3">
+            <v-avatar tile size="90" style="align: center">
+              <img
+                src="https://img.icons8.com/ios-glyphs/96/26e07f/last-24-hours.png"
+              />
+            </v-avatar>
+          </v-col>
+          <v-col justify="left">
+            <h1 class="featureCaption">Keamanan 24 Jam</h1>
+            <p class="featureCaption2">
+              Kami menjamin keamanan 24 jam non stop <br />
+              dengan petugas keamanan terlatih dan terverifikasi.
+            </p>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="3">
+            <v-avatar tile size="90" style="align: center">
+              <img
+                src="https://img.icons8.com/material/96/26e07f/tollbooth.png"
+              />
+            </v-avatar>
+          </v-col>
+          <v-col justify="left">
+            <h1 class="featureCaption">One Gate System</h1>
+            <p class="featureCaption2">
+              Tidak memiliki akses keluar masuk lain selain pintu utama Dengan
+              demikian tidak ada celah untuk pelaku kejahatan.
+            </p>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="3">
+            <v-avatar tile size="90" style="align: center">
+              <div
+                v-animate-onscroll="{
+                  down: 'animated flip',
+                  up: 'animated rotateOut',
+                }"
+              >
+                <img
+                  src="https://img.icons8.com/material/96/26e07f/water-tap-.png"
+                />
+              </div>
+            </v-avatar>
+          </v-col>
+          <v-col justify="center">
+            <h1 class="featureCaption">PDAM atau Artetis</h1>
+            <p class="featureCaption2">
+              Tersedianya air PAM atau Sumur untuk menjamin <br />
+              ketersediaan air bersih.
+            </p>
+            <!-- <v-card-title> Top western road trips </v-card-title>
+            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
+    <!-- //////////////////// VERSI MOBILE FITUR ////////////////////////////////// -->
+    <div id="specification" class="hidden-sm-and-down">
       <v-container>
         <v-row>
           <v-col cols="6" style="margin-top: 130px">
@@ -277,6 +446,42 @@
       </v-container>
     </div>
 
+    <!-- ////////////////////////////// SPESIFICATION MOBILE VERSION //////////////////////////////////////////////////////// -->
+    <div id="specificationmb" class="hidden-sm-and-up">
+      <v-container>
+        <v-row>
+          <v-col cols="12" style="margin-top: 20px">
+            <h1 class="spesifikasi">Spesifikasi</h1>
+            <p class="LocationCaption2" style="margin-top: 10px">
+              Pemilihan kombinasi bahan menjadi sangat penting dalam pembangunan
+              setiap unit karena kemegahan dan kenyamanan merupakan piont
+              penting dalam sebuah desain.
+            </p>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="12">
+            <v-simple-table>
+              <template v-slot:default>
+                <thead>
+                  <tr>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in bahan" :key="item.name">
+                    <td class="text-left">{{ item.name }}</td>
+                    <td class="text-left">{{ item.detail }}</td>
+                  </tr>
+                </tbody>
+              </template>
+            </v-simple-table>
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
+
     <!--//////////////////////////////////////// PRODUK ////////////////////////////////////////////////////// -->
     <v-parallax :src="require('@/assets/pharalax2.jpg')" style="height: 350px">
       <v-container>
@@ -284,7 +489,7 @@
         <h1 class="produk2" style="margin-top: -25px">Kami</h1>
       </v-container>
     </v-parallax>
-    <div id="product">
+    <div id="product" class="hidden-sm-and-down">
       <v-container>
         <div id="salessection" ref="section2">
           <v-row no-gutters style="padding-top: 45px">
@@ -326,6 +531,61 @@
                   </v-row>
                 </v-col>
               </v-row>
+            </v-col>
+          </v-row>
+        </div>
+      </v-container>
+    </div>
+
+    <div id="product" class="hidden-sm-and-up">
+      <v-container>
+        <div class="selessectionmobile" id="salessection" ref="section2">
+          <v-row no-gutters>
+            <v-col v-for="imgMap in mapImg" :key="imgMap" cols="12">
+              <v-img :src="imgMap.src" style="width: 650px; height: 550px">
+              </v-img>
+            </v-col>
+            <v-col cols="12">
+              <v-container>
+                <v-row>
+                  <v-col>
+                    <h1 class="mapsection">List</h1>
+                    <h1 class="mapsection" style="margin-top: -20px">
+                      Properti
+                    </h1>
+                    <v-row>
+                      <v-col
+                        v-for="allblock in block"
+                        :key="allblock.title"
+                        cols="12"
+                      >
+                        <v-row>
+                          <v-col cols="3">
+                            <img :src="allblock.pict" />
+                          </v-col>
+                          <v-col style="padding-left: 20px">
+                            <p
+                              class="LocationCaption1"
+                              style="margin-top: -2px"
+                            >
+                              {{ allblock.title }}
+                            </p>
+                            <v-btn
+                              style="margin-top: -20px"
+                              color="green"
+                              router
+                              :to="allblock.to"
+                              outlined
+                            >
+                              View More
+                            </v-btn>
+                          </v-col>
+                        </v-row>
+                      </v-col>
+                    </v-row>
+                  </v-col>
+                </v-row>
+              </v-container>
             </v-col>
           </v-row>
         </div>
@@ -383,9 +643,11 @@
         </v-col>
       </v-row>
     </div>
+
+    <!-- ////////////////////////// DAFTAR HARGA ///////////////////////////////////////////////////////// -->
     <div id="availability">
       <v-container>
-        <h1 class="pricelist" style="margin-top: 100px">Daftar Harga</h1>
+        <h1 class="pricelist">Daftar Harga</h1>
         <v-data-table :headers="headers" :items="desserts" :items-per-page="5">
         </v-data-table>
       </v-container>
@@ -402,11 +664,15 @@
       </v-container>
     </v-parallax>
 
-    <div id="location" style="background-color: #f1f2f6; height: ">
+    <div
+      id="location"
+      style="background-color: #f1f2f6; height: "
+      class="hidden-sm-and-down"
+    >
       <v-row no-gutters>
         <v-col cols="6">
           <iframe
-            width="800px"
+            width="100%"
             height="636px"
             frameborder="0"
             scrolling="no"
@@ -416,7 +682,7 @@
           >
           </iframe>
         </v-col>
-        <v-col cols="6" style="padding-left: 80px">
+        <v-col cols="6" style="padding-left: 25px">
           <h1 class="location" style="margin-top: 100px">Tempat Terdekat</h1>
           <p class="LocationCaption2" style="margin-top: 2px">
             Area pribadi dengan aksesibilitas mudah adalah yang utama <br />
@@ -502,83 +768,187 @@
       </v-row>
     </div>
 
-    <!-- /////////////////////////////////////////////// FOOTER SECTION ///////////////////////////////////////// -->
-    <div id="footer">
-      <v-row>
-        <v-container>
-          <v-col>
-            <v-row style="padding-top: 20px">
-              <v-col cols="4">
-                <img
-                  src="~@/assets/gendislogoputih.png"
-                  style="
-                    width: 200px;
-                    height: 60px;
-                    position: relative;
-                    top: 3px;
-                  "
-                />
-                <p class="Footerfont">
-                  Showcase all your properties in a truly <br />
-                  modern manner. Welcome to ARGAGENDHIS.
-                </p>
-              </v-col>
-              <v-col>
-                <h1>Kontak</h1>
-                <p>
-                  <a
-                    class="Footerfont"
-                    style="text-decoration: none; color: white"
-                    href="https://api.whatsapp.com/send?phone=628112714200"
-                    >+62811-2714-200</a
-                  >
-                </p>
-                <p class="Footerfont" style="margin-top: -10px">
-                  gendhisargasadana@gmail.com
-                </p>
-                <p class="Footerfont" style="margin-top: -10px">
-                  Jl. Kompol R Soekanto, Mangunharjo,<br />
-                  Kec. Tembalang, Kota Semarang, Jawa Tengah 50272
-                </p>
-              </v-col>
-              <v-col>
-                <h1>Sosial Media Kami</h1>
-                <div class="d-flex">
-                  <v-btn dark icon href="https://www.instagram.com/argagendhis">
-                    <v-icon size="24px" color="white"> mdi-instagram </v-icon>
-                  </v-btn>
-                  <v-btn
-                    class="ml-4"
-                    dark
-                    icon
-                    href="https://www.facebook.com/Argagendhis-Residence-101331898865469"
-                  >
-                    <v-icon size="24px" color="white"> mdi-facebook </v-icon>
-                  </v-btn>
-                  <v-btn
-                    class="mx-4"
-                    dark
-                    icon
-                    href="https://api.whatsapp.com/message/FAXQXMO3HVMKC1"
-                  >
-                    <v-icon size="24px" color="white"> mdi-whatsapp </v-icon>
-                  </v-btn>
-                </div>
+    <div
+      id="location"
+      style="background-color: #f1f2f6; height: "
+      class="hidden-sm-and-up"
+    >
+      <v-container>
+        <v-row no-gutters>
+          <v-col cols="12">
+            <iframe
+              width="100%"
+              height="636px"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=argagendhis&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            >
+            </iframe>
+          </v-col>
+          <v-col cols="12">
+            <h1 class="location">Tempat Terdekat</h1>
+            <p class="LocationCaption2" style="margin-top: 2px">
+              Area pribadi dengan aksesibilitas mudah adalah yang utama dan
+              perlu menjadi pertimbangan untuk memilih sebuah hunian. Pilih
+              lokasi terbaik Anda di Argagendhis Residence.
+            </p>
+            <v-row>
+              <v-col cols="12">
+                <v-row>
+                  <v-col cols="3">
+                    <v-avatar tile size="90">
+                      <img
+                        src="https://img.icons8.com/material/85/00b894/road--v2.png"
+                      />
+                    </v-avatar>
+                  </v-col>
+                  <v-col style="padding-left: 20px">
+                    <p class="LocationCaption1">50 m</p>
+                    <p class="LocationCaption2">Dari Jalan Raya</p>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="3">
+                    <v-avatar tile size="90">
+                      <img
+                        src="https://img.icons8.com/material/85/00b894/hospital-2.png"
+                      />
+                    </v-avatar>
+                  </v-col>
+                  <v-col style="padding-left: 20px">
+                    <p class="LocationCaption1">06 Menit</p>
+                    <p class="LocationCaption2">Dari RSUD Ketileng</p>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="3">
+                    <v-avatar tile size="90">
+                      <img
+                        src="https://img.icons8.com/material/85/00b894/highway.png"
+                      />
+                    </v-avatar>
+                  </v-col>
+                  <v-col style="padding-left: 20px">
+                    <p class="LocationCaption1" style="margin-top: 2px">
+                      12 Menit
+                    </p>
+                    <p class="LocationCaption2">
+                      Dari pintu masuk<br />
+                      Toll Gayamsari
+                    </p>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="3">
+                    <v-avatar tile size="90">
+                      <img
+                        src="https://img.icons8.com/material/85/00b894/university--v1.png"
+                      />
+                    </v-avatar>
+                  </v-col>
+                  <v-col style="padding-left: 20px">
+                    <p class="LocationCaption1" style="margin-top: -5px">
+                      04 Menit
+                    </p>
+                    <p class="LocationCaption2">Dari UNIMUS</p>
+                    <p class="LocationCaption1" style="margin-top: -15px">
+                      16 Menit
+                    </p>
+                    <p class="LocationCaption2">Dari UNDIP</p>
+                  </v-col>
+                </v-row>
               </v-col>
             </v-row>
           </v-col>
-          <v-col>
-            <h1 class="FooterfontCopyright" style="margin-top: 20px">
-              make with <v-icon color="red">mdi-heart</v-icon> by<a
-                href="https://www.instagram.com/tiodong99"
-                style="text-decoration: none; color: white"
-              >
-                @tiodong99</a
-              >
-            </h1>
-          </v-col>
-        </v-container>
-      </v-row>
+        </v-row>
+      </v-container>
+    </div>
+
+    <!-- /////////////////////////////////////////////// FOOTER SECTION ///////////////////////////////////////// -->
+    <div id="footer">
+      <v-container>
+        <v-row>
+          <v-container>
+            <v-col>
+              <v-row style="padding-top: 20px">
+                <v-col cols="4">
+                  <img
+                    src="~@/assets/gendislogoputih.png"
+                    style="
+                      width: 200px;
+                      height: 60px;
+                      position: relative;
+                      top: 3px;
+                    "
+                  />
+                  <p class="Footerfont">
+                    Showcase all your properties in a truly <br />
+                    modern manner. Welcome to ARGAGENDHIS.
+                  </p>
+                </v-col>
+                <v-col>
+                  <h1>Kontak</h1>
+                  <p>
+                    <a
+                      class="Footerfont"
+                      style="text-decoration: none; color: white"
+                      href="https://api.whatsapp.com/send?phone=628112714200"
+                      >+62811-2714-200</a
+                    >
+                  </p>
+                  <p class="Footerfont" style="margin-top: -10px">
+                    gendhisargasadana@gmail.com
+                  </p>
+                  <p class="Footerfont" style="margin-top: -10px">
+                    Jl. Kompol R Soekanto, Mangunharjo,<br />
+                    Kec. Tembalang, Kota Semarang, Jawa Tengah 50272
+                  </p>
+                </v-col>
+                <v-col>
+                  <h1>Sosial Media Kami</h1>
+                  <div class="d-flex">
+                    <v-btn
+                      dark
+                      icon
+                      href="https://www.instagram.com/argagendhis"
+                    >
+                      <v-icon size="24px" color="white"> mdi-instagram </v-icon>
+                    </v-btn>
+                    <v-btn
+                      class="ml-4"
+                      dark
+                      icon
+                      href="https://www.facebook.com/Argagendhis-Residence-101331898865469"
+                    >
+                      <v-icon size="24px" color="white"> mdi-facebook </v-icon>
+                    </v-btn>
+                    <v-btn
+                      class="mx-4"
+                      dark
+                      icon
+                      href="https://api.whatsapp.com/message/FAXQXMO3HVMKC1"
+                    >
+                      <v-icon size="24px" color="white"> mdi-whatsapp </v-icon>
+                    </v-btn>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col>
+              <h1 class="FooterfontCopyright" style="margin-top: 20px">
+                make with <v-icon color="red">mdi-heart</v-icon> by<a
+                  href="https://www.instagram.com/tiodong99"
+                  style="text-decoration: none; color: white"
+                >
+                  @tiodong99</a
+                >
+              </h1>
+            </v-col>
+          </v-container>
+        </v-row>
+      </v-container>
     </div>
   </v-main>
 </template>
@@ -1077,6 +1447,15 @@ export default {
   text-align: center;
 }
 
+.pricelist {
+  font-family: poppinssemibold;
+  font-size: 45px;
+  color: black;
+  margin-top: 100px;
+  text-align: center;
+  font-weight: 200;
+}
+
 :root {
   --animate-duration: 800ms;
   --animate-delay: 1s;
@@ -1161,6 +1540,27 @@ export default {
     text-align: center;
   }
 
+  .feature {
+    font-family: poppinssemibold;
+    color: black;
+    margin-top: 20px;
+    font-size: 35px;
+    text-align: center;
+  }
+
+  .featureCaption {
+    font-family: poppinssemibold;
+    color: black;
+    font-size: 20px;
+    text-align: left;
+  }
+  .featureCaption2 {
+    font-family: poppinslight;
+    color: black;
+    font-size: 10px;
+    text-align: left;
+  }
+
   .produk1 {
     font-family: poppinssemibold;
     color: white;
@@ -1196,6 +1596,30 @@ export default {
     font-size: 45px;
     margin-top: 125px;
     text-align: right;
+  }
+
+  .location {
+    font-family: poppinssemibold;
+    color: black;
+    font-size: 35px;
+    text-align: left;
+  }
+  .LocationCaption2 {
+    font-family: poppinslight;
+    font-size: 15px;
+    color: black;
+    text-align: left;
+    margin-top: -20px;
+    font-weight: 200;
+  }
+
+  .pricelist {
+    font-family: poppinssemibold;
+    font-size: 45px;
+    color: black;
+    margin-top: -20px;
+    text-align: center;
+    font-weight: 200;
   }
 }
 </style>

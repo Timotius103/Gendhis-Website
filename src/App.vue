@@ -87,7 +87,7 @@ export default {
   font-family: poppinslight;
   font-size: 15px;
   color: white;
-  text-align: justify;
+  text-align: left;
   font-weight: 200;
 }
 
@@ -95,14 +95,6 @@ export default {
   font-family: poppinslight;
   font-size: 15px;
   color: white;
-  text-align: center;
-  font-weight: 200;
-}
-
-.pricelist{
-  font-family: poppinssemibold;
-  font-size: 45px;
-  color: black;
   text-align: center;
   font-weight: 200;
 }
