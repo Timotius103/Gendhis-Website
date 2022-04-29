@@ -199,7 +199,7 @@
             </v-col>
             <v-col>
               <h1 class="FooterfontCopyright" style="margin-top: 20px">
-                make with <v-icon color="red">mdi-heart</v-icon> by<a
+                made by<a
                   href="https://www.instagram.com/tiodong99"
                   style="text-decoration: none; color: white"
                 >

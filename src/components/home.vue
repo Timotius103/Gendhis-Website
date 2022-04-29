@@ -691,7 +691,7 @@
           </p>
           <v-row>
             <v-col cols="5">
-              <v-row>
+              <v-row >
                 <v-col cols="4">
                   <v-avatar tile size="90">
                     <img
@@ -767,7 +767,7 @@
         </v-col>
       </v-row>
     </div>
-
+<!-- //////////////////////////////// LOCATION SECTION MOBILE VERSION ////////////////////////////////////////////// -->
     <div
       id="location"
       style="background-color: #f1f2f6; height: "
@@ -798,7 +798,7 @@
               <v-col cols="12">
                 <v-row>
                   <v-col cols="3">
-                    <v-avatar tile size="90">
+                    <v-avatar tile size="90" style="align: center">
                       <img
                         src="https://img.icons8.com/material/85/00b894/road--v2.png"
                       />
@@ -811,7 +811,7 @@
                 </v-row>
                 <v-row>
                   <v-col cols="3">
-                    <v-avatar tile size="90">
+                    <v-avatar tile size="90" style="align: center">
                       <img
                         src="https://img.icons8.com/material/85/00b894/hospital-2.png"
                       />
@@ -824,7 +824,7 @@
                 </v-row>
                 <v-row>
                   <v-col cols="3">
-                    <v-avatar tile size="90">
+                    <v-avatar tile size="90" style="align: center">
                       <img
                         src="https://img.icons8.com/material/85/00b894/highway.png"
                       />
@@ -842,7 +842,7 @@
                 </v-row>
                 <v-row>
                   <v-col cols="3">
-                    <v-avatar tile size="90">
+                    <v-avatar tile size="90" style="align: center">
                       <img
                         src="https://img.icons8.com/material/85/00b894/university--v1.png"
                       />
@@ -938,7 +938,7 @@
             </v-col>
             <v-col>
               <h1 class="FooterfontCopyright" style="margin-top: 20px">
-                make with <v-icon color="red">mdi-heart</v-icon> by<a
+                made by<a
                   href="https://www.instagram.com/tiodong99"
                   style="text-decoration: none; color: white"
                 >
