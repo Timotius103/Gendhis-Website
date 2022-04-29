@@ -938,7 +938,7 @@
             </v-col>
             <v-col>
               <h1 class="FooterfontCopyright" style="margin-top: 20px">
-                made by<a
+                Made by<a
                   href="https://www.instagram.com/tiodong99"
                   style="text-decoration: none; color: white"
                 >
