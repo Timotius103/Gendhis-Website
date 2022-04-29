@@ -32,11 +32,11 @@
                 active-class="deep-purple--text text--accent-4"
               >
                 <v-list-item router to="/blockB">
-                  <v-list-item-title>Block B</v-list-item-title>
+                  <v-list-item-title>Blok B</v-list-item-title>
                 </v-list-item>
 
                 <v-list-item router to="/blockC">
-                  <v-list-item-title>Block C</v-list-item-title>
+                  <v-list-item-title>Blok C</v-list-item-title>
                 </v-list-item>
               </v-list-item-group>
             </v-list>
@@ -52,32 +52,40 @@
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
-          <v-list-item>
-            <v-list-item-title>Home</v-list-item-title>
-          </v-list-item>
-          <v-list-item
-            href="#salessection"
-            v-smooth-scroll="{ duration: 1000, offset: 2 }"
-          >
-            <v-list-item-title>Sales</v-list-item-title>
-          </v-list-item>
+          <v-menu offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn flat text v-bind="attrs" v-on="on" router to="/">
+                <h2 class="navbarmenu">Home</h2>
+              </v-btn>
+            </template>
+          </v-menu>
+          <v-menu offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn flat text v-bind="attrs" v-on="on">
+                <h2 class="navbarmenu">Produk</h2>
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item-group
+                v-model="group"
+                active-class="deep-purple--text text--accent-4"
+              >
+                <v-list-item router to="/blockB">
+                  <v-list-item-title>Block B</v-list-item-title>
+                </v-list-item>
 
-          <v-list-item>
-            <v-list-item-title>About</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item
-            href="#contactus"
-            v-smooth-scroll="{ duration: 1000, offset: 0 }"
-          >
-            <v-list-item-title>Contact</v-list-item-title>
-          </v-list-item>
+                <v-list-item router to="/blockC">
+                  <v-list-item-title>Block C</v-list-item-title>
+                </v-list-item>
+              </v-list-item-group>
+            </v-list>
+          </v-menu>
         </v-list-item-group>
       </v-list>
     </div>
     <v-parallax :src="require('@/assets/pharalax2.jpg')" style="height: 250px">
       <v-container>
-        <h1 class="BlockA" style="margin-top: 100px">Block A</h1>
+        <h1 class="BlockA" style="margin-top: 100px">Blok A</h1>
       </v-container>
     </v-parallax>
     <div style="height: 750px">
@@ -214,6 +222,7 @@ export default {
 
   data() {
     return {
+      drawer:false,
       slideGroup: 0,
       length: 6,
       onboarding: 0,

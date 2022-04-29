@@ -452,7 +452,7 @@
         <v-row>
           <v-col cols="12" style="margin-top: 20px">
             <h1 class="spesifikasi">Spesifikasi</h1>
-            <p class="LocationCaption2" style="margin-top: 10px">
+            <p class="spesifikasiCaption" style="margin-top: 10px">
               Pemilihan kombinasi bahan menjadi sangat penting dalam pembangunan
               setiap unit karena kemegahan dan kenyamanan merupakan piont
               penting dalam sebuah desain.
@@ -806,7 +806,7 @@
                   </v-col>
                   <v-col style="padding-left: 20px">
                     <p class="LocationCaption1">50 m</p>
-                    <p class="LocationCaption2">Dari Jalan Raya</p>
+                    <p class="LocationCaption3">Dari Jalan Raya</p>
                   </v-col>
                 </v-row>
                 <v-row>
@@ -819,7 +819,7 @@
                   </v-col>
                   <v-col style="padding-left: 20px">
                     <p class="LocationCaption1">06 Menit</p>
-                    <p class="LocationCaption2">Dari RSUD Ketileng</p>
+                    <p class="LocationCaption3">Dari RSUD Ketileng</p>
                   </v-col>
                 </v-row>
                 <v-row>
@@ -834,7 +834,7 @@
                     <p class="LocationCaption1" style="margin-top: 2px">
                       12 Menit
                     </p>
-                    <p class="LocationCaption2">
+                    <p class="LocationCaption3">
                       Dari pintu masuk<br />
                       Toll Gayamsari
                     </p>
@@ -852,11 +852,11 @@
                     <p class="LocationCaption1" style="margin-top: -5px">
                       04 Menit
                     </p>
-                    <p class="LocationCaption2">Dari UNIMUS</p>
+                    <p class="LocationCaption3">Dari UNIMUS</p>
                     <p class="LocationCaption1" style="margin-top: -15px">
                       16 Menit
                     </p>
-                    <p class="LocationCaption2">Dari UNDIP</p>
+                    <p class="LocationCaption3">Dari UNDIP</p>
                   </v-col>
                 </v-row>
               </v-col>
@@ -1433,6 +1433,15 @@ export default {
   text-align: left;
 }
 
+.spesifikasiCaption {
+  font-family: poppinslight;
+  font-size: 15px;
+  color: black;
+  text-align: left;
+  margin-top: -20px;
+  font-weight: 200;
+}
+
 .footertext {
   font-family: poppinssemibold;
   color: white;
@@ -1561,6 +1570,21 @@ export default {
     text-align: left;
   }
 
+  .spesifikasi {
+    font-family: poppinssemibold;
+    color: black;
+    font-size: 35px;
+    text-align: center;
+  }
+  .spesifikasiCaption {
+    font-family: poppinslight;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    margin-top: -20px;
+    font-weight: 200;
+  }
+
   .produk1 {
     font-family: poppinssemibold;
     color: white;
@@ -1602,9 +1626,27 @@ export default {
     font-family: poppinssemibold;
     color: black;
     font-size: 35px;
-    text-align: left;
+    text-align: center;
   }
   .LocationCaption2 {
+    font-family: poppinslight;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    margin-top: -20px;
+    font-weight: 200;
+  }
+
+  .LocationCaption3 {
+    font-family: poppinslight;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    margin-top: -20px;
+    font-weight: 200;
+  }
+
+  .LocationCaption3 {
     font-family: poppinslight;
     font-size: 15px;
     color: black;
