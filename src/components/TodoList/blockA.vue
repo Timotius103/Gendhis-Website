@@ -92,15 +92,16 @@
           <v-sheet height="100%" width="100%">
             <v-row class="fill-height" align="center" justify="center">
               <v-card height="100%" width="100%">
-                <v-img :src="slide.image" style="width: 100%; height: 100%">
-                  <v-container>
-                    <h1 class="tipe">{{ slide.tipe }}</h1>
-                    <div id="btnViewMore">
-                      <v-btn color="green">
-                        <h2 class="navbarmenu">View More</h2>
-                      </v-btn>
-                    </div>
-                  </v-container>
+                <v-img
+                  :src="slide.image"
+                  style="width: 100%; height: 100%; align-items: center"
+                >
+                  <h1 class="tipe">{{ slide.tipe }}</h1>
+                  <div id="btnViewMore">
+                    <v-btn color="green" style="align: center">
+                      <h2 class="navbarmenu">View More</h2>
+                    </v-btn>
+                  </div>
                 </v-img>
                 <!-- <v-btn
                   text
@@ -124,70 +125,76 @@
     <div id="footer">
       <v-container>
         <v-row>
-          <v-col>
-            <v-row style="padding-top: 20px">
-              <v-col cols="4">
-                <img
-                  src="~@/assets/gendislogoputih.png"
-                  style="
-                    width: 200px;
-                    height: 60px;
-                    position: relative;
-                    top: 3px;
-                  "
-                />
-                <p class="Footerfont">
-                  Showcase all your properties in a truly <br />
-                  modern manner. Welcome to ARGAGENDHIS.
-                </p>
-              </v-col>
-              <v-col>
-                <h1>Contact</h1>
-                <p class="Footerfont">+62811-2714-200</p>
-                <p class="Footerfont" style="margin-top: -10px">
-                  gendhisargasadana@gmail.com
-                </p>
-                <p class="Footerfont" style="margin-top: -10px">
-                  Jl. Kompol R Soekanto, Mangunharjo,<br />
-                  Kec. Tembalang, Kota Semarang, Jawa Tengah 50272
-                </p>
-              </v-col>
-              <v-col>
-                <h1>Our Social Media</h1>
-                <div class="d-flex">
-                  <v-btn dark icon href="https://www.instagram.com/argagendhis">
-                    <v-icon size="24px" color="white"> mdi-instagram </v-icon>
-                  </v-btn>
-                  <v-btn
-                    class="ml-4"
-                    dark
-                    icon
-                    href="https://www.facebook.com/Argagendhis-Residence-101331898865469"
-                  >
-                    <v-icon size="24px" color="white"> mdi-facebook </v-icon>
-                  </v-btn>
-                  <v-btn
-                    class="mx-4"
-                    dark
-                    icon
-                    href="https://api.whatsapp.com/message/FAXQXMO3HVMKC1"
-                  >
-                    <v-icon size="24px" color="white"> mdi-whatsapp </v-icon>
-                  </v-btn>
-                </div>
-              </v-col>
-            </v-row>
-          </v-col>
-          <v-col>
-            <h1 class="FooterfontCopyright" style="margin-top: 20px">
-              make with <v-icon color="red">mdi-heart</v-icon> by<a
-                href="https://www.instagram.com/tiodong99"
-                style="text-decoration: none; color: white"
-              >
-                @tiodong99</a
-              >
-            </h1>
-          </v-col>
+          <v-container>
+            <v-col>
+              <v-row style="padding-top: 20px">
+                <v-col cols="4">
+                  <img
+                    src="~@/assets/gendislogoputih.png"
+                    style="
+                      width: 200px;
+                      height: 60px;
+                      position: relative;
+                      top: 3px;
+                    "
+                  />
+                  <p class="Footerfont">
+                    Showcase all your properties in a truly <br />
+                    modern manner. Welcome to ARGAGENDHIS.
+                  </p>
+                </v-col>
+                <v-col>
+                  <h1>Contact</h1>
+                  <p class="Footerfont">+62811-2714-200</p>
+                  <p class="Footerfont" style="margin-top: -10px">
+                    gendhisargasadana@gmail.com
+                  </p>
+                  <p class="Footerfont" style="margin-top: -10px">
+                    Jl. Kompol R Soekanto, Mangunharjo,<br />
+                    Kec. Tembalang, Kota Semarang, Jawa Tengah 50272
+                  </p>
+                </v-col>
+                <v-col>
+                  <h1>Our Social Media</h1>
+                  <div class="d-flex">
+                    <v-btn
+                      dark
+                      icon
+                      href="https://www.instagram.com/argagendhis"
+                    >
+                      <v-icon size="24px" color="white"> mdi-instagram </v-icon>
+                    </v-btn>
+                    <v-btn
+                      class="ml-4"
+                      dark
+                      icon
+                      href="https://www.facebook.com/Argagendhis-Residence-101331898865469"
+                    >
+                      <v-icon size="24px" color="white"> mdi-facebook </v-icon>
+                    </v-btn>
+                    <v-btn
+                      class="mx-4"
+                      dark
+                      icon
+                      href="https://api.whatsapp.com/message/FAXQXMO3HVMKC1"
+                    >
+                      <v-icon size="24px" color="white"> mdi-whatsapp </v-icon>
+                    </v-btn>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col>
+              <h1 class="FooterfontCopyright" style="margin-top: 20px">
+                make with <v-icon color="red">mdi-heart</v-icon> by<a
+                  href="https://www.instagram.com/tiodong99"
+                  style="text-decoration: none; color: white"
+                >
+                  @tiodong99</a
+                >
+              </h1>
+            </v-col>
+          </v-container>
         </v-row>
       </v-container>
     </div>
@@ -351,7 +358,6 @@ export default {
   font-family: poppinssemibold;
   color: white;
   font-size: 55px;
-  margin-top: 300px;
   text-align: center;
 }
 .tipeBlockA {
@@ -400,7 +406,13 @@ export default {
 }
 
 #btnViewMore {
-  margin-left: 500px;
+  margin: 0;
+  position: absolute;
+  margin-top: 85px;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 #footer {
   height: auto !important;
