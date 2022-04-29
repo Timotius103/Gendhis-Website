@@ -34,9 +34,7 @@
                 <v-list-item router to="/blockA">
                   <v-list-item-title>Block A</v-list-item-title>
                 </v-list-item>
-                <v-list-item
-                  router to="/blockB"
-                >
+                <v-list-item router to="/blockB">
                   <v-list-item-title>Block B</v-list-item-title>
                 </v-list-item>
               </v-list-item-group>
@@ -117,14 +115,14 @@
         </v-carousel-item>
       </v-carousel>
     </div>
-    <div style="height:400px">
+    <div style="height: 400px">
       <v-container>
         <h1 class="tipeBlockA">Tipe A1</h1>
       </v-container>
     </div>
     <div id="footer">
-      <v-row>
-        <v-container>
+      <v-container>
+        <v-row>
           <v-col>
             <v-row style="padding-top: 20px">
               <v-col cols="4">
@@ -181,11 +179,16 @@
           </v-col>
           <v-col>
             <h1 class="FooterfontCopyright" style="margin-top: 20px">
-              make with <v-icon color="red">mdi-heart</v-icon> by<a href="https://www.instagram.com/tiodong99" style="text-decoration: none;color: white;"> @tiodong99</a>
+              make with <v-icon color="red">mdi-heart</v-icon> by<a
+                href="https://www.instagram.com/tiodong99"
+                style="text-decoration: none; color: white"
+              >
+                @tiodong99</a
+              >
             </h1>
           </v-col>
-        </v-container>
-      </v-row>
+        </v-row>
+      </v-container>
     </div>
   </v-main>
 </template>
@@ -289,7 +292,7 @@ export default {
   text-align: center;
 }
 
-#btnViewMore{
+#btnViewMore {
   margin-left: 500px;
 }
 #footer {

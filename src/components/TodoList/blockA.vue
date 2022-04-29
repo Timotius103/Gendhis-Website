@@ -31,15 +31,11 @@
                 v-model="group"
                 active-class="deep-purple--text text--accent-4"
               >
-                <v-list-item
-                  router to="/blockB"
-                >
+                <v-list-item router to="/blockB">
                   <v-list-item-title>Block B</v-list-item-title>
                 </v-list-item>
 
-                <v-list-item
-                  router to="/blockC"
-                >
+                <v-list-item router to="/blockC">
                   <v-list-item-title>Block C</v-list-item-title>
                 </v-list-item>
               </v-list-item-group>
@@ -126,8 +122,8 @@
       </v-container>
     </div>
     <div id="footer">
-      <v-row>
-        <v-container>
+      <v-container>
+        <v-row>
           <v-col>
             <v-row style="padding-top: 20px">
               <v-col cols="4">
@@ -192,8 +188,8 @@
               >
             </h1>
           </v-col>
-        </v-container>
-      </v-row>
+        </v-row>
+      </v-container>
     </div>
   </v-main>
 </template>
