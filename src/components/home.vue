@@ -50,21 +50,18 @@
                 v-model="group"
                 active-class="deep-purple--text text--accent-4"
               >
-                <v-list-item 
-                  router to="/blockA" 
-                >
+                <v-list-item router to="/blockA">
                   <v-list-item-title>Block A</v-list-item-title>
                 </v-list-item>
                 <v-list-item
-                  router to="/blockB" 
+                  router
+                  to="/blockB"
                   v-smooth-scroll="{ duration: 1000, offset: 2 }"
                 >
                   <v-list-item-title>Block B</v-list-item-title>
                 </v-list-item>
 
-                <v-list-item
-                  router to="/blockC" 
-                >
+                <v-list-item router to="/blockC">
                   <v-list-item-title>Block C</v-list-item-title>
                 </v-list-item>
 
@@ -137,14 +134,6 @@
     <div>
       <v-row no-gutters>
         <v-col>
-          <!-- <v-parallax :src="require('@/assets/homepage.jpg')" 
-            style="background-size: cover; height:625px;
-            text-align: right;" linear-gradient="to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)" position="absolute" height="600">
-            <v-container>
-              <p class="jumbotrontulisan">ARGAGENDHIS</p>
-              <p class="jumbotrontulisan1">Residence</p>
-            </v-container>
-          </v-parallax> -->
           <v-card class="jumbotron">
             <v-container>
               <p class="jumbotrontulisan">ARGAGENDHIS</p>
@@ -154,22 +143,21 @@
         </v-col>
       </v-row>
     </div>
+
+    <!-- ////////////////////// FEATURE SPESIFACTION SECTION //////////////////////////////////////////////////// -->
+
     <v-parallax :src="require('@/assets/pharalax4.png')" style="height: 250px">
       <v-container>
-        <h1 class="featureSpecificationPart" style="margin-top: 100px">
-          Fitur & Spesifikasi
-        </h1>
+        <h1 class="featureSpecificationPart">Fitur & Spesifikasi</h1>
       </v-container>
     </v-parallax>
-
     <!-- <button @click="show = !show">Toggle Slide + Fade</button>
     <Transition name="slide-fade">
       <p v-if="show">hello</p>
     </Transition> -->
-
     <div id="feature">
       <v-container>
-        <h1 class="feature" style="margin-top: 60px">Mengapa Argagendhis?</h1>
+        <h1 class="feature">Mengapa Argagendhis?</h1>
       </v-container>
       <v-container>
         <v-row>
@@ -288,10 +276,12 @@
         </v-row>
       </v-container>
     </div>
+
+    <!--//////////////////////////////////////// PRODUK ////////////////////////////////////////////////////// -->
     <v-parallax :src="require('@/assets/pharalax2.jpg')" style="height: 350px">
       <v-container>
-        <h1 class="progresspart" style="margin-top: 100px">Produk</h1>
-        <h1 class="progresspart" style="margin-top: -25px">Kami</h1>
+        <h1 class="produk1" style="margin-top: 100px">Produk</h1>
+        <h1 class="produk2" style="margin-top: -25px">Kami</h1>
       </v-container>
     </v-parallax>
     <div id="product">
@@ -306,23 +296,26 @@
               <v-row>
                 <v-col>
                   <h1 class="mapsection">List</h1>
-                  <h1 class="mapsection" style="margin-top: -20px">
-                    Properti
-                  </h1>
+                  <h1 class="mapsection" style="margin-top: -20px">Properti</h1>
                   <v-row>
-                    <v-col v-for="allblock in block" :key="allblock.title" cols="8">
+                    <v-col
+                      v-for="allblock in block"
+                      :key="allblock.title"
+                      cols="8"
+                    >
                       <v-row>
                         <v-col cols="4">
-                          <img :src="allblock.pict">
+                          <img :src="allblock.pict" />
                         </v-col>
                         <v-col>
                           <p class="LocationCaption1" style="margin-top: -2px">
-                            {{allblock.title}}
+                            {{ allblock.title }}
                           </p>
-                           <v-btn
+                          <v-btn
                             style="margin-top: -20px"
                             color="green"
-                            router :to="allblock.to"
+                            router
+                            :to="allblock.to"
                             outlined
                           >
                             View More
@@ -338,14 +331,16 @@
         </div>
       </v-container>
     </div>
+
+    <!-- /////////////////////////////////// PROGRESS SECTION ////////////////////////////////////////// -->
     <v-parallax
       id="progress"
       :src="require('@/assets/pharalax3.png')"
       style="height: 350px"
     >
       <v-container>
-        <h1 class="progresspart" style="margin-top: 100px">Progress</h1>
-        <h1 class="progresspart" style="margin-top: -25px">Kami</h1>
+        <h1 class="progresspart1">Progress</h1>
+        <h1 class="progresspart2">Kami</h1>
       </v-container>
     </v-parallax>
     <div style="height: 415px">
@@ -395,13 +390,15 @@
         </v-data-table>
       </v-container>
     </div>
+
+    <!-- //////////////////////////////////////// LOCATION SECTION /////////////////////////////////////////  -->
     <v-parallax
       id="locationpart"
       :src="require('@/assets/pharalax.jpg')"
       style="height: 425px"
     >
       <v-container>
-        <h1 class="locationPart" style="margin-top: 125px">Lokasi Kami</h1>
+        <h1 class="locationPart">Lokasi Kami</h1>
       </v-container>
     </v-parallax>
 
@@ -505,6 +502,7 @@
       </v-row>
     </div>
 
+    <!-- /////////////////////////////////////////////// FOOTER SECTION ///////////////////////////////////////// -->
     <div id="footer">
       <v-row>
         <v-container>
@@ -527,7 +525,14 @@
               </v-col>
               <v-col>
                 <h1>Kontak</h1>
-                <p><a class="Footerfont" style="text-decoration: none;color: white;" href="https://api.whatsapp.com/send?phone=628112714200">+62811-2714-200</a></p>
+                <p>
+                  <a
+                    class="Footerfont"
+                    style="text-decoration: none; color: white"
+                    href="https://api.whatsapp.com/send?phone=628112714200"
+                    >+62811-2714-200</a
+                  >
+                </p>
                 <p class="Footerfont" style="margin-top: -10px">
                   gendhisargasadana@gmail.com
                 </p>
@@ -564,7 +569,12 @@
           </v-col>
           <v-col>
             <h1 class="FooterfontCopyright" style="margin-top: 20px">
-              make with <v-icon color="red">mdi-heart</v-icon> by<a href="https://www.instagram.com/tiodong99" style="text-decoration: none;color: white;"> @tiodong99</a>
+              make with <v-icon color="red">mdi-heart</v-icon> by<a
+                href="https://www.instagram.com/tiodong99"
+                style="text-decoration: none; color: white"
+              >
+                @tiodong99</a
+              >
             </h1>
           </v-col>
         </v-container>
@@ -599,16 +609,22 @@ export default {
       Icon,
       drawer: false,
       model: null,
-      block:[
+      block: [
         {
-          pict:'https://img.icons8.com/material/85/be2edd/circled-a.png', to:'/blockA',title:'Blok A'
+          pict: "https://img.icons8.com/material/85/be2edd/circled-a.png",
+          to: "/blockA",
+          title: "Blok A",
         },
         {
-          pict:'https://img.icons8.com/material/85/FDA7DF/circled-b.png', to:'/blockB',title:'Blok B'
+          pict: "https://img.icons8.com/material/85/FDA7DF/circled-b.png",
+          to: "/blockB",
+          title: "Blok B",
         },
         {
-          pict:'https://img.icons8.com/material/85/ffb8b8/circled-c.png', to:'/blockC',title:'Blok C'
-        }
+          pict: "https://img.icons8.com/material/85/ffb8b8/circled-c.png",
+          to: "/blockC",
+          title: "Blok C",
+        },
       ],
       bahan: [
         {
@@ -861,7 +877,7 @@ export default {
         {
           src: require("../assets/gendhisMap2.png"),
         },
-      ],  
+      ],
       icons: [
         {
           icon: "mdi-instagram",
@@ -899,12 +915,13 @@ export default {
 .fullheight {
   min-height: 100vh !important;
 }
-
+/* ///////////////////////// JUMBOTRON CSS /////////////// */
 .jumbotron {
   background-image: url("../assets/homepage.jpg");
   background-size: cover;
   height: 625px;
   width: max;
+  align-items: center;
   text-align: right;
   position: relative;
 }
@@ -937,6 +954,7 @@ export default {
   bottom: 0;
 }
 
+/* ///////////////////////// SALES CSS //////////////// */
 .sales {
   padding-left: 89px;
   padding-right: 89px;
@@ -951,6 +969,7 @@ export default {
 .feature {
   font-family: poppinssemibold;
   color: black;
+  margin-top: 60px;
   font-size: 45px;
   text-align: center;
 }
@@ -970,18 +989,45 @@ export default {
   font-family: poppinssemibold;
   color: white;
   font-size: 75px;
+  margin-top: 100px;
   text-align: center;
 }
-.progresspart {
+
+.produk1 {
   font-family: poppinssemibold;
   color: white;
+  margin-top: 100px;
   font-size: 75px;
   text-align: left;
 }
+.produk2 {
+  font-family: poppinssemibold;
+  color: white;
+  font-size: 75px;
+  margin-top: -25px;
+  text-align: left;
+}
+
+.progresspart1 {
+  font-family: poppinssemibold;
+  color: white;
+  margin-top: 100px;
+  font-size: 75px;
+  text-align: left;
+}
+.progresspart2 {
+  font-family: poppinssemibold;
+  color: white;
+  font-size: 75px;
+  margin-top: -25px;
+  text-align: left;
+}
+
 .locationPart {
   font-family: poppinssemibold;
   color: white;
   font-size: 75px;
+  margin-top: 125px;
   text-align: right;
 }
 .spesifikasi {
@@ -1017,10 +1063,6 @@ export default {
   text-align: left;
 }
 
-/* .aboutusbackground{
-    background-color: rgba(221, 210, 210, 0.623);
-} */
-
 .footertext {
   font-family: poppinssemibold;
   color: white;
@@ -1035,22 +1077,6 @@ export default {
   text-align: center;
 }
 
-/* .jeda2{
-  background-image: url("../assets/homepage.jpg");
-  background-size: cover;
-  height: 625px;
-  text-align: right;
-  position: relative;
-} */
-
-/* Animation css */
-
-/* This only changes this particular animation duration */
-/* .animate__animated.animate__fadeInRight {
-  --animate-duration: 2s;
-} */
-
-/* This changes all the animations globally */
 :root {
   --animate-duration: 800ms;
   --animate-delay: 1s;
@@ -1095,4 +1121,81 @@ export default {
   transform: translateX(20px);
   opacity: 0;
 } */
+
+/* //////////////////////////////////// RESPONSIVE CSS ///////////////////////////////////////////////////// */
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .jumbotron {
+    background-image: url("../assets/homepage.jpg");
+    background-size: cover;
+    height: 625px;
+    width: max;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  .jumbotron .jumbotrontulisan {
+    font-family: poppinssemibold;
+    color: white;
+    font-size: 45px;
+    margin-bottom: 30px;
+  }
+
+  .jumbotron .jumbotrontulisan1 {
+    font-family: poppinslight;
+    color: white;
+    margin-top: -45px;
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+  .featureSpecificationPart {
+    font-family: poppinssemibold;
+    color: white;
+    font-size: 45px;
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  .produk1 {
+    font-family: poppinssemibold;
+    color: white;
+    margin-top: 100px;
+    font-size: 45px;
+    text-align: left;
+  }
+  .produk2 {
+    font-family: poppinssemibold;
+    color: white;
+    font-size: 45px;
+    margin-top: -25px;
+    text-align: left;
+  }
+
+  .progresspart1 {
+    font-family: poppinssemibold;
+    color: white;
+    margin-top: 100px;
+    font-size: 45px;
+    text-align: left;
+  }
+  .progresspart2 {
+    font-family: poppinssemibold;
+    color: white;
+    font-size: 45px;
+    margin-top: -25px;
+    text-align: left;
+  }
+  .locationPart {
+    font-family: poppinssemibold;
+    color: white;
+    font-size: 45px;
+    margin-top: 125px;
+    text-align: right;
+  }
+}
 </style>
