@@ -607,17 +607,74 @@
     </v-parallax>
     <div style="height: 415px">
       <v-row no-gutters>
+        <v-col
+          no-gutters
+          cols="3"
+          v-for="progressku in progress"
+          :key="progressku.title"
+        >
+          <v-hover v-slot="{ hover }" close-delay="200">
+            <v-card
+              class="cardProgress"
+              height="400"
+              width="500"
+              @click="overlayfunct(progressku.id)"
+              :elevation="hover ? 16 : 2"
+              :class="{ 'on-hover': hover }"
+            >
+              <v-img :src="progressku.image" style="width: 100%; height: 100%">
+              </v-img>
+            </v-card>
+          </v-hover>
+
+          <v-overlay :value="overlay" v-for="overlayarray in arrayOverlay"
+          :key="overlayarray.id">
+            <v-card
+              class="align-center white--text"
+              height="400"
+              width="500"
+              color="teal"
+              @click="overlay = false"
+            >
+              <v-img :src="overlayarray" style="width: 100%; height: 100%">
+              </v-img>
+            </v-card>
+          </v-overlay>
+        </v-col>
+      </v-row>
+    </div>
+    <!-- <div style="height: 415px">
+      <v-row no-gutters>
         <v-col no-gutters cols="3">
-          <v-card class="align-start" height="400" width="500">
+          <v-card
+            height="400"
+            width="500"
+            @click="overlay = !overlay"
+          >
             <v-img
               :src="require('@/assets/progress1.jpeg')"
               style="width: 100%; height: 100%"
             >
             </v-img>
           </v-card>
+          <v-overlay :value="overlay">
+            <v-card
+              class="align-center white--text"
+              height="400"
+              width="500"
+              color="teal"
+              @click="overlay = false"
+            >
+              <v-img
+                :src="require('@/assets/progress1.jpeg')"
+                style="width: 100%; height: 100%"
+              >
+              </v-img>
+            </v-card>
+          </v-overlay>
         </v-col>
         <v-col no-gutters cols="3">
-          <v-card height="400" width="500">
+          <v-card height="400" width="500" @click="overlay = !overlay">
             <v-img
               :src="require('@/assets/progress2.jpeg')"
               style="width: 100%; height: 100%"
@@ -644,7 +701,7 @@
           </v-card>
         </v-col>
       </v-row>
-    </div>
+    </div> -->
 
     <!-- ////////////////////////// DAFTAR HARGA ///////////////////////////////////////////////////////// -->
     <div id="availability">
@@ -978,10 +1035,13 @@ export default {
     // })
 
     return {
+      overlay: false,
+      zIndex: 0,
       show: false,
       Icon,
       drawer: false,
       model: null,
+      arrayOverlay: [],
       block: [
         {
           pict: "https://img.icons8.com/material/85/be2edd/circled-a.png",
@@ -997,6 +1057,28 @@ export default {
           pict: "https://img.icons8.com/material/85/ffb8b8/circled-c.png",
           to: "/blockC",
           title: "Blok C",
+        },
+      ],
+      progress: [
+        {
+          id: 1,
+          title: "progress 1",
+          image: require("../assets/progress1.jpeg"),
+        },
+        {
+          id: 2,
+          title: "progress 2",
+          image: require("../assets/progress2.jpeg"),
+        },
+        {
+          id: 3,
+          title: "progress 3",
+          image: require("../assets/progress3.jpeg"),
+        },
+        {
+          id: 4,
+          title: "progress 4",
+          image: require("../assets/progress4.jpeg"),
         },
       ],
       bahan: [
@@ -1267,11 +1349,27 @@ export default {
       ],
     };
   },
+  // watch: {
+  //   overlay(val) {
+  //     val &&
+  //       setTimeout(() => {
+  //         this.overlay = false;
+  //       }, 2000);
+  //   },
+  // },
   // mounted() {
   //   this.initMap();
   //   this.initLayers();
   // },
   methods: {
+    overlayfunct(id) {
+      for (var i = 0; i < this.progress.length; i++) {
+        if (id === this.progress[i].id) {
+          this.arrayOverlay.push(this.progress[i].image)
+        }
+      }
+      this.overlay = true;
+    },
     // submitComment: function (reply) {
     //   this.comments.push({
     //     id: 1,
