@@ -634,7 +634,7 @@
               height="400"
               width="500"
               color="teal"
-              @click="overlay = false"
+              @click="overlayfunctdrop()"
             >
               <v-img :src="overlayarray" style="width: 100%; height: 100%">
               </v-img>
@@ -1365,10 +1365,18 @@ export default {
     overlayfunct(id) {
       for (var i = 0; i < this.progress.length; i++) {
         if (id === this.progress[i].id) {
+          this.overlay = true;
           this.arrayOverlay.push(this.progress[i].image)
         }
       }
-      this.overlay = true;
+      
+    },
+
+    overlayfunctdrop() {
+     this.overlay = false;
+     if(this.overlay === false){
+       this.arrayOverlay.splice(0, this.arrayOverlay.length);
+     }
     },
     // submitComment: function (reply) {
     //   this.comments.push({
