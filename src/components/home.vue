@@ -11,6 +11,7 @@
             position: fixed;
             z-index: 10000;
             text-align: center;
+            align-content:center;
           "
         >
           <img class="preload" src="~@/assets/gendislogo.png" />
@@ -1693,7 +1694,6 @@ export default {
 @media screen and (max-width: 576px) {
   .preload {
     width: 50%;
-    margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
