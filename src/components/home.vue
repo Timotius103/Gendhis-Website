@@ -500,8 +500,10 @@
             <v-col cols="4">
               <v-row>
                 <v-col>
-                  <h1 class="mapsection">List</h1>
-                  <h1 class="mapsection" style="margin-top: -20px">Properti</h1>
+                  <h1 class="listpropertiSection">List</h1>
+                  <h1 class="listpropertiSection" style="margin-top: -20px">
+                    Properti
+                  </h1>
                   <v-row>
                     <v-col
                       v-for="allblock in block"
@@ -542,15 +544,15 @@
         <div class="selessectionmobile" id="salessection" ref="section2">
           <v-row no-gutters>
             <v-col v-for="imgMap in mapImg" :key="imgMap" cols="12">
-              <v-img :src="imgMap.src" style="width: 650px; height: 550px">
+              <v-img :src="imgMap.src" style="width: 650px; height: 450px">
               </v-img>
             </v-col>
             <v-col cols="12">
               <v-container>
-                <v-row>
+                <v-row no-gutters>
                   <v-col>
-                    <h1 class="mapsection">List</h1>
-                    <h1 class="mapsection" style="margin-top: -20px">
+                    <h1 class="listpropertiSection">List</h1>
+                    <h1 class="listpropertiSection" style="margin-top: -20px">
                       Properti
                     </h1>
                     <v-row>
@@ -660,7 +662,8 @@
       style="height: 425px"
     >
       <v-container>
-        <h1 class="locationPart">Lokasi Kami</h1>
+        <h1 class="locationPart">Lokasi</h1>
+        <h1 class="locationPart2">Kami</h1>
       </v-container>
     </v-parallax>
 
@@ -691,7 +694,7 @@
           </p>
           <v-row>
             <v-col cols="5">
-              <v-row >
+              <v-row>
                 <v-col cols="4">
                   <v-avatar tile size="90">
                     <img
@@ -767,7 +770,7 @@
         </v-col>
       </v-row>
     </div>
-<!-- //////////////////////////////// LOCATION SECTION MOBILE VERSION ////////////////////////////////////////////// -->
+    <!-- //////////////////////////////// LOCATION SECTION MOBILE VERSION ////////////////////////////////////////////// -->
     <div
       id="location"
       style="background-color: #f1f2f6; height: "
@@ -1303,6 +1306,13 @@ export default {
   text-align: left;
 }
 
+.listpropertiSection {
+  font-family: poppinssemibold;
+  color: black;
+  font-size: 65px;
+  text-align: left;
+}
+
 .float-left {
   width: 80px;
   height: 80px;
@@ -1398,6 +1408,13 @@ export default {
   color: white;
   font-size: 75px;
   margin-top: 125px;
+  text-align: right;
+}
+.locationPart2 {
+  font-family: poppinssemibold;
+  color: white;
+  font-size: 75px;
+  margin-top: -25px;
   text-align: right;
 }
 .spesifikasi {
@@ -1600,6 +1617,13 @@ export default {
     text-align: left;
   }
 
+  .listpropertiSection {
+    font-family: poppinssemibold;
+    color: black;
+    font-size: 45px;
+    text-align: left;
+  }
+
   .progresspart1 {
     font-family: poppinssemibold;
     color: white;
@@ -1619,6 +1643,14 @@ export default {
     color: white;
     font-size: 45px;
     margin-top: 125px;
+    text-align: right;
+  }
+
+  .locationPart2 {
+    font-family: poppinssemibold;
+    color: white;
+    font-size: 45px;
+    margin-top: -25px;
     text-align: right;
   }
 
