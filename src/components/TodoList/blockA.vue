@@ -1,5 +1,22 @@
 <template>
   <v-main>
+    <div>
+      <transition name="fade">
+        <div
+          v-if="loading == true"
+          style="
+            width: 100vw;
+            height: 100vh;
+            background: white;
+            position: fixed;
+            z-index: 10000;
+            text-align: center;
+          "
+        >
+          <img class="preload" src="~@/assets/gendislogo.png" />
+        </div>
+      </transition>
+    </div>
     <div id="navbar" ref="section1">
       <!-- percobaan navbar 1 -->
       <v-toolbar dense height="80">
@@ -219,10 +236,22 @@
 <script>
 export default {
   name: "Home",
-
+  mounted: function () {
+    this.loading = true;
+    let elHtml = document.getElementsByTagName("html")[0];
+    elHtml.style.overflowY = "auto";
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000);
+  },
+  destroyed: function () {
+    let elHtml = document.getElementsByTagName("html")[0];
+    elHtml.style.overflowY = null;
+  },
   data() {
     return {
-      drawer:false,
+      loading: true,
+      drawer: false,
       slideGroup: 0,
       length: 6,
       onboarding: 0,
@@ -348,11 +377,11 @@ export default {
     window.removeEventListener("resize", this.onResize, { passive: true });
   },
 
-  mounted() {
-    this.onResize();
+  // mounted() {
+  //   this.onResize();
 
-    window.addEventListener("resize", this.onResize, { passive: true });
-  },
+  //   window.addEventListener("resize", this.onResize, { passive: true });
+  // },
   methods: {
     onResize() {
       this.isMobile = window.innerWidth < 600;
@@ -362,6 +391,15 @@ export default {
 </script>
 
 <style scoped>
+.preload {
+  width: 25%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 .BlockA {
   font-family: poppinssemibold;
   color: white;
@@ -433,5 +471,27 @@ export default {
 #footer {
   height: auto !important;
   background-color: black;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+@media screen and (max-width: 576px) {
+  .preload {
+    width: 50%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
 }
 </style>

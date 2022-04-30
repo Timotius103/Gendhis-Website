@@ -1,5 +1,22 @@
 <template>
   <v-main>
+    <div>
+      <transition name="fade">
+        <div
+          v-if="loading == true"
+          style="
+            width: 100vw;
+            height: 100vh;
+            background: white;
+            position: fixed;
+            z-index: 10000;
+            text-align: center;
+          "
+        >
+          <img class="preload" src="~@/assets/gendislogo.png" />
+        </div>
+      </transition>
+    </div>
     <div id="navbar" ref="section1">
       <!-- percobaan navbar 1 -->
       <v-toolbar dense height="80">
@@ -429,8 +446,8 @@
               <template v-slot:default>
                 <thead>
                   <tr>
-                    <th class="text-center">Name</th>
-                    <th class="text-center">Detail</th>
+                    <th class="text-center">Nama</th>
+                    <th class="text-center">Keterangan</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -465,8 +482,8 @@
               <template v-slot:default>
                 <thead>
                   <tr>
-                    <th class="text-center">Name</th>
-                    <th class="text-center">Detail</th>
+                    <th class="text-center">Nama</th>
+                    <th class="text-center">Keterangan</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -627,8 +644,11 @@
             </v-card>
           </v-hover>
 
-          <v-overlay :value="overlay" v-for="overlayarray in arrayOverlay"
-          :key="overlayarray.id">
+          <v-overlay
+            :value="overlay"
+            v-for="overlayarray in arrayOverlay"
+            :key="overlayarray.id"
+          >
             <v-card
               class="align-center white--text"
               height="400"
@@ -1018,7 +1038,18 @@
 import { Icon } from "@iconify/vue2";
 export default {
   name: "Home",
-
+  mounted: function () {
+    this.loading = true;
+    let elHtml = document.getElementsByTagName("html")[0];
+    elHtml.style.overflowY = "auto";
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000);
+  },
+  destroyed: function () {
+    let elHtml = document.getElementsByTagName("html")[0];
+    elHtml.style.overflowY = null;
+  },
   data() {
     // const X = ref(null);
     // const section1 = ref(null);
@@ -1035,6 +1066,7 @@ export default {
     // })
 
     return {
+      loading: false,
       overlay: false,
       zIndex: 0,
       show: false,
@@ -1366,17 +1398,16 @@ export default {
       for (var i = 0; i < this.progress.length; i++) {
         if (id === this.progress[i].id) {
           this.overlay = true;
-          this.arrayOverlay.push(this.progress[i].image)
+          this.arrayOverlay.push(this.progress[i].image);
         }
       }
-      
     },
 
     overlayfunctdrop() {
-     this.overlay = false;
-     if(this.overlay === false){
-       this.arrayOverlay.splice(0, this.arrayOverlay.length);
-     }
+      this.overlay = false;
+      if (this.overlay === false) {
+        this.arrayOverlay.splice(0, this.arrayOverlay.length);
+      }
     },
     // submitComment: function (reply) {
     //   this.comments.push({
@@ -1391,6 +1422,15 @@ export default {
 </script>
 
 <style scoped>
+.preload {
+  width: 25%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 .fullheight {
   min-height: 100vh !important;
 }
@@ -1633,6 +1673,16 @@ export default {
   opacity: 0;
 } */
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
 /* //////////////////////////////////// RESPONSIVE CSS ///////////////////////////////////////////////////// */
 @media screen and (max-width: 768px) {
   nav ul {
@@ -1641,6 +1691,15 @@ export default {
 }
 
 @media screen and (max-width: 576px) {
+  .preload {
+    width: 50%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
   .jumbotron {
     background-image: url("../assets/homepage.jpg");
     background-size: cover;
