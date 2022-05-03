@@ -5,12 +5,13 @@
         <div
           v-if="loading == true"
           style="
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             background: white;
             position: fixed;
             z-index: 10000;
-            text-align: center;"
+            text-align: center;
+          "
         >
           <img class="preload" src="~@/assets/gendislogo.png" />
         </div>
@@ -18,7 +19,13 @@
     </div>
     <div id="navbar" ref="section1">
       <!-- percobaan navbar 1 -->
-      <v-toolbar dense height="80">
+      <!-- absolute style="position:fixed" -->
+      <v-app-bar
+        danse
+        height="80"
+        elevate-on-scroll
+        scroll-target="#scrolling-techniques-7"
+      >
         <v-container>
           <v-toolbar-title>
             <img
@@ -118,8 +125,8 @@
           class="hidden-sm-and-up"
           @click.stop="drawer = !drawer"
         ></v-app-bar-nav-icon>
-      </v-toolbar>
-      <v-list nav dense v-if="drawer" class="hidden-sm-and-up">
+      </v-app-bar>
+      <v-list nav app v-if="drawer" class="hidden-sm-and-up">
         <v-list-item-group
           v-model="group"
           active-class="deep-purple--text text--accent-4"
@@ -208,26 +215,6 @@
           >
             <h2 class="navbarmenu">Kontak</h2>
           </v-btn>
-          <!-- <v-list-item>
-            <v-list-item-title>Home</v-list-item-title>
-          </v-list-item>
-          <v-list-item
-            href="#salessection"
-            v-smooth-scroll="{ duration: 1000, offset: 2 }"
-          >
-            <v-list-item-title>Sales</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>About</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item
-            href="#contactus"
-            v-smooth-scroll="{ duration: 1000, offset: 0 }"
-          >
-            <v-list-item-title>Contact</v-list-item-title>
-          </v-list-item> -->
         </v-list-item-group>
       </v-list>
     </div>
@@ -254,7 +241,7 @@
     <Transition name="slide-fade">
       <p v-if="show">hello</p>
     </Transition> -->
-    <div id="feature" class="hidden-sm-and-down">
+    <div id="feature" class="hidden-sm-and-down reveal">
       <v-container>
         <h1 class="feature">Mengapa Argagendhis?</h1>
       </v-container>
@@ -345,7 +332,7 @@
     </div>
 
     <!-- //////////////////// VERSI MOBILE FITUR ////////////////////////////////// -->
-    <div id="featuremb" class="hidden-sm-and-up">
+    <div id="featuremb" class="hidden-sm-and-up reveal">
       <v-container>
         <h1 class="feature">Mengapa Argagendhis?</h1>
       </v-container>
@@ -429,7 +416,7 @@
       </v-container>
     </div>
     <!-- //////////////////// VERSI MOBILE FITUR ////////////////////////////////// -->
-    <div id="specification" class="hidden-sm-and-down">
+    <div id="specification" class="hidden-sm-and-down reveal">
       <v-container>
         <v-row>
           <v-col cols="6" style="margin-top: 130px">
@@ -463,7 +450,7 @@
     </div>
 
     <!-- ////////////////////////////// SPESIFICATION MOBILE VERSION //////////////////////////////////////////////////////// -->
-    <div id="specificationmb" class="hidden-sm-and-up">
+    <div id="specificationmb" class="hidden-sm-and-up reveal">
       <v-container>
         <v-row>
           <v-col cols="12" style="margin-top: 20px">
@@ -507,7 +494,7 @@
     </v-parallax>
     <div id="product" class="hidden-sm-and-down">
       <v-container>
-        <div id="salessection" ref="section2">
+        <div id="salessection" ref="section2" class="reveal">
           <v-row no-gutters style="padding-top: 45px">
             <v-col v-for="imgMap in mapImg" :key="imgMap" cols="7">
               <v-img :src="imgMap.src" style="width: 650px; height: 550px">
@@ -557,7 +544,7 @@
 
     <div id="product" class="hidden-sm-and-up">
       <v-container>
-        <div class="selessectionmobile" id="salessection" ref="section2">
+        <div class="selessectionmobile reveal" id="salessection" ref="section2">
           <v-row no-gutters>
             <v-col v-for="imgMap in mapImg" :key="imgMap" cols="12">
               <v-img :src="imgMap.src" style="width: 650px; height: 450px">
@@ -723,7 +710,7 @@
     </div> -->
 
     <!-- ////////////////////////// DAFTAR HARGA ///////////////////////////////////////////////////////// -->
-    <div id="availability">
+    <div id="availability" class="reveal">
       <v-container>
         <h1 class="pricelist">Daftar Harga</h1>
         <v-data-table :headers="headers" :items="desserts" :items-per-page="5">
@@ -748,113 +735,9 @@
       style="background-color: #f1f2f6; height: "
       class="hidden-sm-and-down"
     >
-      <v-row no-gutters>
-        <v-col cols="6">
-          <iframe
-            width="100%"
-            height="636px"
-            frameborder="0"
-            scrolling="no"
-            marginheight="0"
-            marginwidth="0"
-            src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=argagendhis&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          >
-          </iframe>
-        </v-col>
-        <v-col cols="6" style="padding-left: 25px">
-          <h1 class="location" style="margin-top: 100px">Tempat Terdekat</h1>
-          <p class="LocationCaption2" style="margin-top: 2px">
-            Area pribadi dengan aksesibilitas mudah adalah yang utama <br />
-            dan perlu menjadi pertimbangan untuk memilih sebuah hunian. <br />
-            Pilih lokasi terbaik Anda di Argagendhis Residence.
-          </p>
-          <v-row>
-            <v-col cols="5">
-              <v-row>
-                <v-col cols="4">
-                  <v-avatar tile size="90">
-                    <img
-                      src="https://img.icons8.com/material/85/00b894/road--v2.png"
-                    />
-                  </v-avatar>
-                </v-col>
-                <v-col>
-                  <p class="LocationCaption1">50 m</p>
-                  <p class="LocationCaption2">Dari Jalan Raya</p>
-                </v-col>
-              </v-row>
-            </v-col>
-            <v-col>
-              <v-row>
-                <v-col cols="3">
-                  <v-avatar tile size="90">
-                    <img
-                      src="https://img.icons8.com/material/85/00b894/hospital-2.png"
-                    />
-                  </v-avatar>
-                </v-col>
-                <v-col>
-                  <p class="LocationCaption1">06 Menit</p>
-                  <p class="LocationCaption2">Dari RSUD Ketileng</p>
-                </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="5">
-              <v-row>
-                <v-col cols="4">
-                  <v-avatar tile size="90">
-                    <img
-                      src="https://img.icons8.com/material/85/00b894/highway.png"
-                    />
-                  </v-avatar>
-                </v-col>
-                <v-col>
-                  <p class="LocationCaption1" style="margin-top: 2px">
-                    12 Menit
-                  </p>
-                  <p class="LocationCaption2">
-                    Dari pintu masuk<br />
-                    Toll Gayamsari
-                  </p>
-                </v-col>
-              </v-row>
-            </v-col>
-            <v-col>
-              <v-row>
-                <v-col cols="3">
-                  <v-avatar tile size="90">
-                    <img
-                      src="https://img.icons8.com/material/85/00b894/university--v1.png"
-                    />
-                  </v-avatar>
-                </v-col>
-                <v-col>
-                  <p class="LocationCaption1" style="margin-top: -5px">
-                    04 Menit
-                  </p>
-                  <p class="LocationCaption2">Dari UNIMUS</p>
-                  <p class="LocationCaption1" style="margin-top: -15px">
-                    16 Menit
-                  </p>
-                  <p class="LocationCaption2">Dari UNDIP</p>
-                </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-    </div>
-    <!-- //////////////////////////////// LOCATION SECTION MOBILE VERSION ////////////////////////////////////////////// -->
-    <div
-      id="location"
-      style="background-color: #f1f2f6; height: "
-      class="hidden-sm-and-up"
-    >
-      <v-container>
+      <div class="reveal">
         <v-row no-gutters>
-          <v-col cols="12">
+          <v-col cols="6">
             <iframe
               width="100%"
               height="636px"
@@ -866,82 +749,190 @@
             >
             </iframe>
           </v-col>
-          <v-col cols="12">
-            <h1 class="location">Tempat Terdekat</h1>
+          <v-col cols="6" style="padding-left: 25px">
+            <h1 class="location" style="margin-top: 100px">Tempat Terdekat</h1>
             <p class="LocationCaption2" style="margin-top: 2px">
-              Area pribadi dengan aksesibilitas mudah adalah yang utama dan
-              perlu menjadi pertimbangan untuk memilih sebuah hunian. Pilih
-              lokasi terbaik Anda di Argagendhis Residence.
+              Area pribadi dengan aksesibilitas mudah adalah yang utama <br />
+              dan perlu menjadi pertimbangan untuk memilih sebuah hunian. <br />
+              Pilih lokasi terbaik Anda di Argagendhis Residence.
             </p>
             <v-row>
-              <v-col cols="12">
+              <v-col cols="5">
                 <v-row>
-                  <v-col cols="3">
-                    <v-avatar tile size="90" style="align: center">
+                  <v-col cols="4">
+                    <v-avatar tile size="90">
                       <img
                         src="https://img.icons8.com/material/85/00b894/road--v2.png"
                       />
                     </v-avatar>
                   </v-col>
-                  <v-col style="padding-left: 20px">
+                  <v-col>
                     <p class="LocationCaption1">50 m</p>
-                    <p class="LocationCaption3">Dari Jalan Raya</p>
+                    <p class="LocationCaption2">Dari Jalan Raya</p>
                   </v-col>
                 </v-row>
+              </v-col>
+              <v-col>
                 <v-row>
                   <v-col cols="3">
-                    <v-avatar tile size="90" style="align: center">
+                    <v-avatar tile size="90">
                       <img
                         src="https://img.icons8.com/material/85/00b894/hospital-2.png"
                       />
                     </v-avatar>
                   </v-col>
-                  <v-col style="padding-left: 20px">
+                  <v-col>
                     <p class="LocationCaption1">06 Menit</p>
-                    <p class="LocationCaption3">Dari RSUD Ketileng</p>
+                    <p class="LocationCaption2">Dari RSUD Ketileng</p>
                   </v-col>
                 </v-row>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="5">
                 <v-row>
-                  <v-col cols="3">
-                    <v-avatar tile size="90" style="align: center">
+                  <v-col cols="4">
+                    <v-avatar tile size="90">
                       <img
                         src="https://img.icons8.com/material/85/00b894/highway.png"
                       />
                     </v-avatar>
                   </v-col>
-                  <v-col style="padding-left: 20px">
+                  <v-col>
                     <p class="LocationCaption1" style="margin-top: 2px">
                       12 Menit
                     </p>
-                    <p class="LocationCaption3">
+                    <p class="LocationCaption2">
                       Dari pintu masuk<br />
                       Toll Gayamsari
                     </p>
                   </v-col>
                 </v-row>
+              </v-col>
+              <v-col>
                 <v-row>
                   <v-col cols="3">
-                    <v-avatar tile size="90" style="align: center">
+                    <v-avatar tile size="90">
                       <img
                         src="https://img.icons8.com/material/85/00b894/university--v1.png"
                       />
                     </v-avatar>
                   </v-col>
-                  <v-col style="padding-left: 20px">
+                  <v-col>
                     <p class="LocationCaption1" style="margin-top: -5px">
                       04 Menit
                     </p>
-                    <p class="LocationCaption3">Dari UNIMUS</p>
+                    <p class="LocationCaption2">Dari UNIMUS</p>
                     <p class="LocationCaption1" style="margin-top: -15px">
                       16 Menit
                     </p>
-                    <p class="LocationCaption3">Dari UNDIP</p>
+                    <p class="LocationCaption2">Dari UNDIP</p>
                   </v-col>
                 </v-row>
               </v-col>
             </v-row>
           </v-col>
         </v-row>
+      </div>
+    </div>
+    <!-- //////////////////////////////// LOCATION SECTION MOBILE VERSION ////////////////////////////////////////////// -->
+    <div
+      id="location"
+      style="background-color: #f1f2f6; height: "
+      class="hidden-sm-and-up"
+    >
+      <v-container>
+        <div class="reveal">
+          <v-row no-gutters>
+            <v-col cols="12">
+              <iframe
+                width="100%"
+                height="636px"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=argagendhis&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              >
+              </iframe>
+            </v-col>
+            <v-col cols="12">
+              <h1 class="location">Tempat Terdekat</h1>
+              <p class="LocationCaption2" style="margin-top: 2px">
+                Area pribadi dengan aksesibilitas mudah adalah yang utama dan
+                perlu menjadi pertimbangan untuk memilih sebuah hunian. Pilih
+                lokasi terbaik Anda di Argagendhis Residence.
+              </p>
+              <v-row>
+                <v-col cols="12">
+                  <v-row>
+                    <v-col cols="3">
+                      <v-avatar tile size="90" style="align: center">
+                        <img
+                          src="https://img.icons8.com/material/85/00b894/road--v2.png"
+                        />
+                      </v-avatar>
+                    </v-col>
+                    <v-col style="padding-left: 20px">
+                      <p class="LocationCaption1">50 m</p>
+                      <p class="LocationCaption3">Dari Jalan Raya</p>
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col cols="3">
+                      <v-avatar tile size="90" style="align: center">
+                        <img
+                          src="https://img.icons8.com/material/85/00b894/hospital-2.png"
+                        />
+                      </v-avatar>
+                    </v-col>
+                    <v-col style="padding-left: 20px">
+                      <p class="LocationCaption1">06 Menit</p>
+                      <p class="LocationCaption3">Dari RSUD Ketileng</p>
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col cols="3">
+                      <v-avatar tile size="90" style="align: center">
+                        <img
+                          src="https://img.icons8.com/material/85/00b894/highway.png"
+                        />
+                      </v-avatar>
+                    </v-col>
+                    <v-col style="padding-left: 20px">
+                      <p class="LocationCaption1" style="margin-top: 2px">
+                        12 Menit
+                      </p>
+                      <p class="LocationCaption3">
+                        Dari pintu masuk<br />
+                        Toll Gayamsari
+                      </p>
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col cols="3">
+                      <v-avatar tile size="90" style="align: center">
+                        <img
+                          src="https://img.icons8.com/material/85/00b894/university--v1.png"
+                        />
+                      </v-avatar>
+                    </v-col>
+                    <v-col style="padding-left: 20px">
+                      <p class="LocationCaption1" style="margin-top: -5px">
+                        04 Menit
+                      </p>
+                      <p class="LocationCaption3">Dari UNIMUS</p>
+                      <p class="LocationCaption1" style="margin-top: -15px">
+                        16 Menit
+                      </p>
+                      <p class="LocationCaption3">Dari UNDIP</p>
+                    </v-col>
+                  </v-row>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </div>
       </v-container>
     </div>
 
@@ -1038,6 +1029,8 @@ import { Icon } from "@iconify/vue2";
 export default {
   name: "Home",
   mounted: function () {
+    this.reveal();
+    window.addEventListener("scroll", this.reveal);
     this.loading = true;
     let elHtml = document.getElementsByTagName("html")[0];
     elHtml.style.overflowY = "auto";
@@ -1045,6 +1038,7 @@ export default {
       this.loading = false;
     }, 2000);
   },
+
   destroyed: function () {
     let elHtml = document.getElementsByTagName("html")[0];
     elHtml.style.overflowY = null;
@@ -1393,6 +1387,22 @@ export default {
   //   this.initLayers();
   // },
   methods: {
+    reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+    },
+
     overlayfunct(id) {
       for (var i = 0; i < this.progress.length; i++) {
         if (id === this.progress[i].id) {
@@ -1437,7 +1447,7 @@ export default {
 .jumbotron {
   background-image: url("../assets/homepage.jpg");
   background-size: cover;
-  height: 625px;
+  height: 650px;
   width: max;
   align-items: center;
   text-align: right;
@@ -1682,6 +1692,17 @@ export default {
   opacity: 0;
 }
 
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
 /* //////////////////////////////////// RESPONSIVE CSS ///////////////////////////////////////////////////// */
 @media screen and (max-width: 768px) {
   nav ul {

@@ -128,25 +128,111 @@
                     </v-btn>
                   </div>
                 </v-img>
-                <!-- <v-btn
-                  text
-                  flat
-                  href="#locationpart"
-                  v-smooth-scroll="{ duration: 1000, offset: 0 }"
-                >
-                  <h2 class="navbarmenu">Lokasi Kami</h2>
-                </v-btn> -->
               </v-card>
             </v-row>
           </v-sheet>
         </v-carousel-item>
       </v-carousel>
     </div>
-    <div style="height: 800px">
+    <div id="tipeA1a">
       <v-container>
-        <h1 class="tipeBlockA">Tipe A1</h1>
+        <v-row no-gutters>
+          <v-col class="d-flex">
+            <h1 class="tipeMain">Tipe A1 a</h1>
+            <v-spacer></v-spacer>
+            <div class="d-block pa-2" style="margin-top: 5px">
+              <p class="harga">Rp. 1.750.000</p>
+              <v-btn style="margin-top: -20px" color="green" outlined>
+                More Info
+              </v-btn>
+            </div>
+          </v-col>
+        </v-row>
+        <v-row no-gutters style="margin-top: 20px">
+          <p class="fasilitas">Fasilitas:</p>
+        </v-row>
+        <v-row no-gutters style="margin-top: -20px">
+          <v-col v-for="n in fasilitasa1a" :key="n" class="d-flex" cols="4">
+            >
+            <v-avatar tile size="30">
+              <img alt="user" :src="n.img" />
+            </v-avatar>
+            <p
+              class="fasilitasCaption"
+              style="margin-top: 5px; padding-left: 10px"
+            >
+              {{ n.title }}
+            </p>
+          </v-col>
+        </v-row>
+        <v-card style="height: 350px; margin-top: 20px" tile>
+          <v-row no-gutters>
+            <v-col cols="6">
+              <img
+                src="~@/assets/argapuraA1A.png"
+                style="width: 100%; height: 350px"
+              />
+            </v-col>
+            <v-col>
+              <img
+                src="~@/assets/argapura 66 A1.png"
+                style="width: 100%; height: 350px"
+              />
+            </v-col>
+          </v-row>
+        </v-card>
       </v-container>
     </div>
+    <div id="tipeA1a">
+      <v-container>
+        <v-row no-gutters>
+          <v-col class="d-flex">
+            <h1 class="tipeMain">Tipe A1 b</h1>
+            <v-spacer></v-spacer>
+            <div class="d-block pa-2" style="margin-top: 5px">
+              <p class="harga">Rp. 1.750.000</p>
+              <v-btn style="margin-top: -20px" color="green" outlined>
+                More Info
+              </v-btn>
+            </div>
+          </v-col>
+        </v-row>
+        <v-row no-gutters style="margin-top: 20px">
+          <p class="fasilitas">Fasilitas:</p>
+        </v-row>
+        <v-row no-gutters style="margin-top: -20px">
+          <v-col v-for="n in fasilitasa1a" :key="n" class="d-flex" cols="4">
+            >
+            <v-avatar tile size="30">
+              <img alt="user" :src="n.img" />
+            </v-avatar>
+            <p
+              class="fasilitasCaption"
+              style="margin-top: 5px; padding-left: 10px"
+            >
+              {{ n.title }}
+            </p>
+          </v-col>
+        </v-row>
+        <v-card style="height: 350px; margin-top: 20px" tile>
+          <v-row no-gutters>
+            <v-col cols="6">
+              <img
+                src="~@/assets/argapuraA1B.png"
+                style="width: 100%; height: 350px"
+              />
+            </v-col>
+            <v-col>
+              <img
+                src="~@/assets/argapura 66 A1.png"
+                style="width: 100%; height: 350px"
+              />
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-container>
+    </div>
+
     <div id="footer">
       <v-container>
         <v-row>
@@ -255,6 +341,37 @@ export default {
       slideGroup: 0,
       length: 6,
       onboarding: 0,
+      fasilitasa1a: [
+        {
+          title: "1 Ruang Tidur",
+          img: "https://img.icons8.com/material/96/000000/bedroom.png",
+        },
+        {
+          title: "1 Ruang Tamu",
+          img: "https://img.icons8.com/material/96/000000/living-room.png",
+        },
+        {
+          title: "1 Ruang Makan",
+          img: "https://img.icons8.com/material/96/000000/dining-room.png",
+        },
+        {
+          title: "1 Kamar Mandi",
+          img: "https://img.icons8.com/material/96/000000/shower.png",
+        },
+        {
+          title: "1 Garasi Mobil",
+          img: "https://img.icons8.com/material/96/000000/garage.png",
+        },
+        {
+          title: "1 Dapur",
+          img: "https://img.icons8.com/material/96/000000/kitchen.png",
+        },
+        {
+          title: "Taman",
+          img: "https://img.icons8.com/material/96/000000/house-with-a-garden.png",
+        },
+      ],
+
       icons: [
         {
           keterangan: "Tipe A1 a",
@@ -459,6 +576,31 @@ export default {
   font-size: 75px;
 }
 
+.tipeMain {
+  font-family: poppinssemibold;
+  color: black;
+  font-size: 55px;
+  text-align: left;
+}
+.harga {
+  font-family: poppinslight;
+  color: black;
+  font-size: 25px;
+  margin-top: -10px;
+  text-align: left;
+}
+.fasilitas {
+  font-family: poppinssemibold;
+  color: black;
+  font-size: 35px;
+  text-align: left;
+}
+.fasilitasCaption {
+  font-family: poppinslight;
+  color: black;
+  font-size: 14px;
+  text-align: left;
+}
 #btnViewMore {
   margin: 0;
   position: absolute;
@@ -471,6 +613,11 @@ export default {
 #footer {
   height: auto !important;
   background-color: black;
+}
+
+#tipeA1a {
+  height: auto !important;
+  min-height: 800px;
 }
 
 .fade-enter-active,
