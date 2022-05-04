@@ -60,12 +60,12 @@ const router = new VueRouter({
             component: importComponent('TodoList/blockC'),
         },
     ],
-    scrollBehavior(to, from, savedPosition) {
-        if (savedPosition) {
-            return savedPosition;
-          } else {
+    scrollBehavior(to, from, href) {
+        if (href) {
+            return href;
+        } else {
             return { x: 0, y: 0 };
-          }
+        }
     }
 });
 

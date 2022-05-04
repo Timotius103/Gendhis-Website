@@ -48,13 +48,13 @@
                 active-class="deep-purple--text text--accent-4"
               >
                 <v-list-item
-                  href="#feature"
+                  href="#featurePart"
                   v-smooth-scroll="{ duration: 1000, offset: 2 }"
                 >
                   <v-list-item-title>Fitur</v-list-item-title>
                 </v-list-item>
                 <v-list-item
-                  href="#specification"
+                  href="#specificationPart"
                   v-smooth-scroll="{ duration: 1000, offset: 2 }"
                 >
                   <v-list-item-title>Spesifikasi</v-list-item-title>
@@ -96,7 +96,7 @@
                 </v-list-item>
 
                 <v-list-item
-                  href="#availability"
+                  href="#availabilityPart"
                   v-smooth-scroll="{ duration: 1000, offset: 2 }"
                 >
                   <v-list-item-title>Daftar Harga</v-list-item-title>
@@ -107,7 +107,7 @@
           <v-btn
             text
             flat
-            href="#locationpart"
+            href="#locationPart"
             v-smooth-scroll="{ duration: 1000, offset: 0 }"
           >
             <h2 class="navbarmenu">Lokasi Kami</h2>
@@ -234,77 +234,184 @@
     <!-- ////////////////////// FEATURE SPESIFACTION SECTION //////////////////////////////////////////////////// -->
     <v-parallax :src="require('@/assets/pharalax4.png')" style="height: 250px">
       <v-container>
-        <h1 class="featureSpecificationPart">Fitur & Spesifikasi</h1>
+        <div class="reveal">
+          <h1 class="featureSpecificationPart">Fitur & Spesifikasi</h1>
+        </div>
       </v-container>
     </v-parallax>
     <!-- <button @click="show = !show">Toggle Slide + Fade</button>
     <Transition name="slide-fade">
       <p v-if="show">hello</p>
     </Transition> -->
-    <div id="feature" class="hidden-sm-and-down reveal">
-      <v-container>
-        <h1 class="feature">Mengapa Argagendhis?</h1>
-      </v-container>
-      <v-container>
-        <v-row>
-          <v-col cols="3">
-            <v-row justify="center">
-              <v-avatar tile size="90" style="align: center; margin-top: 45px">
+    <div id="featurePart">
+      <div id="featuremb" class="hidden-sm-and-down reveal">
+        <v-container>
+          <h1 class="feature">Mengapa Argagendhis?</h1>
+        </v-container>
+        <v-container>
+          <v-row>
+            <v-col cols="3">
+              <v-row justify="center">
+                <v-avatar
+                  tile
+                  size="90"
+                  style="align: center; margin-top: 45px"
+                >
+                  <img
+                    alt="user"
+                    src="https://img.icons8.com/material/96/26e07f/lightning-bolt--v1.png"
+                  />
+                </v-avatar>
+              </v-row>
+              <v-row justify="center" style="margin-top: 30px">
+                <h1 class="featureCaption">Listrik 2200 Watt</h1>
+                <p class="featureCaption2">
+                  2200 Watt daya listrik dengan sistem kelistrikan<br />
+                  bawah tanah yang terjamin keamanannya
+                </p>
+              </v-row>
+              <!-- <v-card-title> Top western road trips </v-card-title>
+            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
+            </v-col>
+            <v-col cols="3">
+              <v-row justify="center">
+                <v-avatar
+                  tile
+                  size="90"
+                  style="align: center; margin-top: 45px"
+                >
+                  <img
+                    src="https://img.icons8.com/ios-glyphs/96/26e07f/last-24-hours.png"
+                  />
+                </v-avatar>
+              </v-row>
+              <v-row justify="center" style="margin-top: 30px">
+                <h1 class="featureCaption">Keamanan 24 Jam</h1>
+                <p class="featureCaption2">
+                  Kami menjamin keamanan 24 jam non stop <br />
+                  dengan petugas keamanan terlatih dan terverifikasi.
+                </p>
+              </v-row>
+              <!-- <v-card-title> Top western road trips </v-card-title>
+            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
+            </v-col>
+            <v-col cols="3">
+              <v-row justify="center">
+                <v-avatar
+                  tile
+                  size="90"
+                  style="align: center; margin-top: 45px"
+                >
+                  <img
+                    src="https://img.icons8.com/material/96/26e07f/tollbooth.png"
+                  />
+                </v-avatar>
+              </v-row>
+              <v-row justify="center" style="margin-top: 30px">
+                <h1 class="featureCaption">One Gate System</h1>
+                <p class="featureCaption2">
+                  Tidak memiliki akses keluar masuk lain selain pintu utama<br />
+                  Dengan demikian tidak ada celah untuk pelaku kejahatan.
+                </p>
+              </v-row>
+              <!-- <v-card-title> Top western road trips </v-card-title>
+            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
+            </v-col>
+            <v-col cols="3">
+              <v-row justify="center">
+                <v-avatar
+                  tile
+                  size="90"
+                  style="align: center; margin-top: 45px"
+                >
+                  <div
+                    v-animate-onscroll="{
+                      down: 'animated flip',
+                      up: 'animated rotateOut',
+                    }"
+                  >
+                    <img
+                      src="https://img.icons8.com/material/96/26e07f/water-tap-.png"
+                    />
+                  </div>
+                </v-avatar>
+              </v-row>
+              <v-row justify="center" style="margin-top: 30px">
+                <h1 class="featureCaption">PDAM atau Artetis</h1>
+                <p class="featureCaption2">
+                  Tersedianya air PAM atau Sumur untuk menjamin <br />
+                  ketersediaan air bersih.
+                </p>
+              </v-row>
+              <!-- <v-card-title> Top western road trips </v-card-title>
+            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
+    </div>
+
+    <!-- //////////////////// VERSI MOBILE FITUR ////////////////////////////////// -->
+    <div id="featurePart">
+      <div id="featuremb" class="hidden-sm-and-up reveal">
+        <v-container>
+          <h1 class="feature">Mengapa Argagendhis?</h1>
+        </v-container>
+        <v-container>
+          <v-row>
+            <v-col cols="3">
+              <v-avatar tile size="90" style="align: center">
                 <img
                   alt="user"
                   src="https://img.icons8.com/material/96/26e07f/lightning-bolt--v1.png"
                 />
               </v-avatar>
-            </v-row>
-            <v-row justify="center" style="margin-top: 30px">
+            </v-col>
+            <v-col justify="left">
               <h1 class="featureCaption">Listrik 2200 Watt</h1>
               <p class="featureCaption2">
                 2200 Watt daya listrik dengan sistem kelistrikan<br />
                 bawah tanah yang terjamin keamanannya
               </p>
-            </v-row>
-            <!-- <v-card-title> Top western road trips </v-card-title>
+            </v-col>
+            <!--<v-card-title> Top western road trips </v-card-title>
             <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
-          </v-col>
-          <v-col cols="3">
-            <v-row justify="center">
-              <v-avatar tile size="90" style="align: center; margin-top: 45px">
+          </v-row>
+          <v-row>
+            <v-col cols="3">
+              <v-avatar tile size="90" style="align: center">
                 <img
                   src="https://img.icons8.com/ios-glyphs/96/26e07f/last-24-hours.png"
                 />
               </v-avatar>
-            </v-row>
-            <v-row justify="center" style="margin-top: 30px">
+            </v-col>
+            <v-col justify="left">
               <h1 class="featureCaption">Keamanan 24 Jam</h1>
               <p class="featureCaption2">
                 Kami menjamin keamanan 24 jam non stop <br />
                 dengan petugas keamanan terlatih dan terverifikasi.
               </p>
-            </v-row>
-            <!-- <v-card-title> Top western road trips </v-card-title>
-            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
-          </v-col>
-          <v-col cols="3">
-            <v-row justify="center">
-              <v-avatar tile size="90" style="align: center; margin-top: 45px">
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="3">
+              <v-avatar tile size="90" style="align: center">
                 <img
                   src="https://img.icons8.com/material/96/26e07f/tollbooth.png"
                 />
               </v-avatar>
-            </v-row>
-            <v-row justify="center" style="margin-top: 30px">
+            </v-col>
+            <v-col justify="left">
               <h1 class="featureCaption">One Gate System</h1>
               <p class="featureCaption2">
-                Tidak memiliki akses keluar masuk lain selain pintu utama<br />
-                Dengan demikian tidak ada celah untuk pelaku kejahatan.
+                Tidak memiliki akses keluar masuk lain selain pintu utama Dengan
+                demikian tidak ada celah untuk pelaku kejahatan.
               </p>
-            </v-row>
-            <!-- <v-card-title> Top western road trips </v-card-title>
-            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
-          </v-col>
-          <v-col cols="3">
-            <v-row justify="center">
-              <v-avatar tile size="90" style="align: center; margin-top: 45px">
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="3">
+              <v-avatar tile size="90" style="align: center">
                 <div
                   v-animate-onscroll="{
                     down: 'animated flip',
@@ -316,243 +423,115 @@
                   />
                 </div>
               </v-avatar>
-            </v-row>
-            <v-row justify="center" style="margin-top: 30px">
+            </v-col>
+            <v-col justify="center">
               <h1 class="featureCaption">PDAM atau Artetis</h1>
               <p class="featureCaption2">
                 Tersedianya air PAM atau Sumur untuk menjamin <br />
                 ketersediaan air bersih.
               </p>
-            </v-row>
-            <!-- <v-card-title> Top western road trips </v-card-title>
+              <!-- <v-card-title> Top western road trips </v-card-title>
             <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
-          </v-col>
-        </v-row>
-      </v-container>
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
     </div>
 
     <!-- //////////////////// VERSI MOBILE FITUR ////////////////////////////////// -->
-    <div id="featuremb" class="hidden-sm-and-up reveal">
-      <v-container>
-        <h1 class="feature">Mengapa Argagendhis?</h1>
-      </v-container>
-      <v-container>
-        <v-row>
-          <v-col cols="3">
-            <v-avatar tile size="90" style="align: center">
-              <img
-                alt="user"
-                src="https://img.icons8.com/material/96/26e07f/lightning-bolt--v1.png"
-              />
-            </v-avatar>
-          </v-col>
-          <v-col justify="left">
-            <h1 class="featureCaption">Listrik 2200 Watt</h1>
-            <p class="featureCaption2">
-              2200 Watt daya listrik dengan sistem kelistrikan<br />
-              bawah tanah yang terjamin keamanannya
-            </p>
-          </v-col>
-          <!--<v-card-title> Top western road trips </v-card-title>
-            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
-        </v-row>
-        <v-row>
-          <v-col cols="3">
-            <v-avatar tile size="90" style="align: center">
-              <img
-                src="https://img.icons8.com/ios-glyphs/96/26e07f/last-24-hours.png"
-              />
-            </v-avatar>
-          </v-col>
-          <v-col justify="left">
-            <h1 class="featureCaption">Keamanan 24 Jam</h1>
-            <p class="featureCaption2">
-              Kami menjamin keamanan 24 jam non stop <br />
-              dengan petugas keamanan terlatih dan terverifikasi.
-            </p>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col cols="3">
-            <v-avatar tile size="90" style="align: center">
-              <img
-                src="https://img.icons8.com/material/96/26e07f/tollbooth.png"
-              />
-            </v-avatar>
-          </v-col>
-          <v-col justify="left">
-            <h1 class="featureCaption">One Gate System</h1>
-            <p class="featureCaption2">
-              Tidak memiliki akses keluar masuk lain selain pintu utama Dengan
-              demikian tidak ada celah untuk pelaku kejahatan.
-            </p>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col cols="3">
-            <v-avatar tile size="90" style="align: center">
-              <div
-                v-animate-onscroll="{
-                  down: 'animated flip',
-                  up: 'animated rotateOut',
-                }"
-              >
-                <img
-                  src="https://img.icons8.com/material/96/26e07f/water-tap-.png"
-                />
-              </div>
-            </v-avatar>
-          </v-col>
-          <v-col justify="center">
-            <h1 class="featureCaption">PDAM atau Artetis</h1>
-            <p class="featureCaption2">
-              Tersedianya air PAM atau Sumur untuk menjamin <br />
-              ketersediaan air bersih.
-            </p>
-            <!-- <v-card-title> Top western road trips </v-card-title>
-            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
-          </v-col>
-        </v-row>
-      </v-container>
-    </div>
-    <!-- //////////////////// VERSI MOBILE FITUR ////////////////////////////////// -->
-    <div id="specification" class="hidden-sm-and-down reveal">
-      <v-container>
-        <v-row>
-          <v-col cols="6" style="margin-top: 130px">
-            <h1 class="spesifikasi">Spesifikasi</h1>
-            <p class="LocationCaption2" style="margin-top: 10px">
-              Pemilihan kombinasi bahan menjadi sangat penting <br />
-              dalam pembangunan setiap unit karena kemegahan <br />
-              dan kenyamanan merupakan piont penting dalam sebuah desain.
-            </p>
-          </v-col>
-          <v-col cols="6">
-            <v-simple-table>
-              <template v-slot:default>
-                <thead>
-                  <tr>
-                    <th class="text-center">Nama</th>
-                    <th class="text-center">Keterangan</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="item in bahan" :key="item.name">
-                    <td class="text-left">{{ item.name }}</td>
-                    <td class="text-left">{{ item.detail }}</td>
-                  </tr>
-                </tbody>
-              </template>
-            </v-simple-table>
-          </v-col>
-        </v-row>
-      </v-container>
+    <div id="specificationPart">
+      <div id="specification" class="hidden-sm-and-down reveal">
+        <v-container>
+          <v-row>
+            <v-col cols="6" style="margin-top: 130px">
+              <h1 class="spesifikasi">Spesifikasi</h1>
+              <p class="LocationCaption2" style="margin-top: 10px">
+                Pemilihan kombinasi bahan menjadi sangat penting <br />
+                dalam pembangunan setiap unit karena kemegahan <br />
+                dan kenyamanan merupakan piont penting dalam sebuah desain.
+              </p>
+            </v-col>
+            <v-col cols="6">
+              <v-simple-table>
+                <template v-slot:default>
+                  <thead>
+                    <tr>
+                      <th class="text-center">Nama</th>
+                      <th class="text-center">Keterangan</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="item in bahan" :key="item.name">
+                      <td class="text-left">{{ item.name }}</td>
+                      <td class="text-left">{{ item.detail }}</td>
+                    </tr>
+                  </tbody>
+                </template>
+              </v-simple-table>
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
     </div>
 
     <!-- ////////////////////////////// SPESIFICATION MOBILE VERSION //////////////////////////////////////////////////////// -->
-    <div id="specificationmb" class="hidden-sm-and-up reveal">
-      <v-container>
-        <v-row>
-          <v-col cols="12" style="margin-top: 20px">
-            <h1 class="spesifikasi">Spesifikasi</h1>
-            <p class="spesifikasiCaption" style="margin-top: 10px">
-              Pemilihan kombinasi bahan menjadi sangat penting dalam pembangunan
-              setiap unit karena kemegahan dan kenyamanan merupakan piont
-              penting dalam sebuah desain.
-            </p>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col cols="12">
-            <v-simple-table>
-              <template v-slot:default>
-                <thead>
-                  <tr>
-                    <th class="text-center">Nama</th>
-                    <th class="text-center">Keterangan</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="item in bahan" :key="item.name">
-                    <td class="text-left">{{ item.name }}</td>
-                    <td class="text-left">{{ item.detail }}</td>
-                  </tr>
-                </tbody>
-              </template>
-            </v-simple-table>
-          </v-col>
-        </v-row>
-      </v-container>
+    <div id="specificationPart">
+      <div id="specification" class="hidden-sm-and-up reveal">
+        <v-container>
+          <v-row>
+            <v-col cols="12" style="margin-top: 20px">
+              <h1 class="spesifikasi">Spesifikasi</h1>
+              <p class="spesifikasiCaption" style="margin-top: 10px">
+                Pemilihan kombinasi bahan menjadi sangat penting dalam
+                pembangunan setiap unit karena kemegahan dan kenyamanan
+                merupakan piont penting dalam sebuah desain.
+              </p>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="12">
+              <v-simple-table>
+                <template v-slot:default>
+                  <thead>
+                    <tr>
+                      <th class="text-center">Nama</th>
+                      <th class="text-center">Keterangan</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="item in bahan" :key="item.name">
+                      <td class="text-left">{{ item.name }}</td>
+                      <td class="text-left">{{ item.detail }}</td>
+                    </tr>
+                  </tbody>
+                </template>
+              </v-simple-table>
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
     </div>
 
     <!--//////////////////////////////////////// PRODUK ////////////////////////////////////////////////////// -->
     <v-parallax :src="require('@/assets/pharalax2.jpg')" style="height: 350px">
       <v-container>
-        <h1 class="produk1" style="margin-top: 100px">Produk</h1>
-        <h1 class="produk2" style="margin-top: -25px">Kami</h1>
-      </v-container>
-    </v-parallax>
-    <div id="product" class="hidden-sm-and-down">
-      <v-container>
-        <div id="salessection" ref="section2" class="reveal">
-          <v-row no-gutters style="padding-top: 45px">
-            <v-col v-for="imgMap in mapImg" :key="imgMap" cols="7">
-              <v-img :src="imgMap.src" style="width: 650px; height: 550px">
-              </v-img>
-            </v-col>
-            <v-col cols="4">
-              <v-row>
-                <v-col>
-                  <h1 class="listpropertiSection">List</h1>
-                  <h1 class="listpropertiSection" style="margin-top: -20px">
-                    Properti
-                  </h1>
-                  <v-row>
-                    <v-col
-                      v-for="allblock in block"
-                      :key="allblock.title"
-                      cols="8"
-                    >
-                      <v-row>
-                        <v-col cols="4">
-                          <img :src="allblock.pict" />
-                        </v-col>
-                        <v-col>
-                          <p class="LocationCaption1" style="margin-top: -2px">
-                            {{ allblock.title }}
-                          </p>
-                          <v-btn
-                            style="margin-top: -20px"
-                            color="green"
-                            router
-                            :to="allblock.to"
-                            outlined
-                          >
-                            View More
-                          </v-btn>
-                        </v-col>
-                      </v-row>
-                    </v-col>
-                  </v-row>
-                </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
+        <div class="reveal">
+          <h1 class="produk1" style="margin-top: 100px">Produk</h1>
+          <h1 class="produk2" style="margin-top: -25px">Kami</h1>
         </div>
       </v-container>
-    </div>
-
-    <div id="product" class="hidden-sm-and-up">
-      <v-container>
-        <div class="selessectionmobile reveal" id="salessection" ref="section2">
-          <v-row no-gutters>
-            <v-col v-for="imgMap in mapImg" :key="imgMap" cols="12">
-              <v-img :src="imgMap.src" style="width: 650px; height: 450px">
-              </v-img>
-            </v-col>
-            <v-col cols="12">
-              <v-container>
-                <v-row no-gutters>
+    </v-parallax>
+    <div id="productPart">
+      <div id="product" class="hidden-sm-and-down">
+        <v-container>
+          <div id="salessection" ref="section2" class="reveal">
+            <v-row no-gutters style="padding-top: 45px">
+              <v-col v-for="imgMap in mapImg" :key="imgMap" cols="7">
+                <v-img :src="imgMap.src" style="width: 650px; height: 550px">
+                </v-img>
+              </v-col>
+              <v-col cols="4">
+                <v-row>
                   <v-col>
                     <h1 class="listpropertiSection">List</h1>
                     <h1 class="listpropertiSection" style="margin-top: -20px">
@@ -562,13 +541,13 @@
                       <v-col
                         v-for="allblock in block"
                         :key="allblock.title"
-                        cols="12"
+                        cols="8"
                       >
                         <v-row>
-                          <v-col cols="3">
+                          <v-col cols="4">
                             <img :src="allblock.pict" />
                           </v-col>
-                          <v-col style="padding-left: 20px">
+                          <v-col>
                             <p
                               class="LocationCaption1"
                               style="margin-top: -2px"
@@ -590,11 +569,72 @@
                     </v-row>
                   </v-col>
                 </v-row>
-              </v-container>
-            </v-col>
-          </v-row>
-        </div>
-      </v-container>
+              </v-col>
+            </v-row>
+          </div>
+        </v-container>
+      </div>
+    </div>
+
+    <div id="productPart">
+      <div id="product" class="hidden-sm-and-up">
+        <v-container>
+          <div
+            class="selessectionmobile reveal"
+            id="salessection"
+            ref="section2"
+          >
+            <v-row no-gutters>
+              <v-col v-for="imgMap in mapImg" :key="imgMap" cols="12">
+                <v-img :src="imgMap.src" style="width: 650px; height: 450px">
+                </v-img>
+              </v-col>
+              <v-col cols="12">
+                <v-container>
+                  <v-row no-gutters>
+                    <v-col>
+                      <h1 class="listpropertiSection">List</h1>
+                      <h1 class="listpropertiSection" style="margin-top: -20px">
+                        Properti
+                      </h1>
+                      <v-row>
+                        <v-col
+                          v-for="allblock in block"
+                          :key="allblock.title"
+                          cols="12"
+                        >
+                          <v-row>
+                            <v-col cols="3">
+                              <img :src="allblock.pict" />
+                            </v-col>
+                            <v-col style="padding-left: 20px">
+                              <p
+                                class="LocationCaption1"
+                                style="margin-top: -2px"
+                              >
+                                {{ allblock.title }}
+                              </p>
+                              <v-btn
+                                style="margin-top: -20px"
+                                color="green"
+                                router
+                                :to="allblock.to"
+                                outlined
+                              >
+                                View More
+                              </v-btn>
+                            </v-col>
+                          </v-row>
+                        </v-col>
+                      </v-row>
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </v-col>
+            </v-row>
+          </div>
+        </v-container>
+      </div>
     </div>
 
     <!-- /////////////////////////////////// PROGRESS SECTION ////////////////////////////////////////// -->
@@ -604,8 +644,10 @@
       style="height: 350px"
     >
       <v-container>
-        <h1 class="progresspart1">Progress</h1>
-        <h1 class="progresspart2">Kami</h1>
+        <div class="reveal">
+          <h1 class="progresspart1">Progress</h1>
+          <h1 class="progresspart2">Kami</h1>
+        </div>
       </v-container>
     </v-parallax>
     <div style="height: 415px">
@@ -710,32 +752,36 @@
     </div> -->
 
     <!-- ////////////////////////// DAFTAR HARGA ///////////////////////////////////////////////////////// -->
-    <div id="availability" class="reveal">
-      <v-container>
-        <h1 class="pricelist">Daftar Harga</h1>
-        <v-data-table :headers="headers" :items="desserts" :items-per-page="5">
-        </v-data-table>
-      </v-container>
+    <div id="availabilityPart">
+      <div id="availability" class="reveal">
+        <v-container>
+          <h1 class="pricelist">Daftar Harga</h1>
+          <v-data-table
+            :headers="headers"
+            :items="desserts"
+            :items-per-page="5"
+          >
+          </v-data-table>
+        </v-container>
+      </div>
     </div>
 
     <!-- //////////////////////////////////////// LOCATION SECTION /////////////////////////////////////////  -->
-    <v-parallax
-      id="locationpart"
-      :src="require('@/assets/pharalax.jpg')"
-      style="height: 425px"
-    >
+    <v-parallax :src="require('@/assets/pharalax.jpg')" style="height: 425px">
       <v-container>
-        <h1 class="locationPart">Lokasi</h1>
-        <h1 class="locationPart2">Kami</h1>
+        <div class="reveal">
+          <h1 class="locationPart">Lokasi</h1>
+          <h1 class="locationPart2">Kami</h1>
+        </div>
       </v-container>
     </v-parallax>
 
-    <div
-      id="location"
-      style="background-color: #f1f2f6; height: "
-      class="hidden-sm-and-down"
-    >
-      <div class="reveal">
+    <div id="locationPart">
+      <div
+        id="location"
+        style="background-color: #f1f2f6; height: "
+        class="hidden-sm-and-down"
+      >
         <v-row no-gutters>
           <v-col cols="6">
             <iframe
@@ -750,99 +796,104 @@
             </iframe>
           </v-col>
           <v-col cols="6" style="padding-left: 25px">
-            <h1 class="location" style="margin-top: 100px">Tempat Terdekat</h1>
-            <p class="LocationCaption2" style="margin-top: 2px">
-              Area pribadi dengan aksesibilitas mudah adalah yang utama <br />
-              dan perlu menjadi pertimbangan untuk memilih sebuah hunian. <br />
-              Pilih lokasi terbaik Anda di Argagendhis Residence.
-            </p>
-            <v-row>
-              <v-col cols="5">
-                <v-row>
-                  <v-col cols="4">
-                    <v-avatar tile size="90">
-                      <img
-                        src="https://img.icons8.com/material/85/00b894/road--v2.png"
-                      />
-                    </v-avatar>
-                  </v-col>
-                  <v-col>
-                    <p class="LocationCaption1">50 m</p>
-                    <p class="LocationCaption2">Dari Jalan Raya</p>
-                  </v-col>
-                </v-row>
-              </v-col>
-              <v-col>
-                <v-row>
-                  <v-col cols="3">
-                    <v-avatar tile size="90">
-                      <img
-                        src="https://img.icons8.com/material/85/00b894/hospital-2.png"
-                      />
-                    </v-avatar>
-                  </v-col>
-                  <v-col>
-                    <p class="LocationCaption1">06 Menit</p>
-                    <p class="LocationCaption2">Dari RSUD Ketileng</p>
-                  </v-col>
-                </v-row>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="5">
-                <v-row>
-                  <v-col cols="4">
-                    <v-avatar tile size="90">
-                      <img
-                        src="https://img.icons8.com/material/85/00b894/highway.png"
-                      />
-                    </v-avatar>
-                  </v-col>
-                  <v-col>
-                    <p class="LocationCaption1" style="margin-top: 2px">
-                      12 Menit
-                    </p>
-                    <p class="LocationCaption2">
-                      Dari pintu masuk<br />
-                      Toll Gayamsari
-                    </p>
-                  </v-col>
-                </v-row>
-              </v-col>
-              <v-col>
-                <v-row>
-                  <v-col cols="3">
-                    <v-avatar tile size="90">
-                      <img
-                        src="https://img.icons8.com/material/85/00b894/university--v1.png"
-                      />
-                    </v-avatar>
-                  </v-col>
-                  <v-col>
-                    <p class="LocationCaption1" style="margin-top: -5px">
-                      04 Menit
-                    </p>
-                    <p class="LocationCaption2">Dari UNIMUS</p>
-                    <p class="LocationCaption1" style="margin-top: -15px">
-                      16 Menit
-                    </p>
-                    <p class="LocationCaption2">Dari UNDIP</p>
-                  </v-col>
-                </v-row>
-              </v-col>
-            </v-row>
+            <div class="reveal">
+              <h1 class="location" style="margin-top: 100px">
+                Tempat Terdekat
+              </h1>
+              <p class="LocationCaption2" style="margin-top: 2px">
+                Area pribadi dengan aksesibilitas mudah adalah yang utama <br />
+                dan perlu menjadi pertimbangan untuk memilih sebuah hunian.
+                <br />
+                Pilih lokasi terbaik Anda di Argagendhis Residence.
+              </p>
+              <v-row>
+                <v-col cols="5">
+                  <v-row>
+                    <v-col cols="4">
+                      <v-avatar tile size="90">
+                        <img
+                          src="https://img.icons8.com/material/85/00b894/road--v2.png"
+                        />
+                      </v-avatar>
+                    </v-col>
+                    <v-col>
+                      <p class="LocationCaption1">50 m</p>
+                      <p class="LocationCaption2">Dari Jalan Raya</p>
+                    </v-col>
+                  </v-row>
+                </v-col>
+                <v-col>
+                  <v-row>
+                    <v-col cols="3">
+                      <v-avatar tile size="90">
+                        <img
+                          src="https://img.icons8.com/material/85/00b894/hospital-2.png"
+                        />
+                      </v-avatar>
+                    </v-col>
+                    <v-col>
+                      <p class="LocationCaption1">06 Menit</p>
+                      <p class="LocationCaption2">Dari RSUD Ketileng</p>
+                    </v-col>
+                  </v-row>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="5">
+                  <v-row>
+                    <v-col cols="4">
+                      <v-avatar tile size="90">
+                        <img
+                          src="https://img.icons8.com/material/85/00b894/highway.png"
+                        />
+                      </v-avatar>
+                    </v-col>
+                    <v-col>
+                      <p class="LocationCaption1" style="margin-top: 2px">
+                        12 Menit
+                      </p>
+                      <p class="LocationCaption2">
+                        Dari pintu masuk<br />
+                        Toll Gayamsari
+                      </p>
+                    </v-col>
+                  </v-row>
+                </v-col>
+                <v-col>
+                  <v-row>
+                    <v-col cols="3">
+                      <v-avatar tile size="90">
+                        <img
+                          src="https://img.icons8.com/material/85/00b894/university--v1.png"
+                        />
+                      </v-avatar>
+                    </v-col>
+                    <v-col>
+                      <p class="LocationCaption1" style="margin-top: -5px">
+                        04 Menit
+                      </p>
+                      <p class="LocationCaption2">Dari UNIMUS</p>
+                      <p class="LocationCaption1" style="margin-top: -15px">
+                        16 Menit
+                      </p>
+                      <p class="LocationCaption2">Dari UNDIP</p>
+                    </v-col>
+                  </v-row>
+                </v-col>
+              </v-row>
+            </div>
           </v-col>
         </v-row>
       </div>
     </div>
     <!-- //////////////////////////////// LOCATION SECTION MOBILE VERSION ////////////////////////////////////////////// -->
-    <div
-      id="location"
-      style="background-color: #f1f2f6; height: "
-      class="hidden-sm-and-up"
-    >
-      <v-container>
-        <div class="reveal">
+    <div id="locationPart">
+      <div
+        id="location"
+        style="background-color: #f1f2f6; height: "
+        class="hidden-sm-and-up"
+      >
+        <v-container>
           <v-row no-gutters>
             <v-col cols="12">
               <iframe
@@ -856,84 +907,86 @@
               >
               </iframe>
             </v-col>
-            <v-col cols="12">
-              <h1 class="location">Tempat Terdekat</h1>
-              <p class="LocationCaption2" style="margin-top: 2px">
-                Area pribadi dengan aksesibilitas mudah adalah yang utama dan
-                perlu menjadi pertimbangan untuk memilih sebuah hunian. Pilih
-                lokasi terbaik Anda di Argagendhis Residence.
-              </p>
-              <v-row>
-                <v-col cols="12">
-                  <v-row>
-                    <v-col cols="3">
-                      <v-avatar tile size="90" style="align: center">
-                        <img
-                          src="https://img.icons8.com/material/85/00b894/road--v2.png"
-                        />
-                      </v-avatar>
-                    </v-col>
-                    <v-col style="padding-left: 20px">
-                      <p class="LocationCaption1">50 m</p>
-                      <p class="LocationCaption3">Dari Jalan Raya</p>
-                    </v-col>
-                  </v-row>
-                  <v-row>
-                    <v-col cols="3">
-                      <v-avatar tile size="90" style="align: center">
-                        <img
-                          src="https://img.icons8.com/material/85/00b894/hospital-2.png"
-                        />
-                      </v-avatar>
-                    </v-col>
-                    <v-col style="padding-left: 20px">
-                      <p class="LocationCaption1">06 Menit</p>
-                      <p class="LocationCaption3">Dari RSUD Ketileng</p>
-                    </v-col>
-                  </v-row>
-                  <v-row>
-                    <v-col cols="3">
-                      <v-avatar tile size="90" style="align: center">
-                        <img
-                          src="https://img.icons8.com/material/85/00b894/highway.png"
-                        />
-                      </v-avatar>
-                    </v-col>
-                    <v-col style="padding-left: 20px">
-                      <p class="LocationCaption1" style="margin-top: 2px">
-                        12 Menit
-                      </p>
-                      <p class="LocationCaption3">
-                        Dari pintu masuk<br />
-                        Toll Gayamsari
-                      </p>
-                    </v-col>
-                  </v-row>
-                  <v-row>
-                    <v-col cols="3">
-                      <v-avatar tile size="90" style="align: center">
-                        <img
-                          src="https://img.icons8.com/material/85/00b894/university--v1.png"
-                        />
-                      </v-avatar>
-                    </v-col>
-                    <v-col style="padding-left: 20px">
-                      <p class="LocationCaption1" style="margin-top: -5px">
-                        04 Menit
-                      </p>
-                      <p class="LocationCaption3">Dari UNIMUS</p>
-                      <p class="LocationCaption1" style="margin-top: -15px">
-                        16 Menit
-                      </p>
-                      <p class="LocationCaption3">Dari UNDIP</p>
-                    </v-col>
-                  </v-row>
-                </v-col>
-              </v-row>
-            </v-col>
+            <div class="reveal">
+              <v-col cols="12">
+                <h1 class="location">Tempat Terdekat</h1>
+                <p class="LocationCaption2" style="margin-top: 2px">
+                  Area pribadi dengan aksesibilitas mudah adalah yang utama dan
+                  perlu menjadi pertimbangan untuk memilih sebuah hunian. Pilih
+                  lokasi terbaik Anda di Argagendhis Residence.
+                </p>
+                <v-row>
+                  <v-col cols="12">
+                    <v-row>
+                      <v-col cols="3">
+                        <v-avatar tile size="90" style="align: center">
+                          <img
+                            src="https://img.icons8.com/material/85/00b894/road--v2.png"
+                          />
+                        </v-avatar>
+                      </v-col>
+                      <v-col style="padding-left: 20px">
+                        <p class="LocationCaption1">50 m</p>
+                        <p class="LocationCaption3">Dari Jalan Raya</p>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="3">
+                        <v-avatar tile size="90" style="align: center">
+                          <img
+                            src="https://img.icons8.com/material/85/00b894/hospital-2.png"
+                          />
+                        </v-avatar>
+                      </v-col>
+                      <v-col style="padding-left: 20px">
+                        <p class="LocationCaption1">06 Menit</p>
+                        <p class="LocationCaption3">Dari RSUD Ketileng</p>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="3">
+                        <v-avatar tile size="90" style="align: center">
+                          <img
+                            src="https://img.icons8.com/material/85/00b894/highway.png"
+                          />
+                        </v-avatar>
+                      </v-col>
+                      <v-col style="padding-left: 20px">
+                        <p class="LocationCaption1" style="margin-top: 2px">
+                          12 Menit
+                        </p>
+                        <p class="LocationCaption3">
+                          Dari pintu masuk<br />
+                          Toll Gayamsari
+                        </p>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="3">
+                        <v-avatar tile size="90" style="align: center">
+                          <img
+                            src="https://img.icons8.com/material/85/00b894/university--v1.png"
+                          />
+                        </v-avatar>
+                      </v-col>
+                      <v-col style="padding-left: 20px">
+                        <p class="LocationCaption1" style="margin-top: -5px">
+                          04 Menit
+                        </p>
+                        <p class="LocationCaption3">Dari UNIMUS</p>
+                        <p class="LocationCaption1" style="margin-top: -15px">
+                          16 Menit
+                        </p>
+                        <p class="LocationCaption3">Dari UNDIP</p>
+                      </v-col>
+                    </v-row>
+                  </v-col>
+                </v-row>
+              </v-col>
+            </div>
           </v-row>
-        </div>
-      </v-container>
+        </v-container>
+      </div>
     </div>
 
     <!-- /////////////////////////////////////////////// FOOTER SECTION ///////////////////////////////////////// -->
@@ -1025,6 +1078,7 @@
 
 <script>
 // import {onMounted,ref} from "vue"
+
 import { Icon } from "@iconify/vue2";
 export default {
   name: "Home",
@@ -1038,6 +1092,8 @@ export default {
       this.loading = false;
     }, 2000);
   },
+
+  
 
   destroyed: function () {
     let elHtml = document.getElementsByTagName("html")[0];
