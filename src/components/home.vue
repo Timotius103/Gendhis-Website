@@ -143,13 +143,13 @@
                 active-class="deep-purple--text text--accent-4"
               >
                 <v-list-item
-                  href="#featuremb"
+                  href="#featurePart"
                   v-smooth-scroll="{ duration: 1000, offset: 2 }"
                 >
                   <v-list-item-title>Fitur</v-list-item-title>
                 </v-list-item>
                 <v-list-item
-                  href="#specificationmb"
+                  href="#specificationPart"
                   v-smooth-scroll="{ duration: 1000, offset: 2 }"
                 >
                   <v-list-item-title>Spesifikasi</v-list-item-title>
@@ -191,7 +191,7 @@
                 </v-list-item>
 
                 <v-list-item
-                  href="#availability"
+                  href="#availabilityPart"
                   v-smooth-scroll="{ duration: 1000, offset: 2 }"
                 >
                   <v-list-item-title>Daftar Harga</v-list-item-title>
@@ -202,7 +202,7 @@
           <v-btn
             text
             flat
-            href="#locationpart"
+            href="#locationPart"
             v-smooth-scroll="{ duration: 1000, offset: 0 }"
           >
             <h2 class="navbarmenu">Lokasi Kami</h2>
