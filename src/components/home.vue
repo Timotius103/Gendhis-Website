@@ -108,7 +108,7 @@
             text
             flat
             href="#locationPart"
-            v-smooth-scroll="{ duration: 1000, offset: 0 }"
+            v-smooth-scroll="{ duration: 1000, offset: 2 }"
           >
             <h2 class="navbarmenu">Lokasi Kami</h2>
           </v-btn>
@@ -116,7 +116,7 @@
             text
             flat
             href="#footer"
-            v-smooth-scroll="{ duration: 1000, offset: 0 }"
+            v-smooth-scroll="{ duration: 1000, offset: 2 }"
           >
             <h2 class="navbarmenu">Kontak</h2>
           </v-btn>

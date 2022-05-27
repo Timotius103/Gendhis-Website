@@ -60,13 +60,23 @@ const router = new VueRouter({
             component: importComponent('TodoList/blockC'),
         },
     ],
-    scrollBehavior(to, from, href) {
-        if (href) {
-            return href;
-        } else {
-            return { x: 0, y: 0 };
+    // scrollBehavior(to, from, saveposition) {
+    //     if (saveposition) {
+    //         return saveposition;
+    //     } else {
+    //         return { x: 0, y: 0 };
+    //     }
+    // }
+    scrollBehavior(to) {
+        
+        if (to.hash) {
+          return {
+            el: to.hash,
+            behavior: 'smooth',
+          }
         }
-    }
+        return { x:0, y:0};
+      }
 });
 
 export default router;

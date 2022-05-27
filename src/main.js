@@ -12,6 +12,8 @@ import { Icon } from '@iconify/vue2';
 Vue.config.productionTip = false
 Vue.component('icon', Icon);
 
+
+
 new Vue({
   vuetify,
   router,
