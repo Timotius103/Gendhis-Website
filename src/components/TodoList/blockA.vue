@@ -29,7 +29,7 @@
           </v-toolbar-title>
         </v-container>
         <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-sm-and-down">
+        <v-toolbar-items class="d-none d-sm-flex">
           <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
               <v-btn flat text v-bind="attrs" v-on="on" router to="/">
@@ -134,20 +134,36 @@
         </v-carousel-item>
       </v-carousel>
     </div>
-    <div id="tipeA1a">
+
+    <div id="tipeSemua">
       <v-container>
-        <v-row no-gutters>
-          <v-col class="d-flex">
-            <h1 class="tipeMain">Tipe A1 a</h1>
-            <v-spacer></v-spacer>
-            <div class="d-block pa-2" style="margin-top: 5px">
-              <p class="harga">Rp. 1.750.000</p>
-              <v-btn style="margin-top: -20px" color="green" outlined>
-                More Info
-              </v-btn>
-            </div>
-          </v-col>
-        </v-row>
+        <div class="d-none d-sm-flex">
+          <v-row no-gutters>
+            <v-col class="d-flex">
+              <h1 class="tipeMain">Tipe A1 a</h1>
+              <v-spacer></v-spacer>
+              <div class="d-block pa-2" style="margin-top: 5px">
+                <p class="harga">Rp. 1.750.000</p>
+                <v-btn style="margin-top: -20px" color="green" outlined>
+                  More Info
+                </v-btn>
+              </div>
+            </v-col>
+          </v-row>
+        </div>
+        <div class="hidden-sm-and-up reveal">
+          <v-row no-gutters>
+            <v-col>
+              <h1 class="tipeMain">Tipe A1 a</h1>
+              <div class="d-block pa-2" style="margin-top: 5px">
+                <p class="harga">Rp. 1.750.000</p>
+                <v-btn style="margin-top: -20px" color="green" outlined>
+                  More Info
+                </v-btn>
+              </div>
+            </v-col>
+          </v-row>
+        </div>
         <v-row no-gutters style="margin-top: 20px">
           <p class="fasilitas">Fasilitas:</p>
         </v-row>
@@ -165,38 +181,73 @@
             </p>
           </v-col>
         </v-row>
-        <v-card style="height: 350px; margin-top: 20px" tile>
+        <div class="d-none d-sm-flex">
+          <v-card style="height: 350px; margin-top: 20px" tile>
+            <v-row no-gutters>
+              <v-col cols="6">
+                <img
+                  src="~@/assets/argapuraA1A.png"
+                  style="width: 100%; height: 350px"
+                />
+              </v-col>
+              <v-col>
+                <img
+                  src="~@/assets/argapura 66 A1.png"
+                  style="width: 100%; height: 350px"
+                />
+              </v-col>
+            </v-row>
+          </v-card>
+        </div>
+        <div class="hidden-sm-and-up reveal">
           <v-row no-gutters>
-            <v-col cols="6">
+            <v-col>
               <img
                 src="~@/assets/argapuraA1A.png"
-                style="width: 100%; height: 350px"
-              />
-            </v-col>
-            <v-col>
-              <img
-                src="~@/assets/argapura 66 A1.png"
-                style="width: 100%; height: 350px"
+                style="width: 100%; height: 250px"
               />
             </v-col>
           </v-row>
-        </v-card>
+          <v-row>
+            <v-col>
+              <img
+                src="~@/assets/argapura 66 A1.png"
+                style="width: 100%; height: 250px"
+              />
+            </v-col>
+          </v-row>
+        </div>
       </v-container>
     </div>
-    <div id="tipeA1a">
+    <div id="tipeSemua">
       <v-container>
-        <v-row no-gutters>
-          <v-col class="d-flex">
-            <h1 class="tipeMain">Tipe A1 b</h1>
-            <v-spacer></v-spacer>
-            <div class="d-block pa-2" style="margin-top: 5px">
-              <p class="harga">Rp. 1.750.000</p>
-              <v-btn style="margin-top: -20px" color="green" outlined>
-                More Info
-              </v-btn>
-            </div>
-          </v-col>
-        </v-row>
+        <div class="d-none d-sm-flex">
+          <v-row no-gutters>
+            <v-col class="d-flex">
+              <h1 class="tipeMain">Tipe A1 a</h1>
+              <v-spacer></v-spacer>
+              <div class="d-block pa-2" style="margin-top: 5px">
+                <p class="harga">Rp. 1.750.000</p>
+                <v-btn style="margin-top: -20px" color="green" outlined>
+                  More Info
+                </v-btn>
+              </div>
+            </v-col>
+          </v-row>
+        </div>
+        <div class="hidden-sm-and-up reveal">
+          <v-row no-gutters>
+            <v-col>
+              <h1 class="tipeMain">Tipe A1 a</h1>
+              <div class="d-block pa-2" style="margin-top: 5px">
+                <p class="harga">Rp. 1.750.000</p>
+                <v-btn style="margin-top: -20px" color="green" outlined>
+                  More Info
+                </v-btn>
+              </div>
+            </v-col>
+          </v-row>
+        </div>
         <v-row no-gutters style="margin-top: 20px">
           <p class="fasilitas">Fasilitas:</p>
         </v-row>
@@ -214,22 +265,127 @@
             </p>
           </v-col>
         </v-row>
-        <v-card style="height: 350px; margin-top: 20px" tile>
+        <div class="d-none d-sm-flex">
+          <v-card style="height: 350px; margin-top: 20px" tile>
+            <v-row no-gutters>
+              <v-col cols="6">
+                <img
+                  src="~@/assets/argapuraA1A.png"
+                  style="width: 100%; height: 350px"
+                />
+              </v-col>
+              <v-col>
+                <img
+                  src="~@/assets/argapura 66 A1.png"
+                  style="width: 100%; height: 350px"
+                />
+              </v-col>
+            </v-row>
+          </v-card>
+        </div>
+        <div class="hidden-sm-and-up reveal">
           <v-row no-gutters>
-            <v-col cols="6">
-              <img
-                src="~@/assets/argapuraA1B.png"
-                style="width: 100%; height: 350px"
-              />
-            </v-col>
             <v-col>
               <img
-                src="~@/assets/argapura 66 A1.png"
-                style="width: 100%; height: 350px"
+                src="~@/assets/argapuraA1A.png"
+                style="width: 100%; height: 250px"
               />
             </v-col>
           </v-row>
-        </v-card>
+          <v-row>
+            <v-col>
+              <img
+                src="~@/assets/argapura 66 A1.png"
+                style="width: 100%; height: 250px"
+              />
+            </v-col>
+          </v-row>
+        </div>
+      </v-container>
+    </div>
+
+    <div id="tipeSemua">
+      <v-container>
+        <div class="d-none d-sm-flex">
+          <v-row no-gutters>
+            <v-col class="d-flex">
+              <h1 class="tipeMain">Tipe A1 a</h1>
+              <v-spacer></v-spacer>
+              <div class="d-block pa-2" style="margin-top: 5px">
+                <p class="harga">Rp. 1.750.000</p>
+                <v-btn style="margin-top: -20px" color="green" outlined>
+                  More Info
+                </v-btn>
+              </div>
+            </v-col>
+          </v-row>
+        </div>
+        <div class="hidden-sm-and-up reveal">
+          <v-row no-gutters>
+            <v-col>
+              <h1 class="tipeMain">Tipe A1 a</h1>
+              <div class="d-block pa-2" style="margin-top: 5px">
+                <p class="harga">Rp. 1.750.000</p>
+                <v-btn style="margin-top: -20px" color="green" outlined>
+                  More Info
+                </v-btn>
+              </div>
+            </v-col>
+          </v-row>
+        </div>
+        <v-row no-gutters style="margin-top: 20px">
+          <p class="fasilitas">Fasilitas:</p>
+        </v-row>
+        <v-row no-gutters style="margin-top: -20px">
+          <v-col v-for="n in fasilitasa1a" :key="n" class="d-flex" cols="4">
+            >
+            <v-avatar tile size="30">
+              <img alt="user" :src="n.img" />
+            </v-avatar>
+            <p
+              class="fasilitasCaption"
+              style="margin-top: 5px; padding-left: 10px"
+            >
+              {{ n.title }}
+            </p>
+          </v-col>
+        </v-row>
+        <div class="d-none d-sm-flex">
+          <v-card style="height: 350px; margin-top: 20px" tile>
+            <v-row no-gutters>
+              <v-col cols="6">
+                <img
+                  src="~@/assets/argapuraA1A.png"
+                  style="width: 100%; height: 350px"
+                />
+              </v-col>
+              <v-col>
+                <img
+                  src="~@/assets/argapura 66 A1.png"
+                  style="width: 100%; height: 350px"
+                />
+              </v-col>
+            </v-row>
+          </v-card>
+        </div>
+        <div class="hidden-sm-and-up reveal">
+          <v-row no-gutters>
+            <v-col>
+              <img
+                src="~@/assets/argapuraA1A.png"
+                style="width: 100%; height: 250px"
+              />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <img
+                src="~@/assets/argapura 66 A1.png"
+                style="width: 100%; height: 250px"
+              />
+            </v-col>
+          </v-row>
+        </div>
       </v-container>
     </div>
 
@@ -616,6 +772,10 @@ export default {
 }
 
 #tipeA1a {
+  height: auto !important;
+  min-height: 800px;
+}
+#tipeSemua {
   height: auto !important;
   min-height: 800px;
 }

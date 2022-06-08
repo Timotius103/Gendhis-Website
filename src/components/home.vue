@@ -122,11 +122,11 @@
           </v-btn>
         </v-toolbar-items>
         <v-app-bar-nav-icon
-          class="hidden-sm-and-up"
+          class="d-sm-flex d-md-flex d-lg-none"
           @click.stop="drawer = !drawer"
         ></v-app-bar-nav-icon>
       </v-app-bar>
-      <v-list nav app v-if="drawer" class="hidden-sm-and-up">
+      <v-list nav app v-if="drawer" class="d-sm-flex d-md-flex d-lg-none">
         <v-list-item-group
           v-model="group"
           active-class="deep-purple--text text--accent-4"
@@ -244,9 +244,9 @@
       <p v-if="show">hello</p>
     </Transition> -->
     <div id="featurePart">
-      <div id="featuremb" class="hidden-sm-and-down reveal">
+      <div id="featuremb" class="hidden-sm-and-down">
         <v-container>
-          <h1 class="feature">Mengapa Argagendhis?</h1>
+          <h1 class="featurenormal">Mengapa Argagendhis?</h1>
         </v-container>
         <v-container>
           <v-row>
@@ -353,7 +353,7 @@
 
     <!-- //////////////////// VERSI MOBILE FITUR ////////////////////////////////// -->
     <div id="featurePart">
-      <div id="featuremb" class="hidden-sm-and-up reveal">
+      <div id="featuremb" class="d-lg-none d-xs-none d-sm-flex d-md-block">
         <v-container>
           <h1 class="feature">Mengapa Argagendhis?</h1>
         </v-container>
@@ -440,7 +440,7 @@
 
     <!-- //////////////////// VERSI MOBILE FITUR ////////////////////////////////// -->
     <div id="specificationPart">
-      <div id="specification" class="hidden-sm-and-down reveal">
+      <div id="specification" class="d-none d-sm-flex">
         <v-container>
           <v-row>
             <v-col cols="6" style="margin-top: 130px">
@@ -522,7 +522,7 @@
       </v-container>
     </v-parallax>
     <div id="productPart">
-      <div id="product" class="hidden-sm-and-down">
+      <div id="product" class="d-none d-md-flex d-sm-flex">
         <v-container>
           <div id="salessection" ref="section2" class="reveal">
             <v-row no-gutters style="padding-top: 45px">
@@ -530,7 +530,7 @@
                 <v-img :src="imgMap.src" style="width: 650px; height: 550px">
                 </v-img>
               </v-col>
-              <v-col cols="4">
+              <v-col cols="4" class="d-sm-none d-lg-flex">
                 <v-row>
                   <v-col>
                     <h1 class="listpropertiSection">List</h1>
@@ -548,6 +548,47 @@
                             <img :src="allblock.pict" />
                           </v-col>
                           <v-col>
+                            <p
+                              class="LocationCaption1"
+                              style="margin-top: -2px"
+                            >
+                              {{ allblock.title }}
+                            </p>
+                            <v-btn
+                              style="margin-top: -20px"
+                              color="green"
+                              router
+                              :to="allblock.to"
+                              outlined
+                            >
+                              View More
+                            </v-btn>
+                          </v-col>
+                        </v-row>
+                      </v-col>
+                    </v-row>
+                  </v-col>
+                </v-row>
+              </v-col>
+
+              <v-col cols="5" class="d-sm-flex d-lg-none">
+                <v-row>
+                  <v-col>
+                    <h1 class="listpropertiSection">List</h1>
+                    <h1 class="listpropertiSection" style="margin-top: -20px">
+                      Properti
+                    </h1>
+                    <v-row>
+                      <v-col
+                        v-for="allblock in block"
+                        :key="allblock.title"
+                        cols="8"
+                      >
+                        <v-row>
+                          <v-col cols="4" class="blockpict">
+                            <img :src="allblock.pict" />
+                          </v-col>
+                          <v-col class="blocktitle">
                             <p
                               class="LocationCaption1"
                               style="margin-top: -2px"
@@ -780,11 +821,12 @@
       <div
         id="location"
         style="background-color: #f1f2f6; height: "
-        class="hidden-sm-and-down"
+        class="d-none d-sm-flex"
       >
         <v-row no-gutters>
           <v-col cols="6">
             <iframe
+              class="map"
               width="100%"
               height="636px"
               frameborder="0"
@@ -795,7 +837,11 @@
             >
             </iframe>
           </v-col>
-          <v-col cols="6" style="padding-left: 25px">
+          <v-col
+            cols="6"
+            style="padding-left: 25px"
+            class="d-sm-none d-lg-block"
+          >
             <div class="reveal">
               <h1 class="location" style="margin-top: 100px">
                 Tempat Terdekat
@@ -883,6 +929,89 @@
               </v-row>
             </div>
           </v-col>
+
+          <v-col
+            cols="5"
+            style="padding-left: 25px"
+            class="d-sm-block d-lg-none"
+          >
+            <div class="reveal">
+              <h1 class="location">Tempat Terdekat</h1>
+              <p class="LocationCaption2" style="margin-top: 2px">
+                Area pribadi dengan aksesibilitas mudah adalah yang utama <br />
+                dan perlu menjadi pertimbangan untuk memilih sebuah hunian.
+                <br />
+                Pilih lokasi terbaik Anda di Argagendhis Residence.
+              </p>
+              <v-row>
+                <v-col cols="12">
+                  <v-row>
+                    <v-col cols="3">
+                      <v-avatar tile size="90" style="align: center">
+                        <img
+                          src="https://img.icons8.com/material/85/00b894/road--v2.png"
+                        />
+                      </v-avatar>
+                    </v-col>
+                    <v-col style="padding-left: 20px">
+                      <p class="LocationCaption4">50 m</p>
+                      <p class="LocationCaption3">Dari Jalan Raya</p>
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col cols="3">
+                      <v-avatar tile size="90" style="align: center">
+                        <img
+                          src="https://img.icons8.com/material/85/00b894/hospital-2.png"
+                        />
+                      </v-avatar>
+                    </v-col>
+                    <v-col style="padding-left: 20px">
+                      <p class="LocationCaption4">06 Menit</p>
+                      <p class="LocationCaption3">Dari RSUD Ketileng</p>
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col cols="3">
+                      <v-avatar tile size="90" style="align: center">
+                        <img
+                          src="https://img.icons8.com/material/85/00b894/highway.png"
+                        />
+                      </v-avatar>
+                    </v-col>
+                    <v-col style="padding-left: 20px">
+                      <p class="LocationCaption4" style="margin-top: 2px">
+                        12 Menit
+                      </p>
+                      <p class="LocationCaption3">
+                        Dari pintu masuk<br />
+                        Toll Gayamsari
+                      </p>
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col cols="3">
+                      <v-avatar tile size="90" style="align: center">
+                        <img
+                          src="https://img.icons8.com/material/85/00b894/university--v1.png"
+                        />
+                      </v-avatar>
+                    </v-col>
+                    <v-col style="padding-left: 20px">
+                      <p class="LocationCaption4" style="margin-top: -5px">
+                        04 Menit
+                      </p>
+                      <p class="LocationCaption3">Dari UNIMUS</p>
+                      <p class="LocationCaption4" style="margin-top: -15px">
+                        16 Menit
+                      </p>
+                      <p class="LocationCaption3">Dari UNDIP</p>
+                    </v-col>
+                  </v-row>
+                </v-col>
+              </v-row>
+            </div>
+          </v-col>
         </v-row>
       </div>
     </div>
@@ -891,7 +1020,7 @@
       <div
         id="location"
         style="background-color: #f1f2f6; height: "
-        class="hidden-sm-and-up"
+        class="hidden-sm-and-up reveal"
       >
         <v-container>
           <v-row no-gutters>
@@ -926,7 +1055,7 @@
                         </v-avatar>
                       </v-col>
                       <v-col style="padding-left: 20px">
-                        <p class="LocationCaption1">50 m</p>
+                        <p class="LocationCaption4">50 m</p>
                         <p class="LocationCaption3">Dari Jalan Raya</p>
                       </v-col>
                     </v-row>
@@ -939,7 +1068,7 @@
                         </v-avatar>
                       </v-col>
                       <v-col style="padding-left: 20px">
-                        <p class="LocationCaption1">06 Menit</p>
+                        <p class="LocationCaption4">06 Menit</p>
                         <p class="LocationCaption3">Dari RSUD Ketileng</p>
                       </v-col>
                     </v-row>
@@ -952,7 +1081,7 @@
                         </v-avatar>
                       </v-col>
                       <v-col style="padding-left: 20px">
-                        <p class="LocationCaption1" style="margin-top: 2px">
+                        <p class="LocationCaption4" style="margin-top: 2px">
                           12 Menit
                         </p>
                         <p class="LocationCaption3">
@@ -970,11 +1099,11 @@
                         </v-avatar>
                       </v-col>
                       <v-col style="padding-left: 20px">
-                        <p class="LocationCaption1" style="margin-top: -5px">
+                        <p class="LocationCaption4" style="margin-top: -5px">
                           04 Menit
                         </p>
                         <p class="LocationCaption3">Dari UNIMUS</p>
-                        <p class="LocationCaption1" style="margin-top: -15px">
+                        <p class="LocationCaption4" style="margin-top: -15px">
                           16 Menit
                         </p>
                         <p class="LocationCaption3">Dari UNDIP</p>
@@ -1092,8 +1221,6 @@ export default {
       this.loading = false;
     }, 2000);
   },
-
-  
 
   destroyed: function () {
     let elHtml = document.getElementsByTagName("html")[0];
@@ -1428,6 +1555,8 @@ export default {
           href: "https://www.instagram.com/dionisiusaa/",
         },
       ],
+
+      nearlocation: [],
     };
   },
   // watch: {
@@ -1556,6 +1685,13 @@ export default {
   color: black;
   font-size: 55px;
   text-align: left;
+}
+.featurenormal {
+  font-family: poppinssemibold;
+  color: black;
+  margin-top: 60px;
+  font-size: 45px;
+  text-align: center;
 }
 .feature {
   font-family: poppinssemibold;
@@ -1703,6 +1839,7 @@ export default {
   min-height: 500px;
 }
 #specification {
+  margin-top: 40px;
   height: auto !important;
   min-height: 700px;
 }
@@ -1763,6 +1900,130 @@ export default {
 @media screen and (max-width: 768px) {
   nav ul {
     width: 50%;
+  }
+  .feature {
+    font-family: poppinssemibold;
+    color: black;
+    margin-top: 20px;
+    font-size: 35px;
+    text-align: left;
+  }
+  .featureCaption {
+    font-family: poppinssemibold;
+    color: black;
+    font-size: 20px;
+    text-align: left;
+  }
+  .featureCaption2 {
+    font-family: poppinslight;
+    color: black;
+    font-size: 10px;
+    text-align: left;
+  }
+  .blocktitle {
+    padding-right: 2px;
+  }
+  .blockpict {
+    margin-right: 1px;
+  }
+  /* .LocationCaption1 {
+    font-family: poppinslight;
+    font-size: 15px;
+    color: black;
+    text-align: left;
+    
+    margin-top: -20px;
+    font-weight: 200;
+  } */
+
+  .LocationCaption2 {
+    font-family: poppinslight;
+    font-size: 15px;
+    color: black;
+    text-align: left;
+    margin-top: -20px;
+    font-weight: 200;
+  }
+
+  .LocationCaption3 {
+    font-family: poppinslight;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: -20px;
+    font-weight: 200;
+  }
+
+  .LocationCaption4 {
+    font-family: poppinssemibold;
+    color: black;
+    margin-top: 15px;
+    margin-left: 10px;
+    font-size: 20px;
+  }  
+
+  .map{
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 2360px) {
+  nav ul {
+    width: 50%;
+  }
+  .feature {
+    font-family: poppinssemibold;
+    color: black;
+    margin-top: 20px;
+    font-size: 35px;
+    text-align: left;
+  }
+  .featureCaption {
+    font-family: poppinssemibold;
+    color: black;
+    font-size: 20px;
+    text-align: left;
+  }
+  .featureCaption2 {
+    font-family: poppinslight;
+    color: black;
+    font-size: 10px;
+    text-align: left;
+  }
+  .blocktitle {
+    margin-left: 5px;
+  }
+
+  .location {
+    font-family: poppinssemibold;
+    color: black;
+    font-size: 35px;
+    text-align: left;
+  }
+  .LocationCaption2 {
+    font-family: poppinslight;
+    font-size: 15px;
+    color: black;
+    text-align: left;
+    margin-top: -20px;
+    font-weight: 200;
+  }
+
+  .LocationCaption3 {
+    font-family: poppinslight;
+    font-size: 15px;
+    color: black;
+    text-align: left;
+    margin-top: -20px;
+    font-weight: 200;
+  }
+
+  .LocationCaption4 {
+    font-family: poppinssemibold;
+    color: black;
+    margin-top: 15px;
+    font-size: 20px;
   }
 }
 
@@ -1928,6 +2189,14 @@ export default {
     font-weight: 200;
   }
 
+  .LocationCaption4 {
+    font-family: poppinssemibold;
+    color: black;
+    margin-top: 15px;
+    margin-left: 10px;
+    font-size: 20px;
+  } 
+
   .pricelist {
     font-family: poppinssemibold;
     font-size: 45px;
@@ -1935,6 +2204,12 @@ export default {
     margin-top: -20px;
     text-align: center;
     font-weight: 200;
+  }
+
+  #specification {
+    margin-top: -30px;
+    height: auto !important;
+    min-height: 700px;
   }
 }
 </style>
