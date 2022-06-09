@@ -231,6 +231,22 @@
       </v-row>
     </div>
 
+    <div id="app">
+      <v-btn
+        v-scroll="onScroll"
+        v-show="fab"
+        fab
+        dark
+        fixed
+        bottom
+        right
+        color="primary"
+        @click="toTop"
+      >
+        <v-icon>keyboard_arrow_up</v-icon>
+      </v-btn>
+    </div>
+
     <!-- ////////////////////// FEATURE SPESIFACTION SECTION //////////////////////////////////////////////////// -->
     <v-parallax :src="require('@/assets/pharalax4.png')" style="height: 250px">
       <v-container>
@@ -1242,6 +1258,7 @@ export default {
     // })
 
     return {
+      fab: false,
       loading: false,
       overlay: false,
       zIndex: 0,
@@ -1572,6 +1589,14 @@ export default {
   //   this.initLayers();
   // },
   methods: {
+    onScroll (e) {
+      if (typeof window === 'undefined') return
+      const top = window.pageYOffset ||   e.target.scrollTop || 0
+      this.fab = top > 20
+    },
+    toTop () {
+      this.$vuetify.goTo(0)
+    },
     reveal() {
       var reveals = document.querySelectorAll(".reveal");
 
@@ -1961,9 +1986,9 @@ export default {
     margin-top: 15px;
     margin-left: 10px;
     font-size: 20px;
-  }  
+  }
 
-  .map{
+  .map {
     margin-top: 20px;
   }
 }
@@ -2195,7 +2220,7 @@ export default {
     margin-top: 15px;
     margin-left: 10px;
     font-size: 20px;
-  } 
+  }
 
   .pricelist {
     font-family: poppinssemibold;
