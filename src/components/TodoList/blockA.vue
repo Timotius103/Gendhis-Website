@@ -139,6 +139,23 @@
         </v-carousel-item>
       </v-carousel>
     </div>
+
+    <div id="app">
+      <v-btn
+        v-scroll="onScroll"
+        v-show="fab"
+        fab
+        dark
+        fixed
+        bottom
+        right
+        color="primary"
+        @click="toTop"
+      >
+        <v-icon>call</v-icon>
+      </v-btn>
+    </div>
+
     <!--///////////////////////////////////////// TIPE SECTION BLOCK A /////////////////////////////////////////////////////////// -->
     <div id="tipeSemua">
       <div id="tipeA1a">
@@ -151,7 +168,7 @@
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 640,500,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    Tanya Pengembang
+                    Tersedia
                   </v-btn>
                 </div>
               </v-col>
@@ -164,7 +181,7 @@
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 640,500,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    Tanya Pengembang
+                    Tersedia
                   </v-btn>
                 </div>
               </v-col>
@@ -238,7 +255,7 @@
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 550,000,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                      Tanya Pengembang
+                    Tersedia
                   </v-btn>
                 </div>
               </v-col>
@@ -251,7 +268,7 @@
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 550,000,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    Tanya Pengembang
+                    Hubungi Pengembang
                   </v-btn>
                 </div>
               </v-col>
@@ -325,7 +342,7 @@
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 545,000,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    Tanya Pengembang
+                    Tersedia
                   </v-btn>
                 </div>
               </v-col>
@@ -338,7 +355,7 @@
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 545,000,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    Tanya Pengembang
+                    Tersedia
                   </v-btn>
                 </div>
               </v-col>
@@ -412,7 +429,7 @@
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 1,098,195,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    Tanya Pengembang
+                    Tersedia
                   </v-btn>
                 </div>
               </v-col>
@@ -425,7 +442,7 @@
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 1,098,195,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    Tanya Pengembang
+                    Tersedia
                   </v-btn>
                 </div>
               </v-col>
@@ -499,7 +516,7 @@
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 990,530,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    Tanya Pengembang
+                    Tersedia
                   </v-btn>
                 </div>
               </v-col>
@@ -512,7 +529,7 @@
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 990,530,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    Tanya Pengembang
+                    Tersedia
                   </v-btn>
                 </div>
               </v-col>
@@ -586,7 +603,7 @@
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 566,325,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    Tanya Pengembang
+                    Tersedia
                   </v-btn>
                 </div>
               </v-col>
@@ -599,7 +616,7 @@
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 566,325,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    Tanya Pengembang
+                    Tersedia
                   </v-btn>
                 </div>
               </v-col>
@@ -765,6 +782,7 @@ export default {
   },
   data() {
     return {
+      fab: false,
       loading: true,
       drawer: false,
       slideGroup: 0,
@@ -936,6 +954,14 @@ export default {
   //   window.addEventListener("resize", this.onResize, { passive: true });
   // },
   methods: {
+    onScroll(e) {
+      if (typeof window === "undefined") return;
+      const top = window.pageYOffset || e.target.scrollTop || 0;
+      this.fab = top > 20;
+    },
+    toTop() {
+      window.location = "https://api.whatsapp.com/send?phone=628112714200";
+    },
     onResize() {
       this.isMobile = window.innerWidth < 600;
     },
