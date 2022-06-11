@@ -146,12 +146,12 @@
           <div class="d-none d-sm-flex">
             <v-row no-gutters>
               <v-col class="d-flex">
-                <h1 class="tipeMain">Tipe A1 a</h1>
+                <h1 class="tipeMain">Tipe A1 a (Rumah)</h1>
                 <v-spacer></v-spacer>
                 <div class="d-block pa-2" style="margin-top: 5px">
-                  <p class="harga">Rp. 1.750.000</p>
+                  <p class="harga">Rp. 640,500,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    More Info
+                    Tanya Pengembang
                   </v-btn>
                 </div>
               </v-col>
@@ -160,11 +160,11 @@
           <div class="hidden-sm-and-up reveal">
             <v-row no-gutters>
               <v-col>
-                <h1 class="tipeMain">Tipe A1 a</h1>
+                <h1 class="tipeMain">Tipe A1 a (Rumah)</h1>
                 <div class="d-block pa-2" style="margin-top: 5px">
-                  <p class="harga">Rp. 1.750.000</p>
+                  <p class="harga">Rp. 640,500,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    More Info
+                    Tanya Pengembang
                   </v-btn>
                 </div>
               </v-col>
@@ -233,12 +233,12 @@
           <div class="d-none d-sm-flex">
             <v-row no-gutters>
               <v-col class="d-flex">
-                <h1 class="tipeMain">Tipe A1 b</h1>
+                <h1 class="tipeMain">Tipe A1 b (Rukan)</h1>
                 <v-spacer></v-spacer>
                 <div class="d-block pa-2" style="margin-top: 5px">
-                  <p class="harga">Rp. 1.750.000</p>
+                  <p class="harga">Rp. 550,000,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    More Info
+                      Tanya Pengembang
                   </v-btn>
                 </div>
               </v-col>
@@ -247,11 +247,11 @@
           <div class="hidden-sm-and-up reveal">
             <v-row no-gutters>
               <v-col>
-                <h1 class="tipeMain">Tipe A1 b</h1>
+                <h1 class="tipeMain">Tipe A1 b (Rukan)</h1>
                 <div class="d-block pa-2" style="margin-top: 5px">
-                  <p class="harga">Rp. 1.750.000</p>
+                  <p class="harga">Rp. 550,000,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    More Info
+                    Tanya Pengembang
                   </v-btn>
                 </div>
               </v-col>
@@ -320,12 +320,12 @@
           <div class="d-none d-sm-flex">
             <v-row no-gutters>
               <v-col class="d-flex">
-                <h1 class="tipeMain">Tipe A2 & A3</h1>
+                <h1 class="tipeMain">Tipe A2 & A3 (Rumah)</h1>
                 <v-spacer></v-spacer>
                 <div class="d-block pa-2" style="margin-top: 5px">
-                  <p class="harga">Rp. 1.750.000</p>
+                  <p class="harga">Rp. 545,000,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    More Info
+                    Tanya Pengembang
                   </v-btn>
                 </div>
               </v-col>
@@ -334,11 +334,11 @@
           <div class="hidden-sm-and-up reveal">
             <v-row no-gutters>
               <v-col>
-                <h1 class="tipeMain">Tipe A2 & A3</h1>
+                <h1 class="tipeMain">Tipe A2 & A3 (Rumah)</h1>
                 <div class="d-block pa-2" style="margin-top: 5px">
-                  <p class="harga">Rp. 1.750.000</p>
+                  <p class="harga">Rp. 545,000,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    More Info
+                    Tanya Pengembang
                   </v-btn>
                 </div>
               </v-col>
@@ -410,9 +410,9 @@
                 <h1 class="tipeMain">Tipe A5</h1>
                 <v-spacer></v-spacer>
                 <div class="d-block pa-2" style="margin-top: 5px">
-                  <p class="harga">Rp. 1.750.000</p>
+                  <p class="harga">Rp. 1,098,195,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    More Info
+                    Tanya Pengembang
                   </v-btn>
                 </div>
               </v-col>
@@ -423,9 +423,9 @@
               <v-col>
                 <h1 class="tipeMain">Tipe A5</h1>
                 <div class="d-block pa-2" style="margin-top: 5px">
-                  <p class="harga">Rp. 1.750.000</p>
+                  <p class="harga">Rp. 1,098,195,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    More Info
+                    Tanya Pengembang
                   </v-btn>
                 </div>
               </v-col>
@@ -497,9 +497,9 @@
                 <h1 class="tipeMain">Tipe A6</h1>
                 <v-spacer></v-spacer>
                 <div class="d-block pa-2" style="margin-top: 5px">
-                  <p class="harga">Rp. 1.750.000</p>
+                  <p class="harga">Rp. 990,530,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    More Info
+                    Tanya Pengembang
                   </v-btn>
                 </div>
               </v-col>
@@ -510,9 +510,9 @@
               <v-col>
                 <h1 class="tipeMain">Tipe A6</h1>
                 <div class="d-block pa-2" style="margin-top: 5px">
-                  <p class="harga">Rp. 1.750.000</p>
+                  <p class="harga">Rp. 990,530,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    More Info
+                    Tanya Pengembang
                   </v-btn>
                 </div>
               </v-col>
@@ -584,9 +584,9 @@
                 <h1 class="tipeMain">Tipe A7</h1>
                 <v-spacer></v-spacer>
                 <div class="d-block pa-2" style="margin-top: 5px">
-                  <p class="harga">Rp. 1.750.000</p>
+                  <p class="harga">Rp. 566,325,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    More Info
+                    Tanya Pengembang
                   </v-btn>
                 </div>
               </v-col>
@@ -597,9 +597,9 @@
               <v-col>
                 <h1 class="tipeMain">Tipe A7</h1>
                 <div class="d-block pa-2" style="margin-top: 5px">
-                  <p class="harga">Rp. 1.750.000</p>
+                  <p class="harga">Rp. 566,325,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
-                    More Info
+                    Tanya Pengembang
                   </v-btn>
                 </div>
               </v-col>

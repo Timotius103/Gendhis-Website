@@ -260,7 +260,7 @@
       <p v-if="show">hello</p>
     </Transition> -->
     <div id="featurePart">
-      <div id="featuremb" class="hidden-sm-and-down">
+      <div id="featuremb" class="hidden-sm-and-down reveal">
         <v-container>
           <h1 class="featurenormal">Mengapa Argagendhis?</h1>
         </v-container>
@@ -369,7 +369,7 @@
 
     <!-- //////////////////// VERSI MOBILE FITUR ////////////////////////////////// -->
     <div id="featurePart">
-      <div id="featuremb" class="d-lg-none d-xs-none d-sm-flex d-md-block">
+      <div id="featuremb" class="d-lg-none d-xs-none d-sm-flex d-md-block reveal">
         <v-container>
           <h1 class="feature">Mengapa Argagendhis?</h1>
         </v-container>
@@ -456,7 +456,7 @@
 
     <!-- //////////////////// VERSI MOBILE FITUR ////////////////////////////////// -->
     <div id="specificationPart">
-      <div id="specification" class="d-none d-sm-flex">
+      <div id="specification" class="d-none d-sm-flex reveal">
         <v-container>
           <v-row>
             <v-col cols="6" style="margin-top: 130px">
@@ -491,7 +491,7 @@
     </div>
 
     <!-- ////////////////////////////// SPESIFICATION MOBILE VERSION //////////////////////////////////////////////////////// -->
-    <div id="specificationPart">
+    <div class="reveal" id="specificationPart">
       <div id="specification" class="hidden-sm-and-up reveal">
         <v-container>
           <v-row>
