@@ -409,7 +409,7 @@
                 </v-col>
                 <v-col>
                   <img
-                    src="~@/assets/argapura 66 A1.png"
+                    src="~@/assets/argapura 61 A2 A3.png"
                     style="width: 100%; height: 350px"
                   />
                 </v-col>
@@ -428,7 +428,7 @@
             <v-row>
               <v-col>
                 <img
-                  src="~@/assets/argapura 66 A1.png"
+                  src="~@/assets/argapura 61 A2 A3.png"
                   style="width: 100%; height: 250px"
                 />
               </v-col>
@@ -496,7 +496,7 @@
                 </v-col>
                 <v-col>
                   <img
-                    src="~@/assets/argapura 66 A1.png"
+                    src="~@/assets/mahendra 112 a5.png"
                     style="width: 100%; height: 350px"
                   />
                 </v-col>
@@ -515,7 +515,7 @@
             <v-row>
               <v-col>
                 <img
-                  src="~@/assets/argapura 66 A1.png"
+                  src="~@/assets/mahendra 112 a5.png"
                   style="width: 100%; height: 250px"
                 />
               </v-col>
@@ -583,7 +583,7 @@
                 </v-col>
                 <v-col>
                   <img
-                    src="~@/assets/argapura 66 A1.png"
+                    src="~@/assets/mahendra 111 a6.png"
                     style="width: 100%; height: 350px"
                   />
                 </v-col>
@@ -602,7 +602,7 @@
             <v-row>
               <v-col>
                 <img
-                  src="~@/assets/argapura 66 A1.png"
+                  src="~@/assets/mahendra 111 a6.png"
                   style="width: 100%; height: 250px"
                 />
               </v-col>
@@ -646,7 +646,7 @@
             <p class="fasilitas">Fasilitas:</p>
           </v-row>
           <v-row no-gutters style="margin-top: -20px">
-            <v-col v-for="n in fasilitasa1a" :key="n" class="d-flex" cols="4">
+            <v-col v-for="n in fasilitas7a" :key="n" class="d-flex" cols="4">
               >
               <v-avatar tile size="30">
                 <img alt="user" :src="n.img" />
@@ -670,7 +670,7 @@
                 </v-col>
                 <v-col>
                   <img
-                    src="~@/assets/argapura 66 A1.png"
+                    src="~@/assets/sundoro 58 a7.png"
                     style="width: 100%; height: 350px"
                   />
                 </v-col>
@@ -689,7 +689,7 @@
             <v-row>
               <v-col>
                 <img
-                  src="~@/assets/argapura 66 A1.png"
+                  src="~@/assets/sundoro 58 a7.png"
                   style="width: 100%; height: 250px"
                 />
               </v-col>
@@ -838,6 +838,38 @@ export default {
           img: "https://img.icons8.com/material/96/000000/house-with-a-garden.png",
         },
       ],
+
+      fasilitas7a:[
+        {
+          title: "1 Ruang Tidur",
+          img: "https://img.icons8.com/material/96/000000/bedroom.png",
+        },
+        {
+          title: "1 Ruang Tamu",
+          img: "https://img.icons8.com/material/96/000000/living-room.png",
+        },
+        {
+          title: "1 Ruang Makan",
+          img: "https://img.icons8.com/material/96/000000/dining-room.png",
+        },
+        {
+          title: "3 Kamar Mandi",
+          img: "https://img.icons8.com/material/96/000000/shower.png",
+        },
+        {
+          title: "1 Garasi Mobil",
+          img: "https://img.icons8.com/material/96/000000/garage.png",
+        },
+        {
+          title: "1 Dapur",
+          img: "https://img.icons8.com/material/96/000000/kitchen.png",
+        },
+        {
+          title: "Taman",
+          img: "https://img.icons8.com/material/96/000000/house-with-a-garden.png",
+        },
+      ],
+      
 
       icons: [
         {
