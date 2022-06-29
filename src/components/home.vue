@@ -73,7 +73,13 @@
                 v-model="group"
                 active-class="deep-purple--text text--accent-4"
               >
-                <v-list-item router to="/blockA">
+                <v-list-item
+                  href="#productPart"
+                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                >
+                  <v-list-item-title>List Properti</v-list-item-title>
+                </v-list-item>
+                <!-- <v-list-item router to="/blockA">
                   <v-list-item-title>Block A</v-list-item-title>
                 </v-list-item>
                 <v-list-item
@@ -86,7 +92,7 @@
 
                 <v-list-item router to="/blockC">
                   <v-list-item-title>Block C</v-list-item-title>
-                </v-list-item>
+                </v-list-item> -->
 
                 <v-list-item
                   href="#progress"
@@ -126,49 +132,56 @@
           @click.stop="drawer = !drawer"
         ></v-app-bar-nav-icon>
       </v-app-bar>
-      <v-list nav app v-if="drawer" class="d-sm-flex d-md-flex d-lg-none">
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
-          <v-menu offset-y>
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn flat text v-bind="attrs" v-on="on">
-                <h2 class="navbarmenu">Fasilitas</h2>
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item-group
-                v-model="group"
-                active-class="deep-purple--text text--accent-4"
-              >
-                <v-list-item
-                  href="#featurePart"
-                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+      <v-expand-transition>
+        <v-list nav app v-if="drawer" class="d-sm-flex d-md-flex d-lg-none">
+          <v-list-item-group
+            v-model="group"
+            active-class="deep-purple--text text--accent-4"
+          >
+            <v-menu offset-y>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn flat text v-bind="attrs" v-on="on">
+                  <h2 class="navbarmenu">Fasilitas</h2>
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item-group
+                  v-model="group"
+                  active-class="deep-purple--text text--accent-4"
                 >
-                  <v-list-item-title>Fitur</v-list-item-title>
-                </v-list-item>
-                <v-list-item
-                  href="#specificationPart"
-                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                  <v-list-item
+                    href="#featurePart"
+                    v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                  >
+                    <v-list-item-title>Fitur</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item
+                    href="#specificationPart"
+                    v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                  >
+                    <v-list-item-title>Spesifikasi</v-list-item-title>
+                  </v-list-item>
+                </v-list-item-group>
+              </v-list>
+            </v-menu>
+            <v-menu offset-y>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn flat text v-bind="attrs" v-on="on">
+                  <h2 class="navbarmenu">Produk</h2>
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item-group
+                  v-model="group"
+                  active-class="deep-purple--text text--accent-4"
                 >
-                  <v-list-item-title>Spesifikasi</v-list-item-title>
-                </v-list-item>
-              </v-list-item-group>
-            </v-list>
-          </v-menu>
-          <v-menu offset-y>
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn flat text v-bind="attrs" v-on="on">
-                <h2 class="navbarmenu">Produk</h2>
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item-group
-                v-model="group"
-                active-class="deep-purple--text text--accent-4"
-              >
-                <v-list-item router to="/blockA">
+                  <v-list-item
+                    href="#productPart"
+                    v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                  >
+                    <v-list-item-title>List Properti</v-list-item-title>
+                  </v-list-item>
+                  <!-- <v-list-item router to="/blockA">
                   <v-list-item-title>Block A</v-list-item-title>
                 </v-list-item>
                 <v-list-item
@@ -181,44 +194,45 @@
 
                 <v-list-item router to="/blockC">
                   <v-list-item-title>Block C</v-list-item-title>
-                </v-list-item>
+                </v-list-item> -->
 
-                <v-list-item
-                  href="#progress"
-                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
-                >
-                  <v-list-item-title>Progress</v-list-item-title>
-                </v-list-item>
+                  <v-list-item
+                    href="#progress"
+                    v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                  >
+                    <v-list-item-title>Progress</v-list-item-title>
+                  </v-list-item>
 
-                <v-list-item
-                  href="#availabilityPart"
-                  v-smooth-scroll="{ duration: 1000, offset: 2 }"
-                >
-                  <v-list-item-title>Daftar Harga</v-list-item-title>
-                </v-list-item>
-              </v-list-item-group>
-            </v-list>
-          </v-menu>
-          <v-btn
-            text
-            flat
-            href="#locationPart"
-            v-smooth-scroll="{ duration: 1000, offset: 0 }"
-          >
-            <h2 class="navbarmenu">Lokasi Kami</h2>
-          </v-btn>
-          <v-btn
-            text
-            flat
-            href="#footer"
-            v-smooth-scroll="{ duration: 1000, offset: 0 }"
-          >
-            <h2 class="navbarmenu">Kontak</h2>
-          </v-btn>
-        </v-list-item-group>
-      </v-list>
+                  <v-list-item
+                    href="#availabilityPart"
+                    v-smooth-scroll="{ duration: 1000, offset: 2 }"
+                  >
+                    <v-list-item-title>Daftar Harga</v-list-item-title>
+                  </v-list-item>
+                </v-list-item-group>
+              </v-list>
+            </v-menu>
+            <v-btn
+              text
+              flat
+              href="#locationPart"
+              v-smooth-scroll="{ duration: 1000, offset: 0 }"
+            >
+              <h2 class="navbarmenu">Lokasi Kami</h2>
+            </v-btn>
+            <v-btn
+              text
+              flat
+              href="#footer"
+              v-smooth-scroll="{ duration: 1000, offset: 0 }"
+            >
+              <h2 class="navbarmenu">Kontak</h2>
+            </v-btn>
+          </v-list-item-group>
+        </v-list>
+      </v-expand-transition>
     </div>
-    <div>
+    <!-- <div>
       <v-row no-gutters>
         <v-col>
           <v-card class="jumbotron">
@@ -229,6 +243,22 @@
           </v-card>
         </v-col>
       </v-row>
+    </div> -->
+
+    <div class="heroBlock">
+      <v-carousel
+        height="100%"
+        cycle
+        hide-delimiter-background
+        :show-arrows="false"
+      >
+        <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
+          <v-container>
+            <p class="jumbotrontulisan">{{ item.tulisan1 }}</p>
+            <p class="jumbotrontulisan1">{{ item.tulisan2 }}</p>
+          </v-container>
+        </v-carousel-item>
+      </v-carousel>
     </div>
 
     <div id="app">
@@ -369,7 +399,10 @@
 
     <!-- //////////////////// VERSI MOBILE FITUR ////////////////////////////////// -->
     <div id="featurePart">
-      <div id="featuremb" class="d-lg-none d-xs-none d-sm-flex d-md-block reveal">
+      <div
+        id="featuremb"
+        class="d-lg-none d-xs-none d-sm-flex d-md-block reveal"
+      >
         <v-container>
           <h1 class="feature">Mengapa Argagendhis?</h1>
         </v-container>
@@ -1267,6 +1300,18 @@ export default {
       drawer: false,
       model: null,
       arrayOverlay: [],
+
+      items: [
+        {
+          tulisan1: "ARGAGENDHIS",
+          tulisan2: "Residence",
+          src: require("../assets/homepage.jpg"),
+        },
+        {
+          src: require("../assets/promo.jpeg"),
+        },
+      ],
+
       block: [
         {
           pict: "https://img.icons8.com/material/85/be2edd/circled-a.png",
@@ -1589,13 +1634,13 @@ export default {
   //   this.initLayers();
   // },
   methods: {
-    onScroll (e) {
-      if (typeof window === 'undefined') return
-      const top = window.pageYOffset ||   e.target.scrollTop || 0
-      this.fab = top > 20
+    onScroll(e) {
+      if (typeof window === "undefined") return;
+      const top = window.pageYOffset || e.target.scrollTop || 0;
+      this.fab = top > 20;
     },
-    toTop () {
-      this.$vuetify.goTo(0)
+    toTop() {
+      this.$vuetify.goTo(0);
     },
     reveal() {
       var reveals = document.querySelectorAll(".reveal");
@@ -2052,6 +2097,25 @@ export default {
   }
 }
 
+.heroBlock {
+  height: 645px;
+  background-size: cover;
+  align-items: center;
+  text-align: right;
+  position: relative;
+  z-index: 1;
+}
+
+.heroBlock::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 70%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  position: absolute;
+  bottom: 0;
+}
+
 @media screen and (max-width: 576px) {
   .preload {
     width: 50%;
@@ -2079,6 +2143,29 @@ export default {
   }
 
   .jumbotron .jumbotrontulisan1 {
+    font-family: poppinslight;
+    color: white;
+    margin-top: -45px;
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+
+  .heroBlock {
+    height: 645px;
+    z-index: 1;
+    background-size: cover;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  .heroBlock .jumbotrontulisan {
+    font-family: poppinssemibold;
+    color: white;
+    font-size: 45px;
+    margin-bottom: 30px;
+  }
+
+  .heroBlock .jumbotrontulisan1 {
     font-family: poppinslight;
     color: white;
     margin-top: -45px;

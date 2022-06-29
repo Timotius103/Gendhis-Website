@@ -113,7 +113,7 @@
         hide-delimiter-background
         show-arrows-on-hover
       >
-        <v-carousel-item v-for="(slide, i) in slides" :key="i">
+        <!-- <v-carousel-item v-for="(slide, i) in slides" :key="i">
           <v-sheet height="100%" width="100%">
             <v-row class="fill-height" align="center" justify="center">
               <v-card height="100%" width="100%">
@@ -136,6 +136,26 @@
               </v-card>
             </v-row>
           </v-sheet>
+        </v-carousel-item> -->
+        <v-carousel-item
+          v-for="(slide, i) in slides"
+          :key="i"
+          :src="slide.image"
+        >
+        <v-row class="fill-height" align="center" justify="center">
+          <h1 class="tipe">{{ slide.tipe }}</h1>
+          <div id="btnViewMore">
+            <v-btn
+              color="green"
+              style="align: center"
+              :href="slide.to"
+              v-smooth-scroll="{ duration: 1000, offset: 2 }"
+            >
+              <h2 class="navbarmenu">View More</h2>
+            </v-btn>
+          </div>
+        </v-row>
+          
         </v-carousel-item>
       </v-carousel>
     </div>
@@ -296,7 +316,7 @@
               <v-row no-gutters>
                 <v-col cols="6">
                   <img
-                    src="~@/assets/argapuraA1A.png"
+                    src="~@/assets/argapuraA1B.png"
                     style="width: 100%; height: 350px"
                   />
                 </v-col>
@@ -383,7 +403,7 @@
               <v-row no-gutters>
                 <v-col cols="6">
                   <img
-                    src="~@/assets/argapuraA1A.png"
+                    src="~@/assets/argapuraA2A3.png"
                     style="width: 100%; height: 350px"
                   />
                 </v-col>
@@ -400,7 +420,7 @@
             <v-row no-gutters>
               <v-col>
                 <img
-                  src="~@/assets/argapuraA1A.png"
+                  src="~@/assets/argapuraA2A3.png"
                   style="width: 100%; height: 250px"
                 />
               </v-col>
@@ -470,7 +490,7 @@
               <v-row no-gutters>
                 <v-col cols="6">
                   <img
-                    src="~@/assets/argapuraA1A.png"
+                    src="~@/assets/mahendraA5.png"
                     style="width: 100%; height: 350px"
                   />
                 </v-col>
@@ -487,7 +507,7 @@
             <v-row no-gutters>
               <v-col>
                 <img
-                  src="~@/assets/argapuraA1A.png"
+                  src="~@/assets/mahendraA5.png"
                   style="width: 100%; height: 250px"
                 />
               </v-col>
@@ -557,7 +577,7 @@
               <v-row no-gutters>
                 <v-col cols="6">
                   <img
-                    src="~@/assets/argapuraA1A.png"
+                    src="~@/assets/mahendraA6.png"
                     style="width: 100%; height: 350px"
                   />
                 </v-col>
@@ -574,7 +594,7 @@
             <v-row no-gutters>
               <v-col>
                 <img
-                  src="~@/assets/argapuraA1A.png"
+                  src="~@/assets/mahendraA6.png"
                   style="width: 100%; height: 250px"
                 />
               </v-col>
@@ -644,7 +664,7 @@
               <v-row no-gutters>
                 <v-col cols="6">
                   <img
-                    src="~@/assets/argapuraA1A.png"
+                    src="~@/assets/sindoroA7.png"
                     style="width: 100%; height: 350px"
                   />
                 </v-col>
@@ -661,7 +681,7 @@
             <v-row no-gutters>
               <v-col>
                 <img
-                  src="~@/assets/argapuraA1A.png"
+                  src="~@/assets/sindoroA7.png"
                   style="width: 100%; height: 250px"
                 />
               </v-col>
@@ -1066,8 +1086,7 @@ export default {
 #btnViewMore {
   margin: 0;
   position: absolute;
-  margin-top: 85px;
-  top: 50%;
+  top: 57%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
