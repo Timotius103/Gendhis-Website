@@ -246,13 +246,8 @@
     </div> -->
 
     <div class="heroBlock">
-      <v-carousel
-        height="auto"
-        cycle
-        hide-delimiter-background
-        :show-arrows="false"
-      >
-        <v-carousel-item v-for="(item, i) in items" :key="i">
+      <v-carousel hide-delimiters height="auto" show-arrows-on-hover cycle>
+        <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
           <v-img id="imageCarousels" :src="item.src">
             <v-container>
               <p class="jumbotrontulisan">{{ item.tulisan1 }}</p>
@@ -800,63 +795,23 @@
       </v-row>
     </div>
     <!-- <div style="height: 415px">
-      <v-row no-gutters>
-        <v-col no-gutters cols="3">
-          <v-card
-            height="400"
-            width="500"
-            @click="overlay = !overlay"
-          >
-            <v-img
-              :src="require('@/assets/progress1.jpeg')"
-              style="width: 100%; height: 100%"
-            >
-            </v-img>
-          </v-card>
-          <v-overlay :value="overlay">
-            <v-card
-              class="align-center white--text"
-              height="400"
-              width="500"
-              color="teal"
-              @click="overlay = false"
-            >
-              <v-img
-                :src="require('@/assets/progress1.jpeg')"
-                style="width: 100%; height: 100%"
-              >
-              </v-img>
-            </v-card>
-          </v-overlay>
-        </v-col>
-        <v-col no-gutters cols="3">
-          <v-card height="400" width="500" @click="overlay = !overlay">
-            <v-img
-              :src="require('@/assets/progress2.jpeg')"
-              style="width: 100%; height: 100%"
-            >
-            </v-img>
-          </v-card>
-        </v-col>
-        <v-col no-gutters cols="3">
-          <v-card height="400" width="500">
-            <v-img
-              :src="require('@/assets/progress3.jpeg')"
-              style="width: 100%; height: 100%"
-            >
-            </v-img>
-          </v-card>
-        </v-col>
-        <v-col cols="3">
-          <v-card height="400" width="500">
-            <v-img
-              :src="require('@/assets/progress4.jpeg')"
-              style="width: 100%; height: 100%"
-            >
-            </v-img>
-          </v-card>
-        </v-col>
-      </v-row>
+      <v-flex>
+        <v-carousel hide-delimiters style="box-shadow: 0px 0px">
+          <v-carousel-item v-for="i in 2" :key="i">
+            <v-layout row>
+              <v-flex sm3 v-for="j in 4" :key="j">
+                <v-card>
+                  <v-img
+                    src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+                    aspect-ratio="0.8"
+                  ></v-img>
+                 
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-carousel-item>
+        </v-carousel>
+      </v-flex>
     </div> -->
 
     <!-- ////////////////////////// DAFTAR HARGA ///////////////////////////////////////////////////////// -->
@@ -1986,6 +1941,41 @@ export default {
   opacity: 1;
 }
 
+.heroBlock {
+  height: auto;
+  background-size: cover;
+  align-items: center;
+  text-align: right;
+  position: relative;
+  z-index: 1;
+}
+
+.heroBlock::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  position: absolute;
+  bottom: 0;
+}
+
+/* .heroBlock .jumbotrontulisan {
+ font-family: poppinssemibold;
+  color: white;
+  margin-top: 345px;
+  font-size: 75px;
+  margin-bottom: 30px;
+}
+
+.heroBlock .jumbotrontulisan1 {
+  font-family: poppinslight;
+  color: white;
+  margin-top: -45px;
+  font-size: 45px;
+  margin-bottom: 30px;
+} */
+
 /* //////////////////////////////////// RESPONSIVE CSS ///////////////////////////////////////////////////// */
 @media screen and (max-width: 768px) {
   nav ul {
@@ -1994,6 +1984,46 @@ export default {
   #imageCarousels {
     width: auto;
     height: auto;
+  }
+
+  .heroBlock {
+    height: auto;
+    background-size: cover;
+    align-items: center;
+    text-align: right;
+    position: relative;
+    z-index: 1;
+  }
+
+  .heroBlock::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0)
+    );
+    position: absolute;
+    bottom: 0;
+  }
+  .heroBlock .jumbotrontulisan {
+    font-family: poppinssemibold;
+    color: white;
+    margin-top: 150px;
+    font-size: 58px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .heroBlock .jumbotrontulisan1 {
+    font-family: poppinslight;
+    color: white;
+    margin-top: -45px;
+    font-size: 38px;
+    margin-bottom: 30px;
+    text-align: center;
   }
   .feature {
     font-family: poppinssemibold;
@@ -2070,6 +2100,7 @@ export default {
     width: auto;
     height: auto;
   }
+
   .feature {
     font-family: poppinssemibold;
     color: black;
@@ -2123,25 +2154,6 @@ export default {
     margin-top: 15px;
     font-size: 20px;
   }
-}
-
-.heroBlock {
-  height: auto;
-  background-size: cover;
-  align-items: center;
-  text-align: right;
-  position: relative;
-  z-index: 1;
-}
-
-.heroBlock::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 50%;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-  position: absolute;
-  bottom: 0;
 }
 
 /* .heroBlock .jumbotrontulisan {

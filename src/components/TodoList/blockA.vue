@@ -142,20 +142,19 @@
           :key="i"
           :src="slide.image"
         >
-        <v-row class="fill-height" align="center" justify="center">
-          <h1 class="tipe">{{ slide.tipe }}</h1>
-          <div id="btnViewMore">
-            <v-btn
-              color="green"
-              style="align: center"
-              :href="slide.to"
-              v-smooth-scroll="{ duration: 1000, offset: 2 }"
-            >
-              <h2 class="navbarmenu">View More</h2>
-            </v-btn>
-          </div>
-        </v-row>
-          
+          <v-row class="fill-height" align="center" justify="center">
+            <h1 class="tipe">{{ slide.tipe }}</h1>
+            <div id="btnViewMore">
+              <v-btn
+                color="green"
+                style="align: center"
+                :href="slide.to"
+                v-smooth-scroll="{ duration: 1000, offset: 2 }"
+              >
+                <h2 class="navbarmenu">View More</h2>
+              </v-btn>
+            </div>
+          </v-row>
         </v-carousel-item>
       </v-carousel>
     </div>
@@ -176,6 +175,7 @@
       </v-btn>
     </div>
 
+    
     <!--///////////////////////////////////////// TIPE SECTION BLOCK A /////////////////////////////////////////////////////////// -->
     <div id="tipeSemua">
       <div id="tipeA1a">
@@ -839,7 +839,7 @@ export default {
         },
       ],
 
-      fasilitas7a:[
+      fasilitas7a: [
         {
           title: "1 Ruang Tidur",
           img: "https://img.icons8.com/material/96/000000/bedroom.png",
@@ -869,7 +869,6 @@ export default {
           img: "https://img.icons8.com/material/96/000000/house-with-a-garden.png",
         },
       ],
-      
 
       icons: [
         {

@@ -109,7 +109,8 @@ export default {
 .jumbotrontulisan{
   font-family: poppinssemibold;
   color: white;
-  margin-top: 255px;
+  margin-top: 200px;
+  display: block;
   font-size: 75px;
   margin-bottom: 30px;
 }
