@@ -2240,8 +2240,8 @@ export default {
   .featureSpecificationPart {
     font-family: poppinssemibold;
     color: white;
-    font-size: 38px;
-    margin-top: 50px;
+    font-size: 36px;
+    margin-top: 35px;
     text-align: center;
   }
 
