@@ -247,16 +247,18 @@
 
     <div class="heroBlock">
       <v-carousel
-        height="100%"
+        height="auto"
         cycle
         hide-delimiter-background
         :show-arrows="false"
       >
-        <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
-          <v-container>
-            <p class="jumbotrontulisan">{{ item.tulisan1 }}</p>
-            <p class="jumbotrontulisan1">{{ item.tulisan2 }}</p>
-          </v-container>
+        <v-carousel-item v-for="(item, i) in items" :key="i">
+          <v-img id="imageCarousels" :src="item.src">
+            <v-container>
+              <p class="jumbotrontulisan">{{ item.tulisan1 }}</p>
+              <p class="jumbotrontulisan1">{{ item.tulisan2 }}</p>
+            </v-container>
+          </v-img>
         </v-carousel-item>
       </v-carousel>
     </div>
@@ -278,7 +280,23 @@
     </div>
 
     <!-- ////////////////////// FEATURE SPESIFACTION SECTION //////////////////////////////////////////////////// -->
-    <v-parallax :src="require('@/assets/pharalax4.png')" style="height: 250px">
+    <v-parallax
+      class="d-none d-sm-block"
+      :src="require('@/assets/pharalax4.png')"
+      style="height: 235px"
+    >
+      <v-container>
+        <div class="reveal">
+          <h1 class="featureSpecificationPart">Fitur & Spesifikasi</h1>
+        </div>
+      </v-container>
+    </v-parallax>
+
+    <v-parallax
+      class="hidden-sm-and-up"
+      :src="require('@/assets/pharalax4.png')"
+      style="height: 150px"
+    >
       <v-container>
         <div class="reveal">
           <h1 class="featureSpecificationPart">Fitur & Spesifikasi</h1>
@@ -1308,7 +1326,8 @@ export default {
           src: require("../assets/homepage.jpg"),
         },
         {
-          src: require("../assets/promo.jpeg"),
+          size: 200,
+          src: require("../assets/promogendis 1.jpg"),
         },
       ],
 
@@ -1966,10 +1985,15 @@ export default {
   transform: translateY(0);
   opacity: 1;
 }
+
 /* //////////////////////////////////// RESPONSIVE CSS ///////////////////////////////////////////////////// */
 @media screen and (max-width: 768px) {
   nav ul {
     width: 50%;
+  }
+  #imageCarousels {
+    width: auto;
+    height: auto;
   }
   .feature {
     font-family: poppinssemibold;
@@ -2042,6 +2066,10 @@ export default {
   nav ul {
     width: 50%;
   }
+  #imageCarousels {
+    width: auto;
+    height: auto;
+  }
   .feature {
     font-family: poppinssemibold;
     color: black;
@@ -2098,7 +2126,7 @@ export default {
 }
 
 .heroBlock {
-  height: 645px;
+  height: auto;
   background-size: cover;
   align-items: center;
   text-align: right;
@@ -2110,11 +2138,27 @@ export default {
   content: "";
   display: block;
   width: 100%;
-  height: 70%;
+  height: 50%;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   position: absolute;
   bottom: 0;
 }
+
+/* .heroBlock .jumbotrontulisan {
+    font-family: poppinssemibold;
+    color: white;
+    font-size: 48px;
+    margin-bottom: 30px;
+    margin-top: 65px
+  }
+
+  .heroBlock .jumbotrontulisan1 {
+    font-family: poppinslight;
+    color: white;
+    margin-top: -45px;
+    font-size: 28px;
+    margin-bottom: 30px;
+  } */
 
 @media screen and (max-width: 576px) {
   .preload {
@@ -2125,6 +2169,10 @@ export default {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+  }
+  #imageCarousels {
+    max-width: 100%;
+    height: 245px;
   }
   .jumbotron {
     background-image: url("../assets/homepage.jpg");
@@ -2149,34 +2197,51 @@ export default {
     font-size: 25px;
     margin-bottom: 30px;
   }
+  #carousels {
+    height: 245px;
+  }
 
   .heroBlock {
-    height: 645px;
+    height: 245px;
     z-index: 1;
     background-size: cover;
     align-items: center;
     text-align: center;
     position: relative;
   }
+  .heroBlock::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0)
+    );
+    position: absolute;
+    bottom: 0;
+  }
   .heroBlock .jumbotrontulisan {
     font-family: poppinssemibold;
     color: white;
-    font-size: 45px;
+    font-size: 38px;
     margin-bottom: 30px;
+    margin-top: 65px;
   }
 
   .heroBlock .jumbotrontulisan1 {
     font-family: poppinslight;
     color: white;
     margin-top: -45px;
-    font-size: 25px;
+    font-size: 18px;
     margin-bottom: 30px;
   }
   .featureSpecificationPart {
     font-family: poppinssemibold;
     color: white;
-    font-size: 45px;
-    margin-top: 100px;
+    font-size: 38px;
+    margin-top: 50px;
     text-align: center;
   }
 
