@@ -7,3 +7,4 @@ deployment:
     - /bin/cp -r babel.config.js $DEPLOYPATH
     - /bin/cp -r package-lock.json $DEPLOYPATH
     - /bin/cp -r package.json $DEPLOYPATH
+    - /bin/cp -r README.md $DEPLOYPATH
