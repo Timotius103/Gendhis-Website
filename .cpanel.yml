@@ -2,6 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/u1598434/public_html/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp style.css $DEPLOYPATH
-    - /bin/cp -r * $DEPLOYPATH
+    - /bin/cp -r public $DEPLOYPATH
+    - /bin/cp -r src $DEPLOYPATH
+    - /bin/cp -r babel.config.js $DEPLOYPATH
+    - /bin/cp -r package-lock.json $DEPLOYPATH
+    - /bin/cp -r package.json $DEPLOYPATH
