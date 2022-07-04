@@ -1202,7 +1202,7 @@
                       class="mx-4"
                       dark
                       icon
-                      href="https://api.whatsapp.com/message/FAXQXMO3HVMKC1"
+                      @click="toWA"
                     >
                       <v-icon size="24px" color="white"> mdi-whatsapp </v-icon>
                     </v-btn>
@@ -1615,6 +1615,10 @@ export default {
     },
     toTop() {
       this.$vuetify.goTo(0);
+    },
+
+    toWA() {
+      window.location = "https://api.whatsapp.com/send?phone=628112714200";
     },
     reveal() {
       var reveals = document.querySelectorAll(".reveal");

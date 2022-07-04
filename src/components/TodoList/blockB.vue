@@ -582,7 +582,7 @@
                       class="mx-4"
                       dark
                       icon
-                      href="https://api.whatsapp.com/message/FAXQXMO3HVMKC1"
+                      @click="toTop"
                     >
                       <v-icon size="24px" color="white"> mdi-whatsapp </v-icon>
                     </v-btn>
