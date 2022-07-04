@@ -940,32 +940,32 @@ export default {
       ],
       slides: [
         {
-          tipe: "Tipe A1 a",
+          tipe: "Argapura 71",
           image: require("@/assets/argapuraA1A.png"),
           to: "#tipeA1a",
         },
         {
-          tipe: "Tipe A1 b",
+          tipe: "Argapura 55",
           image: require("@/assets/argapuraA1B.png"),
           to: "#tipeA1b",
         },
         {
-          tipe: "Tipe A2 & A3",
+          tipe: "Argapura 60",
           image: require("@/assets/argapuraA2A3.png"),
           to: "#tipeA2A3",
         },
         {
-          tipe: "Tipe A5",
+          tipe: "Mahendra 112",
           image: require("@/assets/mahendraA5.png"),
           to: "#tipeA5",
         },
         {
-          tipe: "Tipe A6",
+          tipe: "Mahendra 111",
           image: require("@/assets/mahendraA6.png"),
           to: "#tipeA6",
         },
         {
-          tipe: "Tipe A7",
+          tipe: "Sindoro 58",
           image: require("@/assets/sindoroA7.png"),
           to: "#tipeA7",
         },
