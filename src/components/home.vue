@@ -1395,7 +1395,7 @@ export default {
           lb1: 41,
           lb2: 30,
           lb: 71,
-          harga: "Rp. 640,500,000",
+          harga: "Rp. 687,500,000",
         },
         {
           no: "A1",
@@ -1404,7 +1404,7 @@ export default {
           lb1: 30,
           lb2: 25,
           lb: 55,
-          harga: "Rp. 550,000,000",
+          harga: "Rp. 597,000,000",
         },
         {
           no: "A2",
@@ -1413,7 +1413,7 @@ export default {
           lb1: 30,
           lb2: 30,
           lb: 60,
-          harga: "Rp. 545,000,000",
+          harga: "Rp. 585,000,000",
         },
         {
           no: "A3",
@@ -1422,7 +1422,7 @@ export default {
           lb1: 30,
           lb2: 30,
           lb: 60,
-          harga: "Rp. 545,000,000",
+          harga: "Rp. 585,000,000",
         },
         {
           no: "A5",
@@ -1431,7 +1431,7 @@ export default {
           lb1: 57.49,
           lb2: 54.5,
           lb: 111.99,
-          harga: "Rp. 1,098,195,000",
+          harga: "Rp. 1,189,195,000",
         },
         {
           no: "A6",
@@ -1440,7 +1440,7 @@ export default {
           lb1: 56.62,
           lb2: 54.02,
           lb: 110.64,
-          harga: "Rp. 990,530,000",
+          harga: "Rp. 1,061,530,000",
         },
         {
           no: "A7",
@@ -1449,7 +1449,16 @@ export default {
           lb1: 33.55,
           lb2: 25.3,
           lb: 58.85,
-          harga: "Rp. 566,325,000",
+          harga: "Rp. 612,325,000",
+        },
+        {
+          no: "A7",
+          type: "Sindoro 62",
+          lt: 46,
+          lb1: 35,
+          lb2: 27,
+          lb: 62,
+          harga: "Rp. 630,500,000",
         },
         {
           no: "B1",
@@ -1458,7 +1467,7 @@ export default {
           lb1: 65.76,
           lb2: 61.63,
           lb: 127.39,
-          harga: "Rp. 1,231,460,000",
+          harga: "Rp. 1,331,460,000",
         },
         {
           no: "B2",
@@ -1467,7 +1476,7 @@ export default {
           lb1: 65.76,
           lb2: 61.63,
           lb: 127.39,
-          harga: "Rp. 1,231,460,000",
+          harga: "Rp. 1,331,460,000",
         },
         {
           no: "B3",
@@ -1476,7 +1485,7 @@ export default {
           lb1: 40,
           lb2: 40,
           lb: 80,
-          harga: "Rp. 870,000,000",
+          harga: "Rp. 952,000,000",
         },
         {
           no: "B3",
@@ -1485,7 +1494,7 @@ export default {
           lb1: 50,
           lb2: 0,
           lb: 50,
-          harga: "Rp. 685,000,000",
+          harga: "Rp. 767,000,000",
         },
         {
           no: "B3",
@@ -1494,7 +1503,7 @@ export default {
           lb1: 45,
           lb2: 0,
           lb: 45,
-          harga: "Rp. 657,500,000",
+          harga: "Rp. 739,500,000",
         },
         {
           no: "B5",
@@ -1503,7 +1512,16 @@ export default {
           lb1: 83.35,
           lb2: 75.25,
           lb: 158.6,
-          harga: "Rp. 1,634,925,000",
+          harga: "Rp. 1,779,925,000",
+        },
+        {
+          no: "B5",
+          type: "Sindoro 102",
+          lt: 145,
+          lb1: 43.49,
+          lb2: 58.45,
+          lb: 101.94,
+          harga: "Rp. 1,459,895,000",
         },
         {
           no: "B6",
@@ -1512,7 +1530,7 @@ export default {
           lb1: 65.76,
           lb2: 61.63,
           lb: 127.39,
-          harga: "Rp. 1,231,460,000",
+          harga: "Rp. 1,331,460,000",
         },
         {
           no: "B7",
@@ -1521,7 +1539,7 @@ export default {
           lb1: 65.76,
           lb2: 61.63,
           lb: 127.39,
-          harga: "Rp. 1,231,460,000",
+          harga: "Rp. 1,331,460,000",
         },
         {
           no: "C1",
@@ -1530,7 +1548,7 @@ export default {
           lb1: 68.1,
           lb2: 64.9,
           lb: 133,
-          harga: "Rp. 1,298,950,000",
+          harga: "Rp. 1,405,950,000",
         },
         {
           no: "C2",
@@ -1539,7 +1557,7 @@ export default {
           lb1: 65.76,
           lb2: 61.63,
           lb: 127.39,
-          harga: "Rp. 1,251,460,000",
+          harga: "Rp. 1,355,460,000",
         },
         {
           no: "C5",
@@ -1548,7 +1566,7 @@ export default {
           lb1: 63.81,
           lb2: 59.63,
           lb: 123.44,
-          harga: "Rp. 1,178,735,000",
+          harga: "Rp. 1,272,735,000",
         },
         {
           no: "C6",
@@ -1557,7 +1575,7 @@ export default {
           lb1: 63.81,
           lb2: 59.63,
           lb: 123.44,
-          harga: "Rp. 1,168,735,000",
+          harga: "Rp. 1,260,735,000",
         },
         {
           no: "C7",
@@ -1566,7 +1584,7 @@ export default {
           lb1: 83.04,
           lb2: 73.47,
           lb: 156.51,
-          harga: "Rp. 1,447,540,000",
+          harga: "Rp. 1,557,540,000",
         },
       ],
       paralax: {
@@ -1758,7 +1776,7 @@ export default {
   font-family: poppinslight;
   color: black;
   font-size: 10px;
-  text-align: center;
+  text-align: center !important;
 }
 .featureSpecificationPart {
   font-family: poppinssemibold;
@@ -2046,7 +2064,7 @@ export default {
     font-family: poppinslight;
     color: black;
     font-size: 10px;
-    text-align: left;
+    text-align: left !important;
   }
   .blocktitle {
     padding-right: 2px;
@@ -2096,7 +2114,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 2360px) {
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
   nav ul {
     width: 50%;
   }
@@ -2122,7 +2140,7 @@ export default {
     font-family: poppinslight;
     color: black;
     font-size: 10px;
-    text-align: left;
+    text-align: left !important;
   }
   .blocktitle {
     margin-left: 5px;
@@ -2218,7 +2236,7 @@ export default {
   }
 
   .heroBlock {
-    height: 245px;
+    height: auto;
     z-index: 1;
     background-size: cover;
     align-items: center;
@@ -2279,7 +2297,7 @@ export default {
     font-family: poppinslight;
     color: black;
     font-size: 10px;
-    text-align: left;
+    text-align: left !important;
   }
 
   .spesifikasi {

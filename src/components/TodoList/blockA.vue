@@ -22,10 +22,12 @@
       <v-toolbar dense height="80">
         <v-container>
           <v-toolbar-title>
-            <img
-              src="~@/assets/gendislogo.png"
-              style="width: 200px; height: 60px; position: relative; top: 3px"
-            />
+            <a @click="toHome">
+              <img
+                src="~@/assets/gendislogo.png"
+                style="width: 200px; height: 60px; position: relative; top: 3px"
+              />
+            </a>
           </v-toolbar-title>
         </v-container>
         <v-spacer></v-spacer>
@@ -175,7 +177,6 @@
       </v-btn>
     </div>
 
-    
     <!--///////////////////////////////////////// TIPE SECTION BLOCK A /////////////////////////////////////////////////////////// -->
     <div id="tipeSemua">
       <div id="tipeA1a">
@@ -183,7 +184,7 @@
           <div class="d-none d-sm-flex">
             <v-row no-gutters>
               <v-col class="d-flex">
-                <h1 class="tipeMain">Argapura 71  (Rumah)</h1>
+                <h1 class="tipeMain">Argapura 71 (Rumah)</h1>
                 <v-spacer></v-spacer>
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 640,500,000</p>
@@ -197,7 +198,7 @@
           <div class="hidden-sm-and-up reveal">
             <v-row no-gutters>
               <v-col>
-                <h1 class="tipeMain">Argapura 71  (Rumah)</h1>
+                <h1 class="tipeMain">Argapura 71 (Rumah)</h1>
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 640,500,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
@@ -270,7 +271,7 @@
           <div class="d-none d-sm-flex">
             <v-row no-gutters>
               <v-col class="d-flex">
-                <h1 class="tipeMain">Argapura 55  (Rukan)</h1>
+                <h1 class="tipeMain">Argapura 55 (Rukan)</h1>
                 <v-spacer></v-spacer>
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 550,000,000</p>
@@ -284,7 +285,7 @@
           <div class="hidden-sm-and-up reveal">
             <v-row no-gutters>
               <v-col>
-                <h1 class="tipeMain">Argapura 55  (Rukan)</h1>
+                <h1 class="tipeMain">Argapura 55 (Rukan)</h1>
                 <div class="d-block pa-2" style="margin-top: 5px">
                   <p class="harga">Rp. 550,000,000</p>
                   <v-btn style="margin-top: -20px" color="green" outlined>
@@ -756,12 +757,7 @@
                     >
                       <v-icon size="24px" color="white"> mdi-facebook </v-icon>
                     </v-btn>
-                    <v-btn
-                      class="mx-4"
-                      dark
-                      icon
-                      @click="toTop"
-                    >
+                    <v-btn class="mx-4" dark icon @click="toTop">
                       <v-icon size="24px" color="white"> mdi-whatsapp </v-icon>
                     </v-btn>
                   </div>
@@ -1012,6 +1008,11 @@ export default {
     },
     toTop() {
       window.location = "https://api.whatsapp.com/send?phone=628112714200";
+    },
+    toHome(){
+      this.$router.push({
+        name: 'Root',
+      })
     },
     onResize() {
       this.isMobile = window.innerWidth < 600;

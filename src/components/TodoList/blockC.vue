@@ -22,10 +22,12 @@
       <v-toolbar dense height="80">
         <v-container>
           <v-toolbar-title>
-            <img
-              src="~@/assets/gendislogo.png"
-              style="width: 200px; height: 60px; position: relative; top: 3px"
-            />
+            <a @click="toHome">
+              <img
+                src="~@/assets/gendislogo.png"
+                style="width: 200px; height: 60px; position: relative; top: 3px"
+              />
+            </a>
           </v-toolbar-title>
         </v-container>
         <v-spacer></v-spacer>
@@ -940,6 +942,11 @@ export default {
     },
     toTop() {
       window.location = "https://api.whatsapp.com/send?phone=628112714200";
+    },
+    toHome(){
+      this.$router.push({
+        name: 'Root',
+      })
     },
     onResize() {
       this.isMobile = window.innerWidth < 600;
