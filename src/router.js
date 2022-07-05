@@ -42,19 +42,19 @@ const router = new VueRouter({
         //     ]
         // },
         {
-            path: "/blockA",
+            path: "/:blockA(.*)",
             name: "blockA",
             meta: { title: 'Block A' },
             component: importComponent('TodoList/blockA'),
         },
         {
-            path: "/blockB",
+            path: "/:blockB(.*)",
             name: "blockB",
             meta: { title: 'Block B' },
             component: importComponent('TodoList/blockB'),
         },
         {
-            path: "/blockC",
+            path: "/:blockC(.*)",
             name: "blockC",
             meta: { title: 'Block C' },
             component: importComponent('TodoList/blockC'),
