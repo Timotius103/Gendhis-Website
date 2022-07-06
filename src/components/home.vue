@@ -825,6 +825,14 @@
             :items-per-page="5"
           >
           </v-data-table>
+          <div id="availabilityKeterangan">
+            <h1 class="pricelist2"> Keterangan:</h1>
+            <ul class="pricelist3">
+              <li>Sumber air bersih PDAM atau artetis</li>
+              <li>Daya listrik 2200 watt</li>
+              <li>Belum termasuk biaya KPR dan Notaris</li>
+            </ul>
+          </div>
         </v-container>
       </div>
     </div>
@@ -1198,12 +1206,7 @@
                     >
                       <v-icon size="24px" color="white"> mdi-facebook </v-icon>
                     </v-btn>
-                    <v-btn
-                      class="mx-4"
-                      dark
-                      icon
-                      @click="toWA"
-                    >
+                    <v-btn class="mx-4" dark icon @click="toWA">
                       <v-icon size="24px" color="white"> mdi-whatsapp </v-icon>
                     </v-btn>
                   </div>
@@ -1895,6 +1898,23 @@ export default {
   font-weight: 200;
 }
 
+.pricelist2 {
+  font-family: poppinssemibold;
+  font-size: 15px;
+  color: black;
+  /* margin-top: 100px; */
+  text-align: left;
+  font-weight: 200;
+}
+
+.pricelist3 {
+  font-family: poppinslight;
+  font-size: 15px;
+  color: black;
+  text-align: left;
+  font-weight: 200;
+}
+
 :root {
   --animate-duration: 800ms;
   --animate-delay: 1s;
@@ -1917,6 +1937,11 @@ export default {
 #availability {
   height: auto !important;
   min-height: 650px;
+  /* min-marginbottom: 0px; */
+  /* margin-bottom: 200px; */
+}
+#availabilityKeterangan {
+  margin-bottom: 100px;
 }
 #location {
   height: auto !important;
@@ -2234,6 +2259,19 @@ export default {
   #carousels {
     height: 245px;
   }
+
+  #availabilityKeterangan {
+    margin-bottom: 0px;
+  }
+
+  /* .pricelist2 {
+    font-family: poppins;
+    font-size: 15px;
+    color: black;
+    margin-top: 100px;
+    text-align: center;
+    font-weight: 200;
+  } */
 
   .heroBlock {
     height: auto;
