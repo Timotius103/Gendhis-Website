@@ -5,6 +5,7 @@ function importComponent(path) {
     return () => import(`./components/${path}.vue`)
 }
 Vue.use(VueRouter);
+
 const router = new VueRouter({
     mode: "history",
     routes: [
@@ -12,63 +13,32 @@ const router = new VueRouter({
             path: "/",
             name: "Root",
             meta: { title: 'Agragendis Residence' },
-            component: importComponent('home'),
+            component:  importComponent('home'),
         },
-        // {
-        //     path: "/",
-        //     name: "Root",
-        //     meta: {title: 'Agragendis Residence'},
-        //     component: importComponent('home'),
-        //     children: [
-        //         // To do list
-        //         {
-        //             path: "/blockA",
-        //             name: "blockA",
-        //             meta: {title: 'Block A'},
-        //             component: importComponent('TodoList/blockA'),
-        //         },
-        //         {
-        //             path: "/blockB",
-        //             name: "blockB",
-        //             meta: {title: 'Block B'},
-        //             component: importComponent('TodoList/blockB'),
-        //         },
-        //         {
-        //             path: "/blockC",
-        //             name: "blockC",
-        //             meta: {title: 'Block C'},
-        //             component: importComponent('TodoList/blockC'),
-        //         },
-        //     ]
-        // },
         {
-            path: "/:blockA(.*)",
+            path: "/blockA",
             name: "blockA",
             meta: { title: 'Block A' },
             component: importComponent('TodoList/blockA'),
         },
         {
-            path: "/:blockB(.*)",
+            path: "/blockB",
             name: "blockB",
             meta: { title: 'Block B' },
             component: importComponent('TodoList/blockB'),
         },
         {
-            path: "/:blockC(.*)",
+            path: "/blockC",
             name: "blockC",
             meta: { title: 'Block C' },
             component: importComponent('TodoList/blockC'),
         },
+        // { 
+        //     path: '/:pathMatch(.*)', 
+        //     component: NotFoundComponent 
+        // }
     ],
-    // scrollBehavior(to, from, saveposition) {
-    //     if (saveposition) {
-    //         return saveposition;
-    //     } else {
-    //         return { x: 0, y: 0 };
-    //     }
-    // }
     scrollBehavior(to) {
-        
         if (to.hash) {
           return {
             el: to.hash,
@@ -77,6 +47,7 @@ const router = new VueRouter({
         }
         return { x:0, y:0};
       }
+      
 });
 
 export default router;
